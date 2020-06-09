@@ -1,4 +1,4 @@
-Website for our integration 4 project: The Traveling Flower
+#Website for our integration 4 project: The Traveling Flower
 
 Through this web application the user stands in direct contact with the traveling flower.
 
@@ -33,8 +33,4 @@ Settings page
 	Logout
 
 
-# WEBAPP-TheTravelingFlower
-# WEBAPP-TheTravelingFlower
-# WEBAPP-TheTravelingFlower
-# WEBAPP-TheTravelingFlower
-# WEBAPP-TheTravelingFlower
+
