@@ -1,12 +1,9 @@
-<<<<<<< HEAD
+
 # integration 4: The Traveling Flower WebApp
-=======
-#Website for our integration 4 project: The Traveling Flower
->>>>>>> 12d5b53d42afbe2dc9bd8d5109a5236311af1314
 
 Through this web application the user stands in direct contact with the traveling flower.
 
-# AS A USER I CAN....:
+# As a user i can ...
 
 ## Login page
 * Register and login so that I am part of the community.
@@ -37,8 +34,3 @@ Myself in their shoes.
 * Logout
 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 12d5b53d42afbe2dc9bd8d5109a5236311af1314
