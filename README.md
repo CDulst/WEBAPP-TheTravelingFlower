@@ -1,7 +1,7 @@
 
 # integration 4: The Traveling Flower WebApp
 
-Through this web application the user stands in direct contact with the traveling flower.
+Through this web application the user stands in direct contact with the traveling flower and it's community.
 
 # As a user i can ...
 
