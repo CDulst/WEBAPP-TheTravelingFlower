@@ -1,19 +1,20 @@
 import React from 'react';
 import ROUTES from './routes'
-import Apply from "./app/apply";
-import Landing from "./app/landing"
-import Tracker from './app/tracker'
-import Challenge from "./app/challenge"
-import Carriers from "./app/carriers"
-import Settings from './app/settings'
-import Sidebar from './app/sidebar'
-import uiStore from './UiStore'
+import Apply from "./app/content/apply";
+import Landing from "./app/content/landing"
+import Tracker from './app/content/tracker'
+import Challenge from "./app/content/challenge"
+import Carriers from "./app/content/carriers"
+import Settings from './app/content/settings'
+import Sidebar from './app/content/sidebar'
+import uiStore from './uiStore'
 import { Switch, Route } from "react-router-dom";
 import {useObserver} from 'mobx-react-lite';
 
 function App() {
   return useObserver(() => (
   <>
+   <h1>The traveling flower</h1>
    <Switch>
    <Route path = {ROUTES.apply}>
    <Apply/>
@@ -38,7 +39,6 @@ function App() {
      (uiStore.sidebarActive ?
    <Sidebar/>
    : 
-   
     <>
     </>
      )

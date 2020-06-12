@@ -1,19 +1,21 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import ROUTES from "../../routes/index";
+import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
-import uiStore from '../../UiStore'
+import uiStore from '../../../uiStore'
 
-function Carriers() {
+function Tracker() {
+
     useEffect(() => {
-        uiStore.setPage("carriers")
+        uiStore.setPage("tracker")
       });
+
   return (
   <>
-  <p> Carriers page </p>
+  <p> Tracker page </p>
   <Link to = {ROUTES.apply}> Go to apply </Link>
   </>
   );
 }
 
-export default Carriers;
+export default Tracker;

@@ -1,0 +1,15 @@
+button {
+    list-style-type: none;
+    color: var(--colorLight);
+    text-decoration: none;
+    padding: var(--spacerSmall) var(--spacerRegular);
+    border-radius: 1.4rem;
+    text-transform: uppercase;
+    transition: ease-in-out .2s;
+  }
+  
+  button:hover {
+    background: var(--hoverButton);
+  }
+  
+  

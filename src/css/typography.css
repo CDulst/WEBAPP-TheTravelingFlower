@@ -1,0 +1,32 @@
+body {
+  font-family: var(--font);
+  font-weight: var(--fontWeightRegular);
+  font-size: var(--fontRegular);
+}
+
+
+h1, .h1-like {
+  /*.....*/
+}
+
+h2{
+  font-family: var(--fontAlt);
+  font-weight: var(--fontWeightAlt);
+  font-size: var(--fontBig);
+}
+
+h3 {
+  font-family: var(--fontAlt);
+  font-weight: var(--fontWeightAlt);
+  font-size: var(--fontMedium);
+}
+
+button {
+  font-family: var(--fontButtons);
+  font-weight: var(--fontWeightBold);
+}
+.hidden{
+  display:none;
+}
+
+
