@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 
 # integration 4: The Traveling Flower WebApp
 
 Through this web application the user stands in direct contact with the traveling flower and it's community.
-=======
-# integration 4: The Traveling Flower WebApp
-Through this web application the user stands in direct contact with the traveling flower.
->>>>>>> master
 
 # As a user I can ...
 

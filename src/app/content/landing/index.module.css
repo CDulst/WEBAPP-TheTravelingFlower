@@ -11,13 +11,36 @@
    position: absolute;
    display:inline-block;
    z-index:2;
-   left:140vw;
-   background-color:var(--colorBGMain)
+   height:110vh;
+   left:140rem;
+   width:100vw;
+   background-color:var(--colorBGMain);
 }
 
+.out{
+   left:0rem;
+   transition: ease-out all 0.8s;
+}
+
+.in{
+   left:140rem;
+   transition: ease-out all 0.8s;
+}
+ 
+
+.arrow{
+   position:absolute;
+   top:4rem;
+   left: 3rem;
+}
 
 @media only screen and (min-width:1400px) {
    .rightSide{
     position:static;
+    width:45%;
+   }
+
+   .arrow{
+    display:none;
    }
 }
