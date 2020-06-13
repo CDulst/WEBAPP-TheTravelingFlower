@@ -6,6 +6,7 @@ import uiStore from '../../../uiStore'
 import VideoScreen from './containers/videoscreen/videoscreen';
 import Login from './containers/login/login';
 import Register from "./containers/register/register";
+import style from "./index.module.css";
 
 
 function Landing() {
@@ -14,10 +15,11 @@ function Landing() {
       });
   return (
   <>
-  <div>
+  <div className = {style.landing__container}>
   <VideoScreen/>
-  <div>
+  <div className = {style.rightSide}>
   <Login/>
+  <Register/>
   </div>
   </div>
   </>

@@ -10,11 +10,12 @@ import Sidebar from './app/content/sidebar'
 import uiStore from './uiStore'
 import { Switch, Route } from "react-router-dom";
 import {useObserver} from 'mobx-react-lite';
+import style from './app.module.css'
 
 function App() {
   return useObserver(() => (
   <>
-   <h1>The traveling flower</h1>
+   <h1 className = {style.hidden}>The traveling flower</h1>
    <Switch>
    <Route path = {ROUTES.apply}>
    <Apply/>
