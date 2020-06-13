@@ -3,7 +3,7 @@ import logo from '../../../../../assets/logo.svg'
 import Button from '../../../../components/button/button'
 import style from "./videoscreen.module.css"
 import uiLanding from "../../uiStore";
-
+import {Link} from "react-router-dom";
 
 function VideoScreen() {
 
@@ -24,8 +24,8 @@ function VideoScreen() {
   <img className = {style.logo} src = {logo}/>
   <div className = {style.button__container}>
   <div className = {style.buttons}>
-  <a onClick = {e => handleClick(e)} ><Button value = "GET STARTED" type = "secondary"/></a>
-  <Button value = "LOG IN" type = "primary"/>
+  <Link to="/join" onClick = {e => handleClick(e)} ><Button value = "GET STARTED" type = "secondary"/></Link>
+  <Link to = "/" onClick = {e => handleClick(e)}  ><Button value = "LOG IN" type = "primary"/></Link>
   </div>
   </div>
   </div>
