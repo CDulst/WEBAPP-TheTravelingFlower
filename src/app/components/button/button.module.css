@@ -2,7 +2,8 @@ button {
     list-style-type: none;
     color: var(--colorLight);
     text-decoration: none;
-    padding: 0.8rem 4rem;
+    padding: 0.8rem 0rem;
+    width:15rem;
     border-radius: 1.4rem;
     text-transform: uppercase;
     transition: ease-in-out .2s;

@@ -4,17 +4,22 @@ import Button from '../../../../components/button/button'
 import style from "./videoscreen.module.css"
 
 
+
 function VideoScreen() {
   return (
   <>
   <div className = {style.video}> 
-  <div>
-  <p>Video</p>
+  <div className = {style.videoContainer}>
+  <video className = {style.videoBG} autoPlay loop muted>
+     <source src = "/videos/video.mp4" type="video/mp4"/>
+  </video>
   </div>
-  <img src = {logo}/>
-  <div className = "Buttons">
-  <Button value = "GET STARTED" type = "primary"/>
-  <Button value = "LOG IN" type = "secondary"/>
+  <img className = {style.logo} src = {logo}/>
+  <div className = {style.button__container}>
+  <div className = {style.buttons}>
+  <Button value = "GET STARTED" type = "secondary"/>
+  <Button value = "LOG IN" type = "primary"/>
+  </div>
   </div>
   </div>
   </>

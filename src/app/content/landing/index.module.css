@@ -1,19 +1,23 @@
 .landing__container{
-    display:flex;
+    position: fixed;
+    display:inline-flex;
+    display:hidden;
+    margin-top:-2rem;
+    width:100vw;
+    height:110%;
+
 }
 .rightSide{
-   position:static;
+   position: absolute;
+   display:inline-block;
    z-index:2;
-   left:120vw;
+   left:140vw;
    background-color:var(--colorBGMain)
-   @media (--only-medium-screen) {
-   position:static;
-  }
 }
 
 
-@media only screen and (--only-) {
-    body {
-      background-color: lightblue;
-    }
-  }
+@media only screen and (min-width:1400px) {
+   .rightSide{
+    position:static;
+   }
+}
