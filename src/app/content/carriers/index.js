@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
-import uiStore from '../../../uiStore'
+import uiStore from '../../../UiStore'
 
 function Carriers() {
     useEffect(() => {
