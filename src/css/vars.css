@@ -1,0 +1,31 @@
+
+:root {
+  --colorText: black;
+  --navText: #555;
+  --subTitle: #0a2f2f;
+  --colorH3Light: #8acaa3;
+  --colorH3Dark: #0a824b;
+  --colorBGMain: #fcf6e9;
+  --hoverButton: #d54283;
+  --colorSecondary: #104ccf;
+  --colorLight: white;
+  --colorBGDark: #0a2f2f;
+  --spacerSmall: .8rem;
+  --spacerRegular: 2rem;
+  --spacerBig: 2.5rem;
+  --fontSmall: 1rem;
+  --fontRegular: 1.2rem;
+  --fontMedium: 1.8rem;
+  --fontBig: 2.5rem;
+  --font: 'Open sans';
+  --fontButtons: 'Roboto';
+  --fontAlt: 'Abril Fatface', serif;
+  --fontWeightRegular: 300;
+  --fontWeightBold: 700;
+  --fontWeightAlt: 400;
+}
+
+@custom-media --only-small-screen (width >= 360px);
+@custom-media --only-regular-screen (width >= 660px);
+@custom-media --only-medium-screen (width >= 1100px);
+@custom-media --only-large-screen (width >= 1500px);
