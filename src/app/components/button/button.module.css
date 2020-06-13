@@ -5,6 +5,7 @@ button {
     padding: 0.8rem 0rem;
     width:15rem;
     border-radius: 1.4rem;
+    border:none;
     text-transform: uppercase;
     transition: ease-in-out .2s;
   }
