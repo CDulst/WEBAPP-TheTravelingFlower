@@ -8,7 +8,7 @@ function Personal() {
   return (
   <>
   <div>
-  <h2>Personal</h2>
+
   <div>
   <p> Full Name </p> 
   <Field/>
@@ -23,7 +23,7 @@ function Personal() {
   <Field/>
   </div> 
   <div>
-  <p> First name </p> 
+  <p> Age </p> 
   <Field/>
   </div>
   </div>

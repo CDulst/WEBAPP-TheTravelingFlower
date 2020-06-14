@@ -1,11 +1,10 @@
 import React from 'react';
 import style from './progressBar.module.css';
-import Button from '../button/button';
-import lineInactive from '../progressBar/lineInactive'
-import lineActive from '../progressBar/lineActive'
-import activeStep from '../progressBar/activeStep'
-import doneStep from '../progressBar/doneStep'
-import inactiveStep from '../progressBar/inactiveStep'
+import lineInactive from '../../../../../assets/apply/lineInactive.png'
+import lineActive from '../../../../../assets/apply/lineActive.png'
+import activeStep from '../../../../../assets/apply/activeStep.svg'
+import doneStep from '../../../../../assets/apply/doneStep.png'
+import inactiveStep from '../../../../../assets/apply/inactiveStep.svg'
 
 
 function ProgressBar({type}) {
@@ -18,7 +17,7 @@ function ProgressBar({type}) {
   <img src = {inactiveStep} />
   <p> Step 1 </p>
   </div>
-  <img src = {lineInactive} />
+  <img src = {lineActive} />
   <div>
   <img src = {inactiveStep} />
   <p> Step 2 </p>
