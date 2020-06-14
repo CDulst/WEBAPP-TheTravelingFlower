@@ -19,7 +19,7 @@ function Login() {
   <Field value = "Email" icon = {email} />
   <Field value = "Password" icon = {password}/> 
   </form>
-  <Button value = "LOG IN" type = "secondary"/>
+  <Button value = "LOG IN" type = "secondary" disable = "true"/>
   <div className = {style.textContainer}>
   <p> Don't have an account ? <Link to= "/join"> Sign Up </Link></p>
   <p className = {style.centerPara}> Want to be a carrier </p>

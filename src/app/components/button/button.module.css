@@ -1,4 +1,4 @@
-button {
+.button {
     list-style-type: none;
     color: var(--colorLight);
     text-decoration: none;
@@ -10,8 +10,9 @@ button {
     transition: ease-in-out .2s;
   }
   
-  button:hover {
-    background: var(--hoverButton);
+
+  .disabled{
+    background-color:#E5EAF3;
   }
   
   

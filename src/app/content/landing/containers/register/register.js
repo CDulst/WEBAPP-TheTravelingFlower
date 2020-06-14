@@ -24,7 +24,7 @@ function Register() {
   <Field value = "Password" icon = {password}/>
   <Field value = "Repeat Password" icon = {password}/>
   </form>
-  <Button value = "SIGN UP" type = "secondary"/>
+  <Button value = "SIGN UP" type = "secondary" disable = "true"/>
   <Link className = {style.link} to = "/">Already have an account ?</Link>
   </div>
   </div>
