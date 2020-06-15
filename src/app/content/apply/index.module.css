@@ -29,7 +29,10 @@
    height: 10rem;
 }
 
-
+.button{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
 
 .underground{
     display:flex;
@@ -42,8 +45,9 @@
 
 @media only screen and (min-width:720px) {
     .container__wrapper{
-        height:110vh;
-    
+        height:100vh;
+        overflow:scroll;
+
     }
     .buttonsWrapper {
         margin-top: 3rem;
@@ -53,9 +57,7 @@
         justify-content: space-around;
     
     }
-    .button{
-        margin-top: 2rem;
-    }
+   
 
     .leftButton{
         margin-left:2rem;
@@ -82,6 +84,7 @@
     width:85vw;
     height:100vh;
 }
+
 
 .underground {
     width: 40vw;
