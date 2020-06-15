@@ -8,14 +8,14 @@ function Header({img,title,text}) {
   <>
   {
    ( img ?
-  <img src = {img} />
+  <img className = {style.image} src = {img}/>
   :
   <>
   </>
    )
   }
-  <h2> {title} </h2>
-  <p> {text} </p>
+  <h2 className = {style.title}> {title} </h2>
+  <p className = {style.text}> {text} </p>
   </>
   );
 }
