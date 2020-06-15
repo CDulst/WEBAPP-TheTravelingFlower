@@ -6,7 +6,7 @@ import Upload from "../../../../components/upload/upload";
 function Motivation() {
 return(
 <>
-<div>
+<div className={style.button__wrapper}>
 <Upload/>
 </div>
 </>
