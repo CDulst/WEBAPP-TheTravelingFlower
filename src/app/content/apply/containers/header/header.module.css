@@ -1,3 +1,8 @@
 .title{
-color: var(--colorH3Dark)
+color: var(--colorH3Dark);
+text-align:center;
+margin-top:2rem;
+}
+.text{
+text-align:center;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
+import style from "./index.module.css"
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
@@ -15,13 +16,17 @@ function Apply() {
       });
   return (
   <>
-  <div>
-  <div>
+  <div className = {style.container}>
+  <div className = {style.container__wrapper}>
+  <div className = {style.wrapper}>
+  <div className = {style.progressWrapper}>
   <ProgressBar/>
-  <div>
+  </div>
+  <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Personal/>
-  <Button value = "next step" type= "secondary"/>
+  <Button className = {style.button} value = "next step" type= "secondary"/>
+  </div>
   </div>
   </div>
   </div>

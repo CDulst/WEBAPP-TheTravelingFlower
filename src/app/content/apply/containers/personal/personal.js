@@ -10,7 +10,7 @@ import questionMark from "../../../../../assets/icons/popup.svg"
 function Personal() {
   return (
   <>
-  <div>
+  <div className = {style.personal}>
     <div>
       <p> Full Name </p> 
         <Field icon={FullNameIcon} value="Full name"/>
