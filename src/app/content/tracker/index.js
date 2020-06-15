@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore.js'
+import Progressbar from '../../components/progressbar/progressbar';
 
 function Tracker() {
 

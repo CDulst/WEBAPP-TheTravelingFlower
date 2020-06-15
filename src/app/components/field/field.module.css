@@ -1,5 +1,5 @@
 .input{
-width:18rem;
+width: 15rem;
 height:2.5rem;
 background-repeat: no-repeat;
 background-position-y:  0.7rem;
@@ -9,3 +9,9 @@ padding-left: 3.5rem;
 border:none;
 margin-bottom:2rem;
 } 
+
+@media only screen and (min-width:1000px) {
+  .input {
+    width: 18rem;
+  }
+}
