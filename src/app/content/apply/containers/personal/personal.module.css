@@ -1,0 +1,15 @@
+
+.button__popup {
+    margin-left: -2rem;
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .formField__identification {
+        margin-right: var(--spacerBig) ;
+    }
+
+    .identificationNumberAge__wrapper {
+        display: flex;
+    }
+  }
