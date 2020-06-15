@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
+import Progressbar from '../../../components/progressbar/progressbar';
 
 const Map = ReactMapboxGl({
     accessToken:
@@ -15,7 +16,7 @@ const Mapbox = () => {
 
     const [viewport] = useState({
         containerStyle:{
-            height: '115vh',
+            height: '100vh',
             width: '100vw'
                 },
             zoom: [4],
@@ -30,7 +31,8 @@ const Mapbox = () => {
             <div className={style.donationCounter}>
             <DonationCounter />
             </div>
-            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>   
+            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/> 
+            
         </div>
     
     );

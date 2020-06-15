@@ -2,5 +2,13 @@
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 3rem;
+    top: -2rem;
+    height: 0rem;
 }
+
+@media only screen and (min-width:720px) {
+    .donationCounter {
+        left: 55%;
+    }
+}
+

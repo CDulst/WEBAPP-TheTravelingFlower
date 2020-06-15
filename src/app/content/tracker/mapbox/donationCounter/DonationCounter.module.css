@@ -1,5 +1,5 @@
 .donationCounter__container {
-    height: 8rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -8,11 +8,23 @@
     width: 70vw;
     text-align: center;
     padding-bottom: 1rem;
-    border-radius: 2rem;
+    border-radius: 3.2rem;
 }
 
 .treesSaved {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (min-width:720px) {
+    .donationCounter__container {
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    .donationCounter__container {
+        width: 30vw;
+    }
 }
