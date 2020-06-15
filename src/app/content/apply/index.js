@@ -7,10 +7,14 @@ import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
 import ProgressBar from "./containers/progressBar/progressBar";
 import Personal from './containers/personal/personal';
+import Adress from './containers/adres/adres';
 import Button from "../../components/button/button";
 import Congrats from '../../../assets/apply/congrats.svg';
+import Adres from './containers/adres/adres';
 
 function Apply() {
+
+
     useEffect(() => {
         uiStore.setPage("apply")
       });
@@ -24,8 +28,11 @@ function Apply() {
   </div>
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
-  <Personal/>
-  <Button className = {style.button} value = "next step" type= "secondary"/>
+  <Adress/>
+  <div className="buttonsWrapper">
+  <Button className = {style.button} value = "Next step" type= "secondary"/>
+  </div>
+  
   </div>
   </div>
   </div>
