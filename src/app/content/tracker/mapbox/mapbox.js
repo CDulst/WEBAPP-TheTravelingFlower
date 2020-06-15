@@ -13,7 +13,7 @@ const Mapbox = () => {
 
     const [viewport] = useState({
         containerStyle:{
-            height: '100vh',
+            height: '115vh',
             width: '100vw'
                 },
             zoom: [4],
