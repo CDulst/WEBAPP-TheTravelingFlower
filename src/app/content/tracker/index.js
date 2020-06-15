@@ -14,7 +14,6 @@ function Tracker() {
 
   return (
   <>
-  <PopupIcon icon={Icon} />
   <p> Tracker page </p>
   <Link to = {ROUTES.apply}> Go to apply </Link>
   

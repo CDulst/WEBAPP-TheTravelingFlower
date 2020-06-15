@@ -4,7 +4,7 @@ import style from './popupIcon.module.css';
 const popupIcon = ({icon}) => {
     return (
         <div className={style.popupIcon}>
-            <img src={icon} alt="icon"></img>
+            <img className={style.iconImage} src={icon} alt="icon"></img>
         </div>
     );
 };
