@@ -4,10 +4,19 @@ import Field from "../../../../components/field/field";
 import FullNameIcon from "../../../../../assets/icons/name.svg"
 import EmailIcon from "../../../../../assets/icons/email.svg"
 import questionMark from "../../../../../assets/icons/popup.svg"
+import identityImage from "../../../../../assets/icons/identity.svg"
+import PopUpImage from "../../../../../assets/apply/identityPopup.svg"
+
+import Popup from "../../../../components/popup/popup"
 
 
 
 function Personal() {
+
+  const handlePopupClick = () => {
+    //popup moet verschijnen als je klikt op het vraagteken
+  }
+
   return (
   <>
   <div className = {style.personal}>
@@ -22,12 +31,12 @@ function Personal() {
   <div className={style.identificationNumberAge__wrapper}>
     <div className={style.formField__identification}>
       <p> Identification Number (ID) </p> 
-      <Field value="Identification Number" popup={questionMark}/>
-      <img className={style.button__popup} src={questionMark} alt="popup"></img>
+      <Field value="Identification Number" icon={identityImage}/>
+      <img onClick={handlePopupClick} className={style.button__popup} src={questionMark} alt="popup"></img>
     </div> 
   <div>
     <p> Age </p> 
-    <Field value="Age"/>
+    <Field value="Age" width="6rem"/>
   </div>
 </div>
 </div>

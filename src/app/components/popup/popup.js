@@ -6,10 +6,12 @@ import Button from '../button/button';
 function Popup({title,text,image}) {
   return (
   <>
-  <p> {title} </p>
-  <p> {text} </p>
-  <img src = {image}/>
+<div className={style.popupWrapper}>
+  <p className={style.popup__title}> {title} </p>
+  <p className={style.popup__paragraph}> {text} </p>
+  <img className={style.popup__image} src = {image}/>
   <Button value = "I got it" type = "secondary"/>
+</div>
   </>
   );
 }
