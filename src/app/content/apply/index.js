@@ -8,11 +8,11 @@ import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
 import ProgressBar from "./containers/progressBar/progressBar";
 import Personal from './containers/personal/personal';
-import Adress from './containers/adres/adres';
 import Button from "../../components/button/button";
 import Congrats from '../../../assets/apply/congrats.svg';
 import Bike from '../../../assets/apply/Bike.svg';
 import Adres from './containers/adres/adres';
+import Rout from './containers/route/route';
 function Apply() {
 
 
@@ -28,11 +28,18 @@ function Apply() {
   <ProgressBar/>
   </div>
   <Switch>
+  <Route path = {ROUTES.route}>
+  <div className = {style.underground}>
+  <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
+  <Route/>
+  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  </div>
+  </Route>
   <Route path = {ROUTES.adres}>
   <div className = {style.underground}>
   <Header title = "Adress" text = "You're adress is save with us" />
   <Adres/>
-  <Button className = {style.button} value = "Sign Up" type= "secondary"/>
+  <Button className = {style.button} value = "Next Step" type= "secondary"/>
   </div>
   </Route>
   <Route path = {ROUTES.personal}>

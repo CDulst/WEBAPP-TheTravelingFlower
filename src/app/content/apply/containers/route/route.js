@@ -4,11 +4,13 @@ import Field from "../../../../components/field/field";
 
 
 
-function Route() {
+function Rout() {
+    return (
+        <>
 <div>
 <div>
 <p> Choose your route </p> 
-<Select>
+<select>
 <option value="option 1"> 
 <div>
 <p>Available Route </p>
@@ -27,10 +29,12 @@ function Route() {
 <p>Berlin - Warschau</p>
 </div> 
 </option>
-</Select>
+</select>
 <Field/>
 </div> 
 </div>
+</>
+  );
 }
 
-export default Route;
+export default Rout;
