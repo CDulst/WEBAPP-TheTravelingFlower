@@ -36,7 +36,7 @@
     
     .stepWrapper{
         display: flex;
-        justify-content: space-between;
+        justify-content: centers;
         width: 5rem;
         height:5rem;
     }
