@@ -1,0 +1,53 @@
+
+.hidden{
+    display:none;
+}
+
+.progressWrapper{
+    display:none;
+}
+
+.step {
+
+}
+
+
+@media only screen and (min-width:720px) {
+ 
+    .progressWrapper{
+        display:flex;
+        width: 40rem;
+        justify-content:space-between;
+    }
+    .stepWrapper{
+        width:5rem;
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .line{
+        transform:rotate(90deg)
+    }
+   
+}
+
+
+@media only screen and (min-width:1400px) {
+    
+    .stepWrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 5rem;
+    }
+
+    .progressWrapper{
+        flex-direction:column;  
+        width: 1rem; 
+        
+    }
+    .line{
+        transform:rotate(0deg);
+        width:20%;
+    }
+}
+

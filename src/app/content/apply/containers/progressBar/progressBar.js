@@ -10,27 +10,27 @@ import inactiveStep from '../../../../../assets/apply/inactiveStep.svg'
 function ProgressBar({type}) {
   return (
   <>
-  <div>
-  <h2> ProgressBar </h2>
-  <img src = {activeStep} />
-  <div>
-  <img src = {inactiveStep} />
-  <p> Step 1 </p>
+  <div class = {style.progressWrapper}>
+  <h2 class = {style.hidden}> ProgressBar </h2>
+  <img className = {style.line} src = {activeStep} />
+  <div className = {style.stepWrapper}>
+  <img  src = {inactiveStep} />
+  <p className = {style.step}> Step 1 </p>
   </div>
-  <img src = {lineActive} />
-  <div>
+  <img className = {style.line} src = {lineActive} />
+  <div className = {style.stepWrapper}>
   <img src = {inactiveStep} />
-  <p> Step 2 </p>
+  <p className = {style.step}> Step 2 </p>
   </div>
-  <img src = {lineInactive} />
-  <div>
+  <img className = {style.line} src = {lineInactive} />
+  <div className = {style.stepWrapper}>
   <img src = {inactiveStep} />
-  <p> Step 3 </p>
+  <p className = {style.step}> Step 3 </p>
   </div>
-  <img src = {lineInactive} />
-  <div>
+  <img className = {style.line} src = {lineInactive} />
+  <div className = {style.stepWrapper}>
   <img src = {inactiveStep} />
-  <p> Step 4 </p>
+  <p className = {style.step}> Step 4 </p>
   </div>
   </div>
   </>
