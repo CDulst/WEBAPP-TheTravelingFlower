@@ -1,0 +1,12 @@
+.button__wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.button__wrapper input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}

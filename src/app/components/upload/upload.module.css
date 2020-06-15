@@ -1,0 +1,23 @@
+.button {
+    background-image: url('../../../assets/Upload.svg');
+    width: 5rem;
+    height: 5rem;
+    background-size: 100%;
+    border: none;
+    background-color: var(--colorBGMain) ;
+    margin-top:2rem;
+
+    
+}
+
+.inputVideo {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.form{
+display:flex;
+align-items:center;
+flex-direction:column;
+}

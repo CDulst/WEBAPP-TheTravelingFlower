@@ -6,8 +6,8 @@ import Upload from "../../../../components/upload/upload";
 function Motivation() {
 return(
 <>
-<div>
-<Upload/>
+<div className={style.button__wrapper}>
+<Upload text = "upload video"/>
 </div>
 </>
 )
