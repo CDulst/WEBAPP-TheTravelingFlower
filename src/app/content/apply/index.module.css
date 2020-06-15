@@ -30,9 +30,7 @@
     align-items:center;
     width: unset;
 }
-.button{
-    margin-top:2rem;
-}
+
 
 @media only screen and (min-width:720px) {
     .container__wrapper{

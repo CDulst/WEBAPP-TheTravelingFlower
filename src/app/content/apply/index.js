@@ -28,6 +28,19 @@ function Apply() {
   <ProgressBar/>
   </div>
   <Switch>
+  <Route path = {ROUTES.finished}>
+  <div className = {style.underground}>
+  <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
+  <Button className = {style.button} value = "Back to home" type= "secondary"/>
+  </div>
+  </Route>
+  <Route path = {ROUTES.motivation}>
+  <div className = {style.underground}>
+  <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
+  <Rout/>
+  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  </div>
+  </Route>
   <Route path = {ROUTES.route}>
   <div className = {style.underground}>
   <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
