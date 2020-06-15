@@ -6,7 +6,8 @@ import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
 import ProgressBar from "./containers/progressBar/progressBar";
 import Personal from './containers/personal/personal';
-import Button from "../../components/button/button"
+import Button from "../../components/button/button";
+import Congrats from '../../../assets/apply/congrats.svg';
 
 function Apply() {
     useEffect(() => {
