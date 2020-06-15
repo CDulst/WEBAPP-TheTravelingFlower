@@ -23,7 +23,7 @@
 }
 .buttonsWrapper {
     display:flex;
-    flex-direction:column;
+    flex-direction:column-reverse;
     align-items: space-around;
     justify-content: space-around;
    height: 10rem;
