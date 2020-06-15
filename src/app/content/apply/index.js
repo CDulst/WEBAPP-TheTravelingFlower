@@ -33,41 +33,41 @@ function Apply() {
   <Route path = {ROUTES.finished}>
   <div className = {style.underground}>
   <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
-  <Button className = {style.button} value = "Back to home" type= "secondary"/>
+  <Link><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.motivation}>
   <div className = {style.underground}>
   <Header title = "Send us your motivation" text = "We have only 24 spots available for carriers in this program. So we want to know who’s the most motivated candidate to bring our Lady Slipper to Yushan (China). Send us a motivational video of max. 1 min. And tell us why you should get the spot in our campaign. " />
   <Motivation/>
-  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  <Link to = {ROUTES.finished}><Button className = {style.button} value = "Next Step" type= "secondary"/>  </Link>
   </div>
   </Route>
   <Route path = {ROUTES.route}>
   <div className = {style.underground}>
   <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
   <Rout/>
-  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  <Link to = {ROUTES.motivation}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.adres}>
   <div className = {style.underground}>
   <Header title = "Adress" text = "You're adress is save with us" />
   <Adres/>
-  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  <Link to = {ROUTES.route}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.personal}>
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Personal/>
-  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  <Link to = {ROUTES.adres}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.landing}>
   <div className = {style.underground}>
   <Header title = "Become a carrier" img = {Bike} />
-  <Button className = {style.button} value = "Sign Up" type= "secondary"/>
+  <Link to = {ROUTES.personal}><Button className = {style.button} value = "Sign Up" type= "secondary"/></Link>
   </div>
   </Route>
   </Switch>
