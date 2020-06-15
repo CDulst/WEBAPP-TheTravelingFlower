@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom';
 function NavItem({text,icon,link}) {
 return(
 <>
-<Link to={link}>
-<div>
-<img src = {icon} alt = "icon"/>
-<p> {text} </p>
+<Link className = {style.link} to={link}>
+<div className = {style.wrapper}>
+<img className = {style.image} src = {icon} alt = "icon"/>
+<p className = {style.text}> {text} </p>
 </div>
 </Link>
 </>
