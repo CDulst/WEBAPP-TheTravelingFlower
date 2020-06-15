@@ -8,6 +8,7 @@
     height: 5rem;
     width: 100vw;
     bottom:0;
+z-index:1;
     position:fixed;
 }
 .navWrapper{
