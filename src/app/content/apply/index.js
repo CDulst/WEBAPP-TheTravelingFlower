@@ -1,15 +1,16 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import ROUTES from "../../../routes/index";
+import ROUTES from "./routes/index";
 import style from "./index.module.css"
 import {useEffect} from 'react';
+import {Switch,Route} from 'react-router-dom';
 import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
 import ProgressBar from "./containers/progressBar/progressBar";
 import Personal from './containers/personal/personal';
 import Button from "../../components/button/button";
 import Congrats from '../../../assets/apply/congrats.svg';
-
+import Bike from '../../../assets/apply/Bike.svg';
 function Apply() {
     useEffect(() => {
         uiStore.setPage("apply")
@@ -22,11 +23,33 @@ function Apply() {
   <div className = {style.progressWrapper}>
   <ProgressBar/>
   </div>
+  <Switch>
+  <Route path = {ROUTES.adres}>
+  <div className = {style.underground}>
+  <Header title = "Adress" text = "You're adress is save with us" />
+  <Button className = {style.button} value = "Sign Up" type= "secondary"/>
+  </div>
+  </Route>
+  <Route path = {ROUTES.personal}>
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Personal/>
-  <Button className = {style.button} value = "next step" type= "secondary"/>
+  <Button className = {style.button} value = "Next Step" type= "secondary"/>
   </div>
+  </Route>
+  <Route path = {ROUTES.landing}>
+  <div className = {style.underground}>
+  <Header title = "Become a carrier" img = {Bike} />
+  <Button className = {style.button} value = "Sign Up" type= "secondary"/>
+  </div>
+  </Route>
+  <Route path = {ROUTES.adres}>
+  <div className = {style.underground}>
+  <Header title = "Adress" text = "You're adress is save with us" />
+  <Button className = {style.button} value = "Next Step" type= "secondary"/>
+  </div>
+  </Route>
+  </Switch>
   </div>
   </div>
   </div>
