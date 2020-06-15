@@ -25,3 +25,26 @@
 .button{
     margin-top:2rem;
 }
+
+@media only screen and (min-width:1400px) {
+.wrapper{
+    display:flex;
+    width:70%;
+    flex-direction:space-between;
+}
+.progressWrapper{
+    display:flex;
+    justify-content:space-between;
+    width:20rem;
+}
+.container__wrapper{
+    display:flex;
+    width:100vw;
+    height:100vh;
+
+}
+}
+
+
+
+
