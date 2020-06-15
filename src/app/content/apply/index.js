@@ -40,14 +40,20 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Send us your motivation" text = "We have only 24 spots available for carriers in this program. So we want to know who’s the most motivated candidate to bring our Lady Slipper to Yushan (China). Send us a motivational video of max. 1 min. And tell us why you should get the spot in our campaign. " />
   <Motivation/>
-  <Link className = {style.button} to = {ROUTES.finished}><Button className = {style.button} value = "Next Step" type= "secondary"/>  </Link>
+  <div className = {style.buttonsWrapper}>
+  <Link to = {ROUTES.route}><Button className = {style.button} value = "Previous Step" type= "primary"/></Link>
+  <Link className = {style.leftButton} to = {ROUTES.finished}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  </div>
   </div>
   </Route>
   <Route path = {ROUTES.route}>
   <div className = {style.underground}>
   <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
   <Rout/>
-  <Link to = {ROUTES.motivation}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  <div className = {style.buttonsWrapper}>
+  <Link to = {ROUTES.adres}><Button className = {style.button} value = "Previous Step" type= "primary"/></Link>
+  <Link className = {style.leftButton} to = {ROUTES.motivation}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  </div>
   </div>
   </Route>
   <Route path = {ROUTES.adres}>
