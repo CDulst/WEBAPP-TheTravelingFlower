@@ -15,6 +15,15 @@ import style from './app.module.css'
 function App() {
   return useObserver(() => (
   <>
+  <div className = {style.container}>
+  {
+     (uiStore.sidebarActive ?
+   <Sidebar/>
+   : 
+    <>
+    </>
+     )
+}
    <h1 className = {style.hidden}>The traveling flower</h1>
    <Switch>
    <Route path = {ROUTES.apply}>
@@ -36,14 +45,7 @@ function App() {
    <Landing/>
    </Route>
    </Switch>
-   {
-     (uiStore.sidebarActive ?
-   <Sidebar/>
-   : 
-    <>
-    </>
-     )
-} 
+   </div>
    </>
   ));
 }
