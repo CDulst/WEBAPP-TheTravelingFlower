@@ -13,6 +13,8 @@ import Congrats from '../../../assets/apply/congrats.svg';
 import Bike from '../../../assets/apply/Bike.svg';
 import Adres from './containers/adres/adres';
 import Rout from './containers/route/route';
+import Motivation from './containers/motivation/motivation';
+
 function Apply() {
 
 
@@ -36,8 +38,8 @@ function Apply() {
   </Route>
   <Route path = {ROUTES.motivation}>
   <div className = {style.underground}>
-  <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
-  <Rout/>
+  <Header title = "Send us your motivation" text = "We have only 24 spots available for carriers in this program. So we want to know who’s the most motivated candidate to bring our Lady Slipper to Yushan (China). Send us a motivational video of max. 1 min. And tell us why you should get the spot in our campaign. " />
+  <Motivation/>
   <Button className = {style.button} value = "Next Step" type= "secondary"/>
   </div>
   </Route>

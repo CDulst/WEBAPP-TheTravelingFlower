@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './popup.module.css';
+import style from './upload.module.css';
 import Button from '../button/button';
-import Upload from '../../../assets/Upload.svg';
+import upload from '../../../assets/Upload.svg';
 import CorrectUpload from '../../../assets/CorrectUpload.svg'
 
 function Upload({text}) {

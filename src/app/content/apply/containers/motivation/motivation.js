@@ -4,9 +4,13 @@ import Field from "../../../../components/field/field";
 import Upload from "../../../../components/upload/upload";
 
 function Motivation() {
+return(
+<>
 <div>
 <Upload/>
 </div>
+</>
+)
 }
 
 export default Motivation;
