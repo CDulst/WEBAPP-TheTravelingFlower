@@ -14,9 +14,8 @@ function Tracker() {
   return (
   <>
   <Mapbox />
-  <Link to = {ROUTES.apply}> Go to apply </Link>
-  
-  </>
+
+   </>
   );
 }
 
