@@ -26,6 +26,7 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    width: unset;
 }
 .button{
     margin-top:2rem;
@@ -49,6 +50,9 @@
     height:100vh;
 }
 
+.underground {
+    width: 40vw;
+}
 }
 
 

@@ -1,0 +1,24 @@
+.dropDown {
+    margin-bottom: 3rem;
+    appearance: none;
+    background-image: url('../../../../../assets//apply//dropdown.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 98%;
+    background-size: 2rem;
+    width: 90vw;
+    border: none;
+    padding: 1rem;
+    border-radius: 3rem;
+    
+}
+
+.dropDown::-ms-expand {
+    display: none;
+}
+
+@media only screen and (min-width:900px) {
+    .dropDown {
+        width: 30vw;
+    }
+}

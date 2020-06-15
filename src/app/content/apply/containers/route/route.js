@@ -10,27 +10,20 @@ function Rout() {
 <div>
 <div>
 <p> Choose your route </p> 
-<select>
+<select className={style.dropDown}>
 <option value="option 1"> 
-<div>
-<p>Available Route </p>
-<p>Brussel - Amsterdam</p>
-</div> 
+Brussel - Amsterdam
 </option>
 <option value="option 2">
-<div>
-<p>Available Route </p>
-<p>Amsterdam - Berlin</p>
-</div> 
+Amsterdam - Berlin
+
 </option>
 <option value="option 3">
-<div>
-<p>Available Route </p>
-<p>Berlin - Warschau</p>
-</div> 
+
+Berlin - Warschau
+
 </option>
 </select>
-<Field/>
 </div> 
 </div>
 </>
