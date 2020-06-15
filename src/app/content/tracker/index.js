@@ -14,8 +14,7 @@ function Tracker() {
   return (
   <>
   <Mapbox />
-
-   </>
+  </>
   );
 }
 

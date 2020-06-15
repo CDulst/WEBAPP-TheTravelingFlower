@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
+import DonationCounter from './donationCounter/DonationCounter'
+import style from './mapbox.module.css';
 
 const Map = ReactMapboxGl({
     accessToken:
@@ -25,6 +27,9 @@ const Mapbox = () => {
     return (
        
         <div>
+            <div className={style.donationCounter}>
+            <DonationCounter />
+            </div>
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>   
         </div>
     
