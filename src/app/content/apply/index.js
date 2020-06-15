@@ -70,7 +70,7 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Personal/>
-  <Link to = {ROUTES.adres}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  <Link to = {ROUTES.adres} className = {style.button}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.landing}>
