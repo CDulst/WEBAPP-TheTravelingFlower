@@ -21,8 +21,9 @@ function Sidebar() {
   <NavItem text = "Tracking" icon = {TrackerActive} link = {ROUTES.tracker} active = "true"/>
   <NavItem text = "Challenge" icon = {Challenge} link = {ROUTES.challenge}/>
   <NavItem text = "Carrier" icon = {Carrier} link = {ROUTES.carriers}/>
-  </div>
   <NavItem text = "Account" icon = {Placeholder} link = {ROUTES.settings}/>
+  </div>
+  
   </div>
   </div>
   </>
