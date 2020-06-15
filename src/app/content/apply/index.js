@@ -8,10 +8,14 @@ import uiStore from '../../../UiStore';
 import Header from './containers/header/header';
 import ProgressBar from "./containers/progressBar/progressBar";
 import Personal from './containers/personal/personal';
+import Adress from './containers/adres/adres';
 import Button from "../../components/button/button";
 import Congrats from '../../../assets/apply/congrats.svg';
 import Bike from '../../../assets/apply/Bike.svg';
+import Adres from './containers/adres/adres';
 function Apply() {
+
+
     useEffect(() => {
         uiStore.setPage("apply")
       });
@@ -27,6 +31,7 @@ function Apply() {
   <Route path = {ROUTES.adres}>
   <div className = {style.underground}>
   <Header title = "Adress" text = "You're adress is save with us" />
+  <Adres/>
   <Button className = {style.button} value = "Sign Up" type= "secondary"/>
   </div>
   </Route>
@@ -41,12 +46,6 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Become a carrier" img = {Bike} />
   <Button className = {style.button} value = "Sign Up" type= "secondary"/>
-  </div>
-  </Route>
-  <Route path = {ROUTES.adres}>
-  <div className = {style.underground}>
-  <Header title = "Adress" text = "You're adress is save with us" />
-  <Button className = {style.button} value = "Next Step" type= "secondary"/>
   </div>
   </Route>
   </Switch>

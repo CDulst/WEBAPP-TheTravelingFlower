@@ -16,6 +16,11 @@
     display:flex;
     justify-content:center;
 }
+
+.buttonsWrapper {
+    margin-top: 3rem;
+}
+
 .underground{
     display:flex;
     flex-direction:column;
@@ -32,6 +37,7 @@
     width:70%;
     flex-direction:space-between;
 }
+
 .progressWrapper{
     display:flex;
     justify-content:space-between;

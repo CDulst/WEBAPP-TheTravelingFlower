@@ -8,25 +8,31 @@ function Adres() {
   return (
   <>
   <div>
-  <h2>Adres</h2>
-  <div>
+  <div className={style.adressWrapper}>
+    
+  <div className={style.spacer}>
   <p> Streetname </p> 
-  <Field/>
+  <Field value="Streetname"/>
   </div>  
-  <div>
+  
   <div>
   <p> Nr. </p> 
-  <Field/>
+  <Field value="Streetnumber"/>
   </div> 
-  <div>
+
+  </div>
+
+<div className={style.adressWrapper}>
+  <div className={style.spacer}>
   <p> Postal Code </p> 
-  <Field/>
+  <Field value="1XXX" width="6rem"/>
   </div>
-  </div>
+
   <div>
   <p> Country </p> 
-  <Field/>
+  <Field value="Belgium, France, ..."/>
   </div> 
+</div>
   </div>
   </>
   );

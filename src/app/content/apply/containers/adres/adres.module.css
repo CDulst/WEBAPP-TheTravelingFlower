@@ -1,0 +1,13 @@
+@media only screen and (min-width:1400px) {
+    .adressWrapper {
+        display: flex;
+    }
+
+    .spacer {
+        margin-right: var(--spacerBig);
+    }
+}
+
+.AdressSubtitle {
+    color: var(--colorH3Dark);
+}
