@@ -29,7 +29,7 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Adress/>
-  <div className="buttonsWrapper">
+  <div className={style.buttonsWrapper}>
   <Button className = {style.button} value = "Next step" type= "secondary"/>
   </div>
   
