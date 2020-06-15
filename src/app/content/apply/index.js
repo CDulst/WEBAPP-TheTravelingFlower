@@ -33,14 +33,14 @@ function Apply() {
   <Route path = {ROUTES.finished}>
   <div className = {style.underground}>
   <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
-  <Link><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
+  <Link className = {style.button}><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
   </div>
   </Route>
   <Route path = {ROUTES.motivation}>
   <div className = {style.underground}>
   <Header title = "Send us your motivation" text = "We have only 24 spots available for carriers in this program. So we want to know who’s the most motivated candidate to bring our Lady Slipper to Yushan (China). Send us a motivational video of max. 1 min. And tell us why you should get the spot in our campaign. " />
   <Motivation/>
-  <Link to = {ROUTES.finished}><Button className = {style.button} value = "Next Step" type= "secondary"/>  </Link>
+  <Link className = {style.button} to = {ROUTES.finished}><Button className = {style.button} value = "Next Step" type= "secondary"/>  </Link>
   </div>
   </Route>
   <Route path = {ROUTES.route}>
@@ -54,7 +54,10 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Adress" text = "You're adress is save with us" />
   <Adres/>
-  <Link to = {ROUTES.route}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  <div className = {style.buttonsWrapper}>
+  <Link to = {ROUTES.personal}><Button className = {style.button} value = "Previous Step" type= "primary"/></Link>
+  <Link className = {style.leftButton} to = {ROUTES.route}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  </div>
   </div>
   </Route>
   <Route path = {ROUTES.personal}>
