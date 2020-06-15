@@ -10,7 +10,7 @@ const progressbar = () => {
 
     return (
         <div>
-            <Line percent="20" strokeWidth="3" strokeColor="#0a824b" trailColor="#0a2f2f"/>
+            <Line percent="20" strokeWidth="0.7" strokeColor="#0a824b" trailColor="#0a2f2f"/>
         </div>
     );
 };

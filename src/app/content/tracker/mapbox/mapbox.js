@@ -28,6 +28,9 @@ const Mapbox = () => {
     return (
        
         <div>
+            {/*<div className={style.progressbar}>
+             <Progressbar />
+            </div>*/}
             <div className={style.donationCounter}>
             <DonationCounter />
             </div>

@@ -6,6 +6,14 @@
     height: 0rem;
 }
 
+.progressbar {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+    z-index: 2;
+    
+}
+
 @media only screen and (min-width:720px) {
     .donationCounter {
         left: 55%;
