@@ -31,7 +31,7 @@ function Apply() {
   <Route path = {ROUTES.route}>
   <div className = {style.underground}>
   <Header title = "Choose Your Route" text = "You can choose 1 favourite route, you would like to do. It’s not certain if this is the route you’ll get, but we consider your favourite route. " />
-  <Route/>
+  <Rout/>
   <Button className = {style.button} value = "Next Step" type= "secondary"/>
   </div>
   </Route>
