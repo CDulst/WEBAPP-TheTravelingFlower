@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore.js'
-import Progressbar from '../../components/progressbar/progressbar';
+import PopupIcon from '../../components/popupIcon/popupIcon';
+import Icon from '../../../assets/icons/email.svg'
 
 function Tracker() {
 
@@ -15,6 +16,7 @@ function Tracker() {
   <>
   <p> Tracker page </p>
   <Link to = {ROUTES.apply}> Go to apply </Link>
+  
   </>
   );
 }

@@ -1,0 +1,12 @@
+.message__image {
+    width: 1.8rem;
+    margin-right: 1rem;
+}
+
+.message__container {
+    display: flex;
+}
+
+.message__name {
+    font-weight: bold;
+}
