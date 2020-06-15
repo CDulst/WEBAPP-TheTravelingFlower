@@ -17,7 +17,7 @@ function Adres() {
   
   <div>
   <p> Nr. </p> 
-  <Field value="Streetnumber"/>
+  <Field value="number" width="8rem"/>
   </div> 
 
   </div>

@@ -9,6 +9,10 @@
     text-transform: uppercase;
     transition: ease-in-out .2s;
   }
+
+  .spacer {
+    margin-top: var(--spacerBig);
+  }
   
 
   .disabled{
