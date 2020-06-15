@@ -4,21 +4,23 @@
     justify-content:center;
     align-items:center;
     width:100vw;
-    height:100vh;
+    height:90vh;
 
 }
 .wrapper{
     width:80vw;
-    height:90vh;   
+    height:90vh;  
+    align-items:center; 
 }
 .progressWrapper{
-    
     display:flex;
     justify-content:center;
+    align-items:center;
 }
 
 .buttonsWrapper {
     margin-top: 3rem;
+
 }
 
 .underground{
@@ -32,17 +34,27 @@
     margin-top:2rem;
 }
 
+@media only screen and (min-width:720px) {
+    .container__wrapper{
+        height:110vh;
+    
+    }
+    
+    }
+    
+
 @media only screen and (min-width:1400px) {
 .wrapper{
     display:flex;
     width:100%;
     justify-content:center;
 }
-
 .progressWrapper{
     display:flex;
     justify-content:space-between;
     width:20rem;
+    height:100vh;
+    align-items:center;
 }
 .container__wrapper{
     display:flex;
