@@ -4,6 +4,7 @@ import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore.js'
 import Mapbox from './mapbox/mapbox'
+import style from './index.module.css'
 
 function Tracker() {
 
@@ -13,7 +14,9 @@ function Tracker() {
 
   return (
   <>
+  <div className={style.map}>
   <Mapbox />
+  </div>
   </>
   );
 }

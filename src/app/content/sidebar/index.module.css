@@ -9,7 +9,7 @@
     display:flex;
     justify-content:center;
     align-items: flex-end;
-    height: 7rem;
+    height: 8rem;
     width: 100vw;
     bottom:0;
     z-index:1;
@@ -29,6 +29,7 @@
     border-radius:10rem;
     width:3rem;
     height:3rem;  
+    top:2rem;
 }
 
 .activeTR{
@@ -66,6 +67,38 @@
 @media only screen and (min-width:720px) {
     
         
+.active{
+    background-color: var(--colorBGMain);
+    border-radius:10rem;
+    width:4rem;
+    height:4rem;  
+    left:1.5rem;
+}
+
+.activeImage{
+    width:2.5rem;
+
+}
+
+.activeTR{
+    top:7vh;
+}
+.activeCH{
+    top:33.5vh;
+}
+.activeCA{
+    top:60vh;
+}
+.activeAC{
+    top:85vh;
+}
+
+
+.activeImageCenter{
+    top:20%;
+    left:20%;
+}
+
     .wrapper{
         display: flex;
         flex-direction: column;
@@ -77,6 +110,7 @@
     }
     .container{
         background-color: var(--colorBGDark);
+        position: absolute;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -89,7 +123,7 @@
         display:flex;
         height: 100vh;
         width: unset;
-        padding-top: 2rem;
+        padding-top: 4rem;
         padding-bottom: 2rem;
         justify-content:space-between;
         flex-direction:column;
@@ -105,7 +139,7 @@
         padding: 1rem 1rem;
         height: 100vh;
         width: 5rem;
-        position:static;
+        position: absolute;
     }
   
  }
