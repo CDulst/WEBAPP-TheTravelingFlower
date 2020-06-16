@@ -41,7 +41,7 @@ const Mapbox = () => {
             </div>
             */}
 
-            {/* <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>  */}
+            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
            
             
         </div>
