@@ -27,7 +27,7 @@ const Mapbox = () => {
 
     return (
        
-        <div>
+        <div className={style.secondContainer}>
             <div className={style.donationCounter}>
             <DonationCounter />
             </div>
@@ -35,6 +35,7 @@ const Mapbox = () => {
             <div className={style.progressbarLocation}>
             <ProgressbarLocation />
             </div>
+
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/> 
             
         </div>
