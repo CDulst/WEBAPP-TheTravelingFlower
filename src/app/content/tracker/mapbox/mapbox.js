@@ -6,6 +6,7 @@ import ProgressbarLocation from './ProgressLocation/ProgressLocation';
 import Livechat from './Livechat/Livechat';
 import PopupIcon from '../../../components/popupIcon/popupIcon'
 import message from '../../../../assets/icons/message_white.svg'
+import info from '../../../../assets/icons/info.svg'
 
 
 const Map = ReactMapboxGl({
@@ -45,6 +46,10 @@ const Mapbox = () => {
 
             <div className={style.iconMessage}>
                 <PopupIcon icon={message} direction="-1" />
+            </div>
+
+            <div className={style.iconInfo}>
+                <PopupIcon icon={info} />
             </div>
 
             <div className={style.livechat}>
