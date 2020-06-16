@@ -31,7 +31,6 @@ function Sidebar() {
   <NavItem text = "Carrier" icon = {Carrier} link = {ROUTES.carriers}/>
   <NavItem text = "Account" icon = {Placeholder} link = {ROUTES.settings}/>
   </div>
-  
   </div>
   </div>
   </>
