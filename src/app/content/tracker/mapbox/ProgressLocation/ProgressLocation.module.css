@@ -2,6 +2,14 @@
     width: 90vw;
 }
 
+.indicator {
+    position: relative;
+    
+    margin-left: -3.2rem;
+    bottom: 5rem;
+    height: 0rem;
+}
+
 @media only screen and (min-width:720px) {
     .progress {
         width: 60vw;
