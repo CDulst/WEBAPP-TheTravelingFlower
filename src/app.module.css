@@ -2,9 +2,11 @@
     display:none;
 }
 .container{
-    display:flex;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
     overflow: hidden;
     height: 100%;
+    width: 100vw;
     
 }
 

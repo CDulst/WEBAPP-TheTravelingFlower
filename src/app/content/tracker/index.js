@@ -14,9 +14,7 @@ function Tracker() {
 
   return (
   <>
-  <div className={style.map}>
   <Mapbox />
-  </div>
   </>
   );
 }
