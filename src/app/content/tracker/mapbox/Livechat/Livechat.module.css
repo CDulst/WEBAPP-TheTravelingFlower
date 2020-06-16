@@ -1,0 +1,39 @@
+.livechat__container {
+    position: absolute;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url('../../../../../assets//tracker//background.svg');
+    
+}
+
+.livechat__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 4;
+}
+
+.messages {
+    height: 80vh;
+    overflow: scroll;
+    
+}
+
+.input__wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width:720px) {
+    .livechat__container {
+        width: 30rem;
+        position: absolute;
+        right: 0;
+        
+    }
+}

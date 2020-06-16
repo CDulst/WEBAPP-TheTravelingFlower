@@ -3,6 +3,7 @@ import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';
+import Livechat from './Livechat/Livechat';
 
 const Map = ReactMapboxGl({
     accessToken:
@@ -35,9 +36,12 @@ const Mapbox = () => {
             <DonationCounter />
             </div>
 
-
             <div className={style.progressbarLocation}>
             <ProgressbarLocation />
+            </div>
+
+            <div className={style.livechat}>
+            <Livechat />
             </div>
             
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>

@@ -5,8 +5,13 @@
 
 .message__container {
     display: flex;
+    margin: 5%;
 }
 
 .message__name {
     font-weight: bold;
+}
+
+.message__contentName {
+    width: 80vw;
 }
