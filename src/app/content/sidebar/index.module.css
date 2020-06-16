@@ -35,9 +35,18 @@
     left:8vw
 }
 
-.activeTR{
+.activCH{
     left:34vw
 }
+
+.activeCA{
+    left:59vw
+}
+
+.activeTR{
+    left:83.5vw
+}
+
 
 .activeImage{
     width:2rem;
@@ -49,15 +58,6 @@
     left:17%;
 }
 
-.activeImageRight{
-    top:18%;
-    left:17%;
-}
-
-.activeImageLeft{
-    top:18%;
-    left:17%;
-}
 
 @media only screen and (min-width:720px) {
     
