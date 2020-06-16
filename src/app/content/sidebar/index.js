@@ -15,10 +15,14 @@ import {useEffect} from 'react';
 function Sidebar() {
   return (
   <>
+
   <div className = {style.container}>
   <div className = {style.wrapper}>
-  <div className = {style.navWrapper}>
-  <NavItem text = "Tracking" icon = {TrackerActive} link = {ROUTES.tracker} active = "true"/>
+  <div className = {`${style.active} ${style.activeTR}`}>
+  <img className = {`${style.activeImage} ${style.activeImageCenter}`} src = {TrackerActive} alt = "hello"/>
+  </div>
+  <div className = {`${style.navWrapper}`}>
+  <NavItem text = "Tracking" icon = {Tracker} link = {ROUTES.tracker} active = "true"/>
   <NavItem text = "Challenge" icon = {Challenge} link = {ROUTES.challenge}/>
   <NavItem text = "Carrier" icon = {Carrier} link = {ROUTES.carriers}/>
   <NavItem text = "Account" icon = {Placeholder} link = {ROUTES.settings}/>
