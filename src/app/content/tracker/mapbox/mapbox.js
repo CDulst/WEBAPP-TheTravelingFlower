@@ -35,11 +35,11 @@ const Mapbox = () => {
             */}
 
 
-            {/* 
+            
             <div className={style.progressbarLocation}>
             <ProgressbarLocation />
             </div>
-            */}
+            
 
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
            

@@ -1,3 +1,11 @@
 .progress {
-    width: 100;
+    width: 90vw;
+}
+
+@media only screen and (min-width:720px) {
+    .progress {
+        width: 60vw;
+    }
+
+
 }
