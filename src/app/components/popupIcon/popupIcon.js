@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './popupIcon.module.css';
 
-const popupIcon = ({icon}) => {
+const PopupIcon = ({icon, direction}) => {
     return (
-        <div className={style.popupIcon}>
-            <img className={style.iconImage} src={icon} alt="icon"></img>
+        <div style={{transform: `scaleX(${direction})`}} className={style.popupIcon}>
+            <img className={style.iconImage}  src={icon} alt="icon"></img>
         </div>
     );
 };
 
-export default popupIcon;
+export default PopupIcon;

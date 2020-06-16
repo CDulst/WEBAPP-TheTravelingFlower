@@ -4,6 +4,9 @@ import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';
 import Livechat from './Livechat/Livechat';
+import PopupIcon from '../../../components/popupIcon/popupIcon'
+import message from '../../../../assets/icons/message_white.svg'
+
 
 const Map = ReactMapboxGl({
     accessToken:
@@ -40,8 +43,12 @@ const Mapbox = () => {
             <ProgressbarLocation />
             </div>
 
+            <div className={style.iconMessage}>
+                <PopupIcon icon={message} direction="-1" />
+            </div>
+
             <div className={style.livechat}>
-            <Livechat />
+            {/* <Livechat />*/}
             </div>
             
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
