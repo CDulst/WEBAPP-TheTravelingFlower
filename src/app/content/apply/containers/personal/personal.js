@@ -20,7 +20,7 @@ function Personal() {
   return (
   <>
   <div className = {style.personal}>
-    <div>
+    <div className = {style.per}>
       <p> Full Name </p> 
         <Field icon={FullNameIcon} value="Full name"/>
      </div>  

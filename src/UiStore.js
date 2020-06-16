@@ -41,5 +41,5 @@ decorate(UIStore,{
 
 configure({enforceActions: 'observed'});
 
-const uiStore = new UIStore
+const uiStore = new UIStore();
 export default uiStore;

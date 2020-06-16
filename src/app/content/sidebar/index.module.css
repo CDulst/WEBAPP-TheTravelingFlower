@@ -32,19 +32,23 @@
 }
 
 .activeTR{
-    left:8vw
+    left:8vw;
+    transition: ease-in-out all 0.3s
 }
 
-.activCH{
-    left:34vw
+.activeCH{
+    left:34vw;
+    transition: ease-in-out all 0.3s
 }
 
 .activeCA{
-    left:59vw
+    left:59vw;
+    transition: ease-in-out all 0.3s
 }
 
-.activeTR{
-    left:83.5vw
+.activeAC{
+    left:83.5vw;
+      transition: ease-in-out all 0.3s
 }
 
 
