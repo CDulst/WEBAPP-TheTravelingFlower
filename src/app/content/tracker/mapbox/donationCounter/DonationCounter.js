@@ -11,7 +11,7 @@ const DonationCounter = () => {
             <p className={style.donation__paragraph}><span className={style.donation}>$123.32</span><span className={style.raised}>raised!</span></p>
             <div className={style.treesSaved}>
                 <p className={style.trees}>40 trees saved!</p>
-                <Link className={style.challengeLink} to = {ROUTES.challenge}>Go to challenge</Link>
+                <Link className={style.challengeLink} to = {ROUTES.challenge}>Challenge</Link>
             </div>
         </div>
     );
