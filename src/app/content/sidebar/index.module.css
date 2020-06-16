@@ -20,12 +20,48 @@
    display:flex;
    width: 100vw;
    justify-content: space-around;
-   
+}
 
+.active{
+    position:absolute;
+    top:1rem;
+    background-color: var(--colorBGMain);
+    border-radius:10rem;
+    width:3rem;
+    height:3rem;  
+}
+
+.activeTR{
+    left:8vw
+}
+
+.activCH{
+    left:34vw
+}
+
+.activeCA{
+    left:59vw
+}
+
+.activeTR{
+    left:83.5vw
+}
+
+
+.activeImage{
+    width:2rem;
+    position: relative;
+}
+
+.activeImageCenter{
+    top:18%;
+    left:17%;
 }
 
 
 @media only screen and (min-width:720px) {
+    
+        
     .wrapper{
         display: flex;
         flex-direction: column;
