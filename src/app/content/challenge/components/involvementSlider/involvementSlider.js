@@ -17,9 +17,9 @@ function InvolvementSlider({item1, item2, text, handleChange}) {
   <>
 <div className={style.slider__container}>
   <div className={style.slider}>
-    <p>{item1}</p>
+    <p className={style.paragraph}>{item1}</p>
     <Slider className={style.sliderComponent} value={value} onChange={handleChange} />
-    <p>{item2}</p>
+    <p className={style.paragraph}>{item2}</p>
   </div>
   <p>{text}</p>
 </div>

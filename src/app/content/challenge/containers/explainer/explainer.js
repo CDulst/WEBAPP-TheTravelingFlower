@@ -19,7 +19,7 @@ function Explainer() {
     <Involvement />
   <div className={style.sliderWrapper}>
     <div className={style.slider}>
-    <InvolvementSlider />
+    <InvolvementSlider item1="low" item2="high" text="community involvement" />
   </div>
     
     </div>
