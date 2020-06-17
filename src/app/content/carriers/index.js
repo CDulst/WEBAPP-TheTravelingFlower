@@ -6,6 +6,8 @@ import uiStore from '../../../UiStore'
 import ChallengeText from '../challenge/components/challengeText/challengeText';
 import icon from '../../../assets/challenge/flag.svg'
 import flag from "../../../assets/challenge/flag.svg";
+import Slider from './containers/slider/slider';
+import style from './index.module.css'
 
 function Carriers() {
     useEffect(() => {
@@ -13,8 +15,8 @@ function Carriers() {
       });
   return (
   <>
-  <div>
-  <p> Carriers page </p>
+  <div className={style.carrier__container}>
+  
   </div>
   </>
   );
