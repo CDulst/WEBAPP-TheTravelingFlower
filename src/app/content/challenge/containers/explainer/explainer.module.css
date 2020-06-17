@@ -1,5 +1,66 @@
+.dynamicText {
+    margin-top: 1rem;
+    text-align: center;
+}
+
 .explainer {
+    grid-column: 1/ span 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+
+}
+
+.dynamicText1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dynamicText2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--hoverButton);
+}
+
+.sliderWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.button__explainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+} 
+
+.slider {
+width: 100%;
+margin-top: 4rem;
+}
+
+@media only screen and (min-width:720px) {
+    .explainer {
+        height: 100vh;
+        width: 100%;
+    
+    }
+
+    .slider {
+        margin-bottom: 0;
+    }
+
+    .button__explainer {
+        margin-bottom: 3rem;
+    } 
+
+
+}
+
+@media only screen and (min-width:1100px) {
+    .explainer {
+        height: 100vh;
+        width: 50vw;
+    }
+
 }

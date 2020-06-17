@@ -6,21 +6,25 @@
 .container{
     display:flex;
     justify-content:space-between;
+    align-items:center;
+
 
 }
 .profileWrapper{
     display:flex;
     width:12rem;
+    align-items:center;
     justify-content:space-between;
 }
 .content{
     margin-top: 1rem;
     padding: 1rem 1rem;
     border-bottom: solid 1px white;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
 }
 .user{
     font-weight:1000;
+    margin-top:2rem;
 }
 .text{
     max-width:30rem;
@@ -51,7 +55,7 @@
     }
     .content{
         margin-top: 0rem;
-        padding: 1.5rem 2rem;
+        padding: 2rem 2rem;
         border-bottom: solid 1px white;
         margin-bottom: 0.5rem;
     }
