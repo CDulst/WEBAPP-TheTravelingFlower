@@ -4,8 +4,8 @@ import line from "../../../../../assets/challenge/line.svg";
 import icon from "../../../../../assets/challenge/icon.svg";
 import flag from "../../../../../assets/challenge/flag.svg";
 import SwitchButton from "../../../../components/switch/switch";
-import ChallengeText from "../../components/challengeText";
-import ChallengeVideo from "../../components/challengeVideo";
+import ChallengeText from "../../components/challengeText/challengeText";
+import ChallengeVideo from "../../components/challengeVideo/challengeVideo";
 
 function Assignment() {
   return (
