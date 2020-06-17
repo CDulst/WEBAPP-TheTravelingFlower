@@ -1,0 +1,23 @@
+.involvement__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter {
+    background-color: var(--colorH3Dark);
+    height: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    color: var(--colorBGMain);
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.involvementPhoto {
+    margin-bottom: -4rem;
+}

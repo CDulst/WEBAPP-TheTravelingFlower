@@ -5,6 +5,7 @@ import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
 import Switch from '../../components/switch/switch';
 import InvolvementSlider from './components/involvementSlider/involvementSlider';
+import Involvement from './containers/involvement/involvement';
 
 function Challenge() {
     useEffect(() => {
@@ -12,7 +13,7 @@ function Challenge() {
       });
   return (
   <>
-  <div className="challenge__container">
+  <div >
   <p> Challenge Page </p>
     
   </div>
