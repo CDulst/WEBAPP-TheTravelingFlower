@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
+import Switch from '../../components/switch/switch';
 
 function Challenge() {
     useEffect(() => {
@@ -10,7 +11,10 @@ function Challenge() {
       });
   return (
   <>
+  <div className="challenge__container">
   <p> Challenge Page </p>
+ 
+  </div>
   </>
   );
 }
