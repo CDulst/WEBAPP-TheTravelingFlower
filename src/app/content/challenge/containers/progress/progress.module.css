@@ -1,0 +1,14 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.indicator {
+    position: relative;
+    top: 4.7rem;
+}
+
+.progressTitle {
+    margin: 0;
+    font-weight: bold;
+}
