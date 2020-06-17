@@ -19,7 +19,6 @@ import {useEffect} from 'react';
 function Sidebar() {
   return useObserver(() => (
   <>
-  
   <div className = {style.container}>
   <div className = {style.wrapper}>
   <div className = {(uiStore.activePage === "tracker" ? `${style.active} ${style.activeTR}` : uiStore.activePage === "challenge" ?  `${style.active} ${style.activeCH}`: uiStore.activePage === "carriers" ?  `${style.active} ${style.activeCA}` : `${style.active} ${style.activeAC}`)}>
