@@ -7,6 +7,7 @@ import Switch from '../../components/switch/switch';
 import InvolvementSlider from './components/involvementSlider/involvementSlider';
 import Involvement from './containers/involvement/involvement';
 import Progress from './containers/progress/progress';
+import Explainer from './containers/explainer/explainer';
 
 function Challenge() {
     useEffect(() => {
