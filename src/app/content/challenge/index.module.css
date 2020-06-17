@@ -3,8 +3,8 @@
     flex-direction: column;
     height: 100vh;
     overflow-x: scroll;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     
 }
 
@@ -23,6 +23,8 @@
         display: grid;
         grid-template-columns: 30% 70%;
         grid-template-rows: 20% 50% 30% ;
+        margin-right: 5rem;
+        margin-left: 5rem;
     }
 
     .involvement__container {
