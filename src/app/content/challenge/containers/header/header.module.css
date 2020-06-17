@@ -17,6 +17,7 @@
     font-size:1rem;
     margin-bottom:
 }
+
 .hashtags{
     color:#4B66A1;
     font-family:var(--fontButtons);
@@ -24,7 +25,7 @@
 .question{
     position: absolute;
     height:3rem;
-    width:3rem;
+    width:10rem;
     left:85%;
     top:1rem;
 }

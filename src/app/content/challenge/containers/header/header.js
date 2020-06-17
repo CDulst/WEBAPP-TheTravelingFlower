@@ -8,7 +8,9 @@ import style from './header.module.css'
 function Header({hashtags}) {
   return (
   <>
-    <img className = {style.question} src = {question} alt = "question"/>
+  <Link to = "challenge/explainer" className = {style.question}>
+  <img classname = {style.questionImage} src = {question} alt = "question"/>
+  </Link>
   <div className={style.header}>
   <img className = {style.image} src = {icon} alt = "icon"/>
   <div>
