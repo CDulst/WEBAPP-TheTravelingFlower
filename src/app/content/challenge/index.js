@@ -6,6 +6,7 @@ import uiStore from '../../../UiStore'
 import Switch from '../../components/switch/switch';
 import InvolvementSlider from './components/involvementSlider/involvementSlider';
 import Involvement from './containers/involvement/involvement';
+import Progress from './containers/progress/progress';
 
 function Challenge() {
     useEffect(() => {
@@ -15,7 +16,7 @@ function Challenge() {
   <>
   <div >
   <p> Challenge Page </p>
-    
+   
   </div>
   </>
   );
