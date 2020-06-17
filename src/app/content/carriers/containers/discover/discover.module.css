@@ -1,0 +1,19 @@
+.mapboxContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mapboxButton {
+    position: absolute;
+    z-index: 3;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapboxButton:hover {
+    background-image: url('../../../../../assets/tracker/background2.svg');
+}

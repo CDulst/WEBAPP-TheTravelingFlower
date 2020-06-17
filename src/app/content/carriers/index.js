@@ -18,7 +18,7 @@ function Carriers() {
   return (
   <>
   <div className={style.carrier__container}>
-  
+    
   </div>
   </>
   );
