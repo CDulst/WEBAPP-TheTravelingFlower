@@ -1,0 +1,40 @@
+.hidden{
+    display:none;
+}
+.container{
+    margin-top:4rem;
+    border-bottom: solid white 1px;
+    padding-bottom: 1rem;;
+}
+.part{
+    text-align:center;
+    font-weight:1000;
+}
+.use{
+    text-align:center;
+}
+.hashtags{
+    color:var(--colorH3Light);
+    font-family:var(--fontButtons);
+}
+@media only screen and (min-width:720px) {
+    .part{
+        font-size:1.5rem;
+        text-align:left;
+        padding: 0 3rem;
+    }
+    .use{
+        text-align:left;
+        padding: 0 3rem;
+    }
+ }
+ @media only screen and (min-width:1100px) {
+    .container{
+        margin-top:2rem;
+        border-bottom: solid white 1px;
+        padding-bottom: 1rem;;
+    }
+ }
+
+
+ 

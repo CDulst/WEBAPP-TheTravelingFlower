@@ -6,15 +6,15 @@ import style from "./post.module.css"
 function Post({pic, user,social,text,content}) {
   return (
   <>
-  <div>
-  <div>
-  <div>
+  <div class = {style.content}>
+  <div className = {style.container}>
+  <div className = {style.profileWrapper}>
   <img src = {pic} alt = "pic"/>
-  <p> {user} </p>
+  <p className = {style.user}> {user} </p>
   </div>
-  <img src = {social} alt = "social" />
+  <img className = {style.social} src = {social} alt = "social" />
   </div>
-  <p> {text} </p>
+  <p className = {style.text}> {text} </p>
   <img className = {style.image} src = {content} alt = "contant"/>
   </div>
   </>

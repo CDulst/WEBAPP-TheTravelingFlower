@@ -12,9 +12,12 @@ function SocialFeed() {
   return (
   <>
   <div className = {style.container}>
-  <img src = {close} alt = "close"/>
+  <img className = {style.close} src = {close} alt = "close"/>
   <FeedHeader hashtags = "#TravelingFlower #FlowerAmsterdamTF"/>
+  <div className = {style.postWrapper}>
+  <Post pic = {ProfileExample} user = "Johnny Bravo" social = {SocialExample} text = "Ik ben een chad die graag kookt en eten klaar maakt" content = {ContentExample} />
   <Post pic = {ProfileExample} user = "Johnny Bravo" social = {SocialExample} text = "Ik ben een chad" content = {ContentExample} />
+  </div>
   </div>
   </>
   );

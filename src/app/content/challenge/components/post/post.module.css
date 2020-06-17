@@ -1,3 +1,63 @@
 .image{
-    width:80vw;
+    width:90vw;
+    border-radius:3rem;
+    margin-top:0.5rem;
 }
+.container{
+    display:flex;
+    justify-content:space-between;
+
+}
+.profileWrapper{
+    display:flex;
+    width:12rem;
+    justify-content:space-between;
+}
+.content{
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    border-bottom: solid 1px white;
+    margin-bottom: 2rem;
+}
+.user{
+    font-weight:1000;
+}
+.text{
+    max-width:30rem;
+}
+
+
+@media only screen and (min-width:720px) {
+    
+    .image{
+        width:62vw;
+        border-radius:3rem;
+        margin-top:0.5rem;
+    }
+    .content{
+        margin-top: 1rem;
+        padding: 2rem 2rem;
+        border-bottom: solid 1px white;
+        margin-bottom: 2rem;
+    }
+           
+ }
+
+@media only screen and (min-width:1100px) {
+    
+    .image{
+        width:35vw;
+        height:30vh;
+    }
+    .content{
+        margin-top: 0rem;
+        padding: 1.5rem 2rem;
+        border-bottom: solid 1px white;
+        margin-bottom: 0.5rem;
+    }
+    .social{
+        width:2rem;
+    }
+           
+ }
+

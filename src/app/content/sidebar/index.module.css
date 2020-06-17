@@ -11,8 +11,8 @@
     align-items: flex-end;
     height: 6rem;
     width: 100vw;
-    bottom:0rem;
-    z-index:1;
+    bottom:-0.8rem;
+    z-index:5;
     position: absolute;
 }
 
