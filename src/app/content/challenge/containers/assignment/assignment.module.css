@@ -6,6 +6,18 @@
     align-items: center;
     border-top: 1px var(--colorBGDark) solid;
     border-bottom: 1px var(--colorBGDark) solid;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+
+}
+
+@media only screen and (min-width:1100px) {
+    .assignment__container {
+        margin-right: 5rem;
+        margin-left: 5rem;
+    }
+
+
 }
