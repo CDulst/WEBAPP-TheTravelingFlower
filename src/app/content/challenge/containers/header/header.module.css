@@ -1,7 +1,7 @@
 .header {
     display:flex;
     justify-content:center;
-    margin-top:1rem;
+    margin-top:2rem;
     padding-bottom:1rem;
     grid-column: 1 / span 2;
 }

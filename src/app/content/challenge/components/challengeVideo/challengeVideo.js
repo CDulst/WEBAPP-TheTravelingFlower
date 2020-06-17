@@ -8,7 +8,7 @@ function ChallengeVideo({video}) {
   return (
   <>
   <div className={style.videoContainer}>
-  <video className={style.video}  controls>
+  <video className={style.video}  controls autoPlay>
   <source src={video} type="video/mp4"/>
   <source src={video} type="video/ogg"/>
   your browser does not support the video tag.
