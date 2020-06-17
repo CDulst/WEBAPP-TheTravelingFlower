@@ -4,6 +4,7 @@ import ROUTES from "../../../routes/index";
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
 import Switch from '../../components/switch/switch';
+import InvolvementSlider from './components/involvementSlider/involvementSlider';
 
 function Challenge() {
     useEffect(() => {
@@ -13,7 +14,7 @@ function Challenge() {
   <>
   <div className="challenge__container">
   <p> Challenge Page </p>
- 
+
   </div>
   </>
   );
