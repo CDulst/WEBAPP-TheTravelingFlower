@@ -1,0 +1,8 @@
+.slider__container {
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    width: 80%;
+}
