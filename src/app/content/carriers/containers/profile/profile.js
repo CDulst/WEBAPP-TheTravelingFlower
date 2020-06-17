@@ -34,11 +34,13 @@ function Profile({pic, name, flag, age, transport,bio}) {
       </article>
 
     <div>
+      {/*
       <div>
         <img src={instagram} alt="instagram"></img>
         <img src={twitter} alt="twitter"></img>
         <img src={facebook} alt="facebook"></img>
       </div>
+      */}
 
       <p>#TheTravelingFlower</p>
     </div>

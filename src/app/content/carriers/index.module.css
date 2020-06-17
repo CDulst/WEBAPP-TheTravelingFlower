@@ -1,3 +1,8 @@
 .carrier__container {
     height: 100vh;
 }
+
+.sliderPosition {
+    position: fixed;
+    bottom: 5rem;
+}

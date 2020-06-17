@@ -18,7 +18,7 @@ function Slider({onchange}) {
       <img src={person} className={style.secondNextCarrier} alt="person"></img>
     </div>
     <div className={style.sliderComponent}>
-      <InvolvementSlider item1="4/24" />
+      <InvolvementSlider />
     </div>
     </div>
   </>

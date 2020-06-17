@@ -10,6 +10,7 @@ import Slider from './containers/slider/slider';
 import style from './index.module.css'
 import TimeLine from './containers/timeline/timeline';
 import Discover from './containers/discover/discover';
+import Profile from './containers/profile/profile'
 
 function Carriers() {
     useEffect(() => {
@@ -18,7 +19,12 @@ function Carriers() {
   return (
   <>
   <div className={style.carrier__container}>
+    
     <Discover />
+    <Profile />
+    <div className={style.sliderPosition}>
+    <Slider />
+    </div>
   </div>
   </>
   );
