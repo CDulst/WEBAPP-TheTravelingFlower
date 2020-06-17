@@ -7,13 +7,30 @@
 .mapboxButton {
     position: absolute;
     z-index: 3;
-    height: 100vh;
-    width: 40vw;
+    height: 20vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.mapbox2 {
+ width: 100vw;
+ height: 20vh;
+}
+
 .mapboxButton:hover {
     background-image: url('../../../../../assets/tracker/background2.svg');
+}
+
+@media only screen and (min-width:720px) {
+   .mapboxButton {
+       height: 100vh;
+       width: 40vw;
+   }
+
+   .mapbox2 {
+    width: 40vw;
+    height: 100vh;
+   }
 }
