@@ -2,8 +2,7 @@
     display:none;
 }
 .container{
-    display: grid;
-    grid-template-columns: 7rem 1fr;
+
     overflow: hidden;
     height: 100%;
     width: 100vw;
@@ -12,6 +11,8 @@
 
 @media only screen and (min-width:720px) {
     .container{
+    display: grid;
+    grid-template-columns: 7rem 1fr;
     flex-direction: row;
     align-items:flex-start;
     height:100vh;
