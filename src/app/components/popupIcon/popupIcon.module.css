@@ -4,6 +4,7 @@
     border-radius: 2rem;
     display: flex;
     align-items: center;
+   
 
 }
 
@@ -21,10 +22,10 @@
 }
 
 .wrapper{
+    cursor:pointer;
     display:flex;
     flex-direction:row;
     height:3rem;
-    
     width:10rem;
     transform: rotateZ(90deg);
     justify-content:space-around;
@@ -36,7 +37,9 @@
     transform: rotateY(-180deg);
     transform: rotateX(-180deg);
     padding-right:1rem;
+    padding-bottom:1.8rem;
     color:white;
+
     font-family: var(--fontButtons);
 }
 .feedIcon{

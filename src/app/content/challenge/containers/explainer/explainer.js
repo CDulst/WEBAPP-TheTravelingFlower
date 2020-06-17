@@ -4,6 +4,7 @@ import style from './explainer.module.css';
 import Involvement from '../involvement/involvement';
 import InvolvementSlider from '../../components/involvementSlider/involvementSlider';
 import Button from '../../../../components/button/button';
+import SocialFeed from '../socialfeed/socialfeed';
 
 
 
@@ -27,6 +28,7 @@ function Explainer() {
     <Button value="I GOT IT!" type="" />
     </div>
   </div>
+  <SocialFeed />
   </>
   );
 }

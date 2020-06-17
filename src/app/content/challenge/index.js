@@ -13,11 +13,16 @@ import {Route,Switch} from "react-router-dom";
 import FeedIcon from '../../../assets/challenge/feedIcon.svg'
 import style from './index.module.css'
 import PopupIcon from '../../components/popupIcon/popupIcon'
+import uiChallenge from "./stores/uiStore";
 
 function Challenge() {
     useEffect(() => {
         uiStore.setPage("challenge")
       });
+
+      const handleOnClick = (e) => {
+        uiChallenge.UIOut();
+      }
   return (
   <>
   <div className={style.challenge__container}>
@@ -27,7 +32,7 @@ function Challenge() {
    </Route>
   <Route path = "/challenge">
   <div className = {style.popUP}>
-  <PopupIcon icon = {FeedIcon} direction = "-1" text = "Social Feed"/>
+  <PopupIcon icon = {FeedIcon} direction = "-1" text = "Social Feed" click = {handleOnClick}/>
   </div>
   <Header hashtags = "#TheTravelingFlower #TulipAmsterdamTF"/>
   <Assignment/>
