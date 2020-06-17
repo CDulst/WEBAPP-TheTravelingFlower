@@ -3,6 +3,8 @@
     flex-direction: column;
     height: 100vh;
     overflow-x: scroll;
+    margin-right: 5rem;
+    margin-left: 5rem;
     
 }
 
