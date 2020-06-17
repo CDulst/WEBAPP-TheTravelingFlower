@@ -19,7 +19,7 @@
 
 .popUP{
     position:absolute;
-    right:-1rem;
+    right:0rem;
     top:40%;
     z-index:3;
 }
