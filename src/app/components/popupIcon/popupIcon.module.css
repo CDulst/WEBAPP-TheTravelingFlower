@@ -8,7 +8,6 @@
 }
 
 
-
 .popupIcon::after {
     content: url('../../../assets//icons//triangle.svg'); 
     margin-left: 1rem;
@@ -16,24 +15,35 @@
     height: 100%;
 }
 
+.iconImage{
+    transform: rotate(270deg);
+    height:1rem;
+}
 
 .wrapper{
     display:flex;
     flex-direction:row;
     height:3rem;
-    width:8rem;
-    transform: rotate(90deg);
+    width:9rem;
+    transform: rotateZ(90deg);
     justify-content:space-around;
     align-items:center;
     background-color: var(--colorSecondary);
     border-radius:3rem;
 }
-
+.text{
+    transform: rotateY(-180deg);
+    transform: rotateX(-180deg);
+    padding-right:1rem;
+    color:white;
+    font-family: var(--fontButtons);
+}
 .feedIcon{
     height:2rem;
+    transform: rotate(90deg);
 }
 .feedIcon:after{
-    content: url('../../../assets//icons//triangle.svg'); 
+    content: url('../../../assets//challenge/blueArrow.svg');
     position:relative;
     bottom:2rem;
     left:7rem;

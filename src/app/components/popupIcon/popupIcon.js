@@ -6,7 +6,7 @@ const PopupIcon = ({icon, direction, text, onClick}) => {
         
         (!text ?
         <div style={{transform: `scaleX(${direction})`}} className={style.popupIcon}>
-            <img className={style.iconImage}  src={icon} alt="icon"></img>
+            <img   src={icon} alt="icon"></img>
         </div>
         :
         <div style={{transform: `scaleX(${direction})`}} className={style.feedIcon}>
