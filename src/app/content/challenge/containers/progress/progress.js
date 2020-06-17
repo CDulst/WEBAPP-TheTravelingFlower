@@ -6,18 +6,18 @@ import indicator from '../../../../../assets/challenge/indicatorChallenge.png'
 
 
 
-function Progress({title, start, end, current}) {
+function Progress({title, start, end, current, percentage}) {
   return (
   <>
   
   <div className={style.progress}>
     <div>
-    <img src={indicator} alt="indicator"></img>
+    <img style={{left: `${percentage}%`}} className={style.indicator} src={indicator} alt="indicator"></img>
     <p>{current}</p>
     </div>
-    <p>{title}</p>
-    <Progressbar percentage="10%"/>
-    <div>
+    <p className={style.progressTitle}>{title}</p>
+    <Progressbar percentage={percentage}/>
+    <div className={style.info}>
       <p>{start}</p>
       <p>{end}</p>
     </div>

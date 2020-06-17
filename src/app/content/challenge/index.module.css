@@ -22,15 +22,16 @@
     .challenge__container {
         display: grid;
         grid-template-columns: 30% 70%;
-        grid-template-rows: 20% 50% 30% ;
+        grid-template-rows: 10rem 30rem 20rem ;
         margin-right: 5rem;
         margin-left: 5rem;
     }
 
     .involvement__container {
-        position: absolute;
-        bottom: 3rem;
-        left: 10rem;
+        
+        position: relative;
+        bottom: 10rem;
+        left: -5rem;
         background-color: var(--colorBGMain);
     }
 

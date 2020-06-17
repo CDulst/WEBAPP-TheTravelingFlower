@@ -11,7 +11,7 @@ function Involvement() {
     <div className={style.involvement__container}>
       <img src={involvementFlower} className={style.involvementPhoto} alt="involvement flower"></img>
       
-        <span className={style.counter}>$119</span>
+        <span className={style.counter}>$119989</span>
       
     </div>
   </>
