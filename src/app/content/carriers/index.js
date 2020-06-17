@@ -8,7 +8,8 @@ import icon from '../../../assets/challenge/flag.svg'
 import flag from "../../../assets/challenge/flag.svg";
 import Slider from './containers/slider/slider';
 import style from './index.module.css'
-import TimeLine from './components/timeline/timeline';
+import TimeLine from './containers/timeline/timeline';
+import Discover from './containers/discover/discover';
 
 function Carriers() {
     useEffect(() => {
@@ -17,7 +18,7 @@ function Carriers() {
   return (
   <>
   <div className={style.carrier__container}>
-    
+  
   </div>
   </>
   );

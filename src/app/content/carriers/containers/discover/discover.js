@@ -1,14 +1,13 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import style from './discover.module.css'
+import Button from '../../../../components/button/button';
 
-
-
-function Discover() {
-  return (
-  <>
-
-  </>
-  );
-}
+const Discover = () => {
+    return (
+        <div>
+            <Button value="discover journey"/>
+        </div>
+    );
+};
 
 export default Discover;
