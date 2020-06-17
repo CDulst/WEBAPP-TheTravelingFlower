@@ -13,7 +13,7 @@ function Challenge() {
   <>
   <div className="challenge__container">
   <p> Challenge Page </p>
-  <Switch />
+ 
   </div>
   </>
   );
