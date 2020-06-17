@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import style from "./post.module.css"
 
 
 function Post({pic, user,social,text,content}) {
@@ -15,7 +15,7 @@ function Post({pic, user,social,text,content}) {
   <img src = {social} alt = "social" />
   </div>
   <p> {text} </p>
-  <img src = {content} alt = "contant"/>
+  <img className = {style.image} src = {content} alt = "contant"/>
   </div>
   </>
   );
