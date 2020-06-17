@@ -5,10 +5,14 @@
 
 .indicator {
     position: relative;
-    top: 5.5rem;
+    top: 3.5rem;
 }
 
 .progressTitle {
     margin: 0;
     font-weight: bold;
+}
+
+p{
+    margin: 0;
 }
