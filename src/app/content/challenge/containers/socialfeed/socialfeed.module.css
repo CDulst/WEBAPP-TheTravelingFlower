@@ -10,7 +10,7 @@ color:white;
 }
 
 .positionOut{
-right:-50rem;
+right:-100rem;
 transition: all ease-in-out 0.4s;
 
 }
@@ -50,7 +50,7 @@ cursor:pointer;
     
     .container{
        
-        width:45vw;
+        width:40vw;
         }
         .postWrapper{
             overflow:scroll;

@@ -7,7 +7,7 @@ import Livechat from './Livechat/Livechat';
 import PopupIcon from '../../../components/popupIcon/popupIcon'
 import message from '../../../../assets/icons/message_white.svg'
 import info from '../../../../assets/icons/info.svg'
-
+import uiTracker from "../stores/uiStore"
 
 const Map = ReactMapboxGl({
     accessToken:
@@ -28,7 +28,10 @@ const Mapbox = () => {
             pitch:[60]
           
         })
-
+        const handleOnClick = (e) => {
+            uiTracker.UIOut();
+          }
+    
 
     return (
        
@@ -45,7 +48,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.iconMessage}>
-                <PopupIcon icon={message} direction="-1" />
+                <PopupIcon icon={message} direction="-1" click = {handleOnClick} />
             </div>
 
             <div className={style.iconInfo}>
@@ -53,7 +56,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.livechat}>
-            {/* <Livechat />*/}
+            <Livechat />
             </div>
             
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
