@@ -37,9 +37,9 @@
 
     .involvement__container {
         position: relative;
-        bottom: 10rem;
-        left: -2rem;
+        bottom: 7rem;
         background-color: var(--colorBGMain);
+        margin-right: 5rem;
     }
     .progress {
         grid-row: 3;
