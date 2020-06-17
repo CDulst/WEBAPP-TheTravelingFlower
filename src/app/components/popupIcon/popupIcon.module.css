@@ -4,12 +4,38 @@
     border-radius: 2rem;
     display: flex;
     align-items: center;
+
 }
+
+
 
 .popupIcon::after {
     content: url('../../../assets//icons//triangle.svg'); 
     margin-left: 1rem;
     margin-bottom: .3rem;
     height: 100%;
-   
+}
+
+
+.wrapper{
+    display:flex;
+    flex-direction:row;
+    height:3rem;
+    width:8rem;
+    transform: rotate(90deg);
+    justify-content:space-around;
+    align-items:center;
+    background-color: var(--colorSecondary);
+    border-radius:3rem;
+}
+
+.feedIcon{
+    height:2rem;
+}
+.feedIcon:after{
+    content: url('../../../assets//icons//triangle.svg'); 
+    position:relative;
+    bottom:2rem;
+    left:7rem;
+ 
 }
