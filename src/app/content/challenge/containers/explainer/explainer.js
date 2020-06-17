@@ -28,7 +28,9 @@ function Explainer() {
     <Button value="I GOT IT!" type="" />
     </div>
   </div>
+  <div className={style.socialfeed}>
   <SocialFeed />
+  </div>
   </>
   );
 }
