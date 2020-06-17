@@ -3,6 +3,8 @@
     flex-direction: column;
     height: 100vh;
     overflow-x: scroll;
+    margin-right: 5rem;
+    margin-left: 5rem;
     
 }
 
@@ -14,11 +16,19 @@
     justify-content: center;
 }
 
-@media only screen and (min-width:1100px) {
+
+
+@media only screen and (min-width:1300px) {
     .challenge__container {
         display: grid;
         grid-template-columns: 30% 70%;
-        grid-template-rows: 20% 40% 40% ;
+        grid-template-rows: 20% 50% 30% ;
+    }
+
+    .involvement__container {
+        position: absolute;
+        bottom: 3rem;
+        left: 10rem;
     }
 
 

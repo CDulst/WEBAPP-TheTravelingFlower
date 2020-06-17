@@ -20,7 +20,9 @@ function Challenge() {
   <div className={style.challenge__container}>
   <Header hashtags = "#TheTravelingFlower #TulipAmsterdamTF"/>
   <Assignment/>
+  <div className={style.involvement__container}>
   <Involvement/>
+  </div>
   <div className={style.progress}>
   <Progress/>
   <Progress/>
