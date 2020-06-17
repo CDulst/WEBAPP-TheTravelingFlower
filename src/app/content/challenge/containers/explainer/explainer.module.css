@@ -57,6 +57,17 @@ margin-top: 4rem;
 
 }
 
+.socialfeed {
+    display: none;
+}
+
+@media only screen and (min-width:1100px) {
+    .socialfeed {
+        display: block;
+    }
+
+}
+
 @media only screen and (min-width:1100px) {
     .explainer {
         height: 100vh;
