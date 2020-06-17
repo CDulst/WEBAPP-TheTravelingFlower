@@ -3,10 +3,17 @@ import {Link} from "react-router-dom";
 
 
 
-function ChallengeText() {
+function ChallengeText({icon,title,flag,text}) {
   return (
   <>
-
+  <div>
+  <img src = {icon}/>
+  <div>
+  <p>{title}</p>
+  <img src = {flag}/>
+  </div>
+  <p>{text}</p>
+  </div>
   </>
   );
 }
