@@ -38,7 +38,7 @@ function Challenge() {
   <Progress title="Distance untill next challenge" start="Amsterdam" end="Berlin" percentage="40"/>
   <Progress title="Challenge goal" start="$0" end="$5000" percentage="20"/>
   </div>
-  <SocialFeed/>
+  {/*<SocialFeed/>*/}
   </Route>
   </Switch>
   </div>
