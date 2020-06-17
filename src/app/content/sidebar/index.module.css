@@ -8,12 +8,12 @@
     background-color: var(--colorBGDark);
     display:flex;
     justify-content:center;
-    align-items: flex-end;
+    align-items: center;
     height: 6rem;
     width: 100vw;
-    bottom:0rem;
+    bottom: -1rem;
     padding-top: 1rem;
-    z-index:1;
+    z-index:5;
     position: absolute;
 }
 
@@ -26,12 +26,11 @@
 
 .active{
     position:absolute;
-    top:1rem;
     background-color: var(--colorBGMain);
     border-radius:10rem;
     width:3rem;
     height:3rem;  
-    top:.5rem;
+    top:0.6rem;
 }
 
 .activeTR{
