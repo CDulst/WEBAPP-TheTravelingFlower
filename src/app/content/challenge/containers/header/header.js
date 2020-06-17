@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import icon from "../../../../../assets/challenge/icon.svg"
+import style from './header.module.css'
 
 
 function Header({hashtags}) {
   return (
   <>
-  <div>
+  <div className={style.header}>
   <img src = {icon} alt = "icon"/>
   <div>
   <h3> Location challenge </h3>

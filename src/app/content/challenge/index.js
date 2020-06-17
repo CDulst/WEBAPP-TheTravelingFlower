@@ -9,6 +9,7 @@ import Header from "./containers/header/header";
 import Involvement from "./containers/involvement/involvement";
 import Progress from "./containers/progress/progress";
 import SocialFeed from "./containers/socialfeed/socialfeed";
+import style from './index.module.css'
 
 function Challenge() {
     useEffect(() => {
@@ -16,13 +17,15 @@ function Challenge() {
       });
   return (
   <>
-  <div >
+  <div className={style.challenge__container}>
   <Header hashtags = "#TheTravelingFlower #TulipAmsterdamTF"/>
   <Assignment/>
   <Involvement/>
+  <div className={style.progress}>
   <Progress/>
   <Progress/>
-  <SocialFeed/>
+  </div>
+    {/*<SocialFeed/>*/}
   </div>
   </>
   );

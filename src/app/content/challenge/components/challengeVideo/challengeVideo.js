@@ -13,7 +13,7 @@ function ChallengeVideo({video}) {
   your browser does not support the video tag.
   </video>
   <div>
-  <img src = "play" alt = "play"/>
+  {/*<img src = "play" alt = "play"/>*/}
   </div>
   </div>
   </>
