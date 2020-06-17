@@ -11,7 +11,7 @@ import style from "./socialfeed.module.css";
 function SocialFeed() {
   return (
   <>
-  <div className = {style.container}>
+  <div className = {`${style.container} ${style.positionOut}`}>
   <img className = {style.close} src = {close} alt = "close"/>
   <FeedHeader hashtags = "#TravelingFlower #FlowerAmsterdamTF"/>
   <div className = {style.postWrapper}>

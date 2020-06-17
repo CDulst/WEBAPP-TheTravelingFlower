@@ -13,9 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--colorBGMain);
-  
   overflow:hidden;
-  display:inline-block;
+  overflow-y: hidden;
 }
 
 code {
