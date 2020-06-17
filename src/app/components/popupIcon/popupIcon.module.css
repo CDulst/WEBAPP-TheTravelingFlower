@@ -37,7 +37,7 @@
     transform: rotateY(-180deg);
     transform: rotateX(-180deg);
     padding-right:1rem;
-    padding-bottom:1.8rem;
+
     color:white;
 
     font-family: var(--fontButtons);
