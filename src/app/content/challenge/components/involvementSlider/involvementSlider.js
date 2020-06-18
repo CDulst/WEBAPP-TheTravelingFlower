@@ -5,7 +5,7 @@ import style from './involvementSlider.module.css'
 
 
 
-function InvolvementSlider({item1, item2, text, handleChange}) {
+function InvolvementSlider({item1, item2, text, handleChange, orientation}) {
 
   const [value, setValue] = useState(50)
 
@@ -18,7 +18,7 @@ function InvolvementSlider({item1, item2, text, handleChange}) {
 <div className={style.slider__container}>
   <div className={style.slider}>
     <p className={style.paragraph}>{item1}</p>
-    <Slider className={style.sliderComponent} value={value} onChange={handleChange} />
+    <Slider className={style.sliderComponent} orientation={orientation} value={value} onChange={handleChange} />
     <p className={style.paragraph}>{item2}</p>
   </div>
   <p>{text}</p>
