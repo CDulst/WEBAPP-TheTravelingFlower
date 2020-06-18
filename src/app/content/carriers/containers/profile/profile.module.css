@@ -1,0 +1,78 @@
+.informationContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.informationContainer2 {
+    width: 70%;
+}
+
+.nameAndFlag {
+    display: flex;
+}
+
+.nameCarrierInfo {
+    margin-right: 2rem;
+}
+
+.personalInfoWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.personalInfoWrapperBio {
+    display: flex;
+    flex-direction: column;
+}
+
+.personalInfoSection1 {
+    display: flex;
+}
+
+.textBio {
+    line-height: 2.5rem;
+}
+
+.title__personalInfo {
+    color: var(--hoverButton);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.socialMediaWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20rem;
+}
+
+.socialMediaIcon {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+@media only screen and (min-width:720px) {
+    .informationContainer {
+        width: 80%;
+    }
+
+    .socialMediaWrapper {
+        margin-bottom: 0;
+    }
+    
+    .informationContainer2 {
+        width: 80%;
+    }
+
+ }

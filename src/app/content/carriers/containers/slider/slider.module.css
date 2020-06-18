@@ -49,7 +49,7 @@
 
     .slider {
         height: 100vh;
-        width: 15rem;
+        width: 13rem;
         box-shadow: unset;
         justify-content: center;
         flex-direction: row;
@@ -69,6 +69,8 @@
     .carriers {
         display: flex;
         flex-direction: column;
+        height: 100vh;      
+        justify-content: space-evenly;
     }
 
     .mobile {
