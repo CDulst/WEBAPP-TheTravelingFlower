@@ -1,0 +1,20 @@
+.container{
+    height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.wrapper{
+    overflow:scroll;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    height:80vh;
+    padding-top:4rem;
+}
+.title{
+   display:none;
+}

@@ -2,18 +2,19 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import arrow from '../../../../../assets/settings/arrow.svg'
 import Button from '../../../../components/button/button'
+import style from "./setting.module.css"
 
-const [editing,setEditing] = useState(false);
 
 function Setting({title,value}) {
+  const [editing,setEditing] = useState(false);
   return (
   <>
-  <div>
+  <div className = {style.container}>
   <p>{title}</p>
   {(!editing ?
   <>
   <div>
-  <p>{value}</p>
+  <p className = {style.value}>{value}</p>
   </div>
   <img src = {arrow} alt = "arrow"/>
   </>
