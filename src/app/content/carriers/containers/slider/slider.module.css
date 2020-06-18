@@ -60,13 +60,9 @@
 
         
     }
-
     .carriers {
         display: flex;
         flex-direction: column;
     }
 
-    .sliderComponent {
-        transform: rotate(90deg);
-    }
  }
