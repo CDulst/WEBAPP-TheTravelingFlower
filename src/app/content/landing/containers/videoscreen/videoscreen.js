@@ -18,7 +18,7 @@ function VideoScreen() {
   <div className = {style.video}> 
   <div className = {style.videoContainer}>
   <video className = {style.videoBG} autoPlay loop muted>
-     <source src = "/videos/video.mp4" type="video/mp4"/>
+     <source src = "/videos/promo.mp4" type="video/mp4"/>
   </video>
   </div>
   <img className = {style.logo} src = {logo}/>
