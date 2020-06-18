@@ -10,8 +10,8 @@ function Settings() {
       });
   return (
   <>
-  <p> Settings page </p>
-  <Link to = {ROUTES.landing}> Go to landing </Link>
+  <h2> Setting </h2>
+  
   </>
   );
 }
