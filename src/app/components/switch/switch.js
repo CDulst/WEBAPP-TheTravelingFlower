@@ -9,7 +9,6 @@ const SwitchButton = ({item1, item2, handleChange}) => {
         checkedB: true,
     })
 
-
     handleChange = (e) => {
         setState({...state, [e.target.name]: e.target.checked})
     }

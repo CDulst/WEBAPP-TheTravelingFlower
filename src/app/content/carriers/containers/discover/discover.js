@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import style from './discover.module.css'
 import Button from '../../../../components/button/button';
+import {Link} from "react-router-dom";
 import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
@@ -30,7 +31,7 @@ const Discover = ({start, end, type}) => {
     return (
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
-            <Button value="discover journey"/>
+            <Link to="/carriers/detail"><Button value="discover journey"/></Link>
             </div>
 
             
