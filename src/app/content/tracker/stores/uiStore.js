@@ -5,7 +5,7 @@ import {observable,action,decorate,configure} from "mobx"
 
 class UITracker {
   constructor(){
-  this.uiOut = true;
+  this.uiOut = false;
   }
 
   UIOut(){
