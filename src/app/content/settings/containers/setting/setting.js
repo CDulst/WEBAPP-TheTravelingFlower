@@ -5,7 +5,7 @@ import Button from '../../../../components/button/button'
 import style from "./setting.module.css"
 
 
-function Setting({title,value}) {
+function Setting({title,value,edit}) {
   const [editing,setEditing] = useState(false);
   return (
   <>
@@ -16,7 +16,10 @@ function Setting({title,value}) {
   <div>
   <p className = {style.value}>{value}</p>
   </div>
+  <div className = {style.editContainer}>
+  <p className = {style.editN}>Edit {edit}</p>
   <img src = {arrow} alt = "arrow"/>
+  </div>
   </>
   :
   <div>

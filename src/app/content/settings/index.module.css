@@ -17,4 +17,31 @@
 }
 .title{
    display:none;
+   text-transform:uppercase;
+   text-align:center;
+   color: var(--colorH3Dark);
 }
+
+@media only screen and (min-width:720px) {
+
+    .container{
+        height:90vh;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+    }
+    .wrapper{
+        overflow:scroll;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        align-items:center;
+        height:100vh;
+        padding-top:1rem;
+    }
+    .title{
+        display:block;
+     }
+ }
+ 

@@ -1,10 +1,33 @@
 .container{
 display:flex;
 width: 90vw;
+max-width:35rem;
 justify-content: space-between;
 padding: 0 1rem;
 }
 
 .value{
 font-weight:800;
+font-size: 1rem;
+text-align:center;
 }
+
+.editN{
+display:none;
+margin-right: 1rem;
+}
+
+.editContainer{
+    display:flex;
+   
+}
+
+@media only screen and (min-width:720px) {
+    .value{
+        font-size:1.2rem;
+    }
+    .editN{
+        display:block;
+    }
+ }
+ 
