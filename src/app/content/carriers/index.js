@@ -11,6 +11,7 @@ import style from './index.module.css'
 import TimeLine from './containers/timeline/timeline';
 import Discover from './containers/discover/discover';
 import Profile from './containers/profile/profile'
+import pic from '../../../assets/carrier/carrier.png'
 
 function Carriers() {
     useEffect(() => {
@@ -21,7 +22,9 @@ function Carriers() {
   <div className={style.carrier__container}>
     
     <Discover />
-    <Profile />
+  
+    <Profile pic={pic} name="John Boss" flag={flag} age="12" transport="Bike" bio="I am john and I love nature. I am a young nature activist and I like to spend time in my garden. I hate my life and my wife. please kill me I dont want to particpate in this" />
+  
     <div className={style.sliderPosition}>
     <Slider />
     </div>

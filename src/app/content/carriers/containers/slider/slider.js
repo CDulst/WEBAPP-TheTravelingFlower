@@ -19,7 +19,7 @@ function Slider({onchange}) {
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
-      <InvolvementSlider orientation="vertical" height="60vh" />
+      <InvolvementSlider orientation="vertical" height="80vh" />
       </div>
       <div className={style.mobile}>
       <InvolvementSlider orientation="horizontal"/>

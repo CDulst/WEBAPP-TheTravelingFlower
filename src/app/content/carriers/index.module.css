@@ -1,5 +1,6 @@
 .carrier__container {
     height: 100vh;
+    overflow-x: scroll;
 }
 
 .sliderPosition {
