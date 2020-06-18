@@ -6,6 +6,7 @@
 .sliderPosition {
     position: fixed;
     bottom: 5rem;
+    width: 100%;
 }
 
 .containerDetail {
@@ -21,12 +22,28 @@
 @media only screen and (min-width:720px) {
     .carrier__container {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sliderPosition {
+        position: absolute;
+        bottom: -1rem;
+        width: 90%;
+    }
+ }
+
+
+ @media only screen and (min-width:1300px) {
+    .carrier__container {
+        display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
     .sliderPosition {
         position: unset;
+        width: unset;
     }
  }
 

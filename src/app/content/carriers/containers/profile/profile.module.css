@@ -65,11 +65,13 @@
 
 @media only screen and (min-width:720px) {
     .informationContainer {
-        width: 80%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 
     .socialMediaWrapper {
-        margin-bottom: 0;
+        margin-bottom: 16rem;
     }
     
     .informationContainer2 {
