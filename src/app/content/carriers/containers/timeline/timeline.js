@@ -35,6 +35,36 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date}) {
 
     </VerticalTimelineElement>
 
+    <VerticalTimelineElement
+        contentStyle={{background: `${backgroundColor}`, color: '#fff'}}
+        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
+        date={date}
+        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
+        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
+      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys" image={image} />
+
+    </VerticalTimelineElement>
+
+    <VerticalTimelineElement
+        contentStyle={{background: `${backgroundColor}`, color: '#fff'}}
+        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
+        date={date}
+        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
+        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
+      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys" image={image} />
+
+    </VerticalTimelineElement>
+
+    <VerticalTimelineElement
+        contentStyle={{background: `${backgroundColor}`, color: '#fff'}}
+        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
+        date={date}
+        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
+        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
+      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys" image={image} />
+
+    </VerticalTimelineElement>
+
     
 
     
