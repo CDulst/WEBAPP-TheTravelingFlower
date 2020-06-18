@@ -15,8 +15,10 @@ function Settings() {
   <>
   <div className = {style.container}>
   <div className = {style.wrapper}>
+
   <h2 className = {style.title}> Settings</h2>
   <Account />
+
   <Logout/>
   </div>
   </div>
