@@ -18,13 +18,8 @@ function InvolvementSlider({item1, item2, text, handleChange, orientation, heigh
 <div className={style.slider__container}>
   <div className={style.slider}>
     <p className={style.paragraph}>{item1}</p>
-    {direction === "desktop" ? 
-    <Slider style={{height: `${height}`}} orientation="vertical" value={value} onChange={handleChange} />
-    :
-    <Slider orientation="horizontal" value={value} onChange={handleChange} />
     
-    }
-    
+    <Slider style={{height: `${height}`}} orientation={orientation} value={value} onChange={handleChange} />
     <p className={style.paragraph}>{item2}</p>
   </div>
   <p>{text}</p>
