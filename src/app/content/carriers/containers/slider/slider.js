@@ -18,7 +18,12 @@ function Slider({onchange}) {
       <img src={person} className={style.secondNextCarrier} alt="person"></img>
     </div>
     <div className={style.sliderComponent}>
-      <InvolvementSlider />
+      <div className={style.desktop}>
+      <InvolvementSlider orientation="vertical" height="60vh" />
+      </div>
+      <div className={style.mobile}>
+      <InvolvementSlider orientation="horizontal"/>
+      </div>
     </div>
     </div>
   </>
