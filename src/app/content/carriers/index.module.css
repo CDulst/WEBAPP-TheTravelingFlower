@@ -6,3 +6,10 @@
     position: fixed;
     bottom: 5rem;
 }
+
+@media only screen and (min-width:720px) {
+    .carrier__container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+ }
