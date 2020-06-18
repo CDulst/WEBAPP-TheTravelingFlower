@@ -34,3 +34,20 @@
 .secondNextCarrier {
     width: 5%;
 }
+
+@media only screen and (min-width:720px) {
+    .currentCarrier {
+        width: 6rem;
+  
+    }
+
+    .secondNextCarrier {
+        width: 3rem;
+    }
+
+    .nextCarrier {
+        width: 4rem;
+
+        
+    }
+ }
