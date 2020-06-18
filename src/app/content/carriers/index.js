@@ -1,6 +1,4 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-import ROUTES from "../../../routes/index";
+import React, {useState} from 'react';
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
 import {Route,Switch} from "react-router-dom";
@@ -13,8 +11,22 @@ import TimeLine from './containers/timeline/timeline';
 import Discover from './containers/discover/discover';
 import Profile from './containers/profile/profile'
 import pic from '../../../assets/carrier/carrier.png'
+import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
+
+const Map = ReactMapboxGl({
+  accessToken:
+    'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
+    
+    minZoom: [2.7]
+});
 
 function Carriers() {
+
+  const [viewport] = useState({
+    zoom: [4],
+    pitch:[60]
+  
+})
     useEffect(() => {
         uiStore.setPage("carriers")
       });
@@ -22,7 +34,11 @@ function Carriers() {
   <>
   <Switch>
   <Route path = "/carriers/detail">
-  <p> detail </p>
+  <div className={style.containerDetail}>
+  <Map className={style.mapbox3} {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
+  <TimeLine />
+  </div>
+  
   </Route>
   <Route path = "/carriers">
   <div className={style.carrier__container}>

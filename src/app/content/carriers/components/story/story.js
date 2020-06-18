@@ -12,7 +12,7 @@ function Story({title, date, location, content, image}) {
         <p>{`${location} ${date}`}</p>
         <h2>{title}</h2>
       </div>
-      <img src={image} alt="journeyPhoto"></img>
+      <img className={style.storyPhoto} src={image} alt="journeyPhoto"></img>
       <p>{content}</p>
     </div>
   </>

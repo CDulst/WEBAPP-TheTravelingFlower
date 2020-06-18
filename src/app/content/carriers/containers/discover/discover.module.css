@@ -26,13 +26,13 @@
 
 @media only screen and (min-width:720px) {
    .mapboxButton {
-       height: 100vh;
+       height: 100%;
        width: 40vw;
        top: 0;
    }
 
    .mapbox2 {
     width: 40vw;
-    height: 100vh;
+    height: 100%;
    }
 }
