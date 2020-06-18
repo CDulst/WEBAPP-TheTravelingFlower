@@ -13,6 +13,7 @@ function Story({title, date, location, content, image}) {
         <h2 className={style.story__title}>{title}</h2>
       </div>
       <img className={style.storyPhoto} src={image} alt="journeyPhoto"></img>
+      <img className={style.storyPhoto} src={image} alt="journeyPhoto"></img>
       <p>{content}</p>
     </div>
   </>

@@ -19,6 +19,17 @@
     height: 13rem;
 }
 
+
+.detailTitle {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px var(--colorH3Dark) solid;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-bottom: 2rem;
+    color: var(--colorH3Dark);
+}
+
 @media only screen and (min-width:720px) {
     .carrier__container {
         display: flex;

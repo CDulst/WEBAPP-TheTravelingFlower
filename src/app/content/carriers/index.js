@@ -38,7 +38,8 @@ function Carriers() {
   <Route path = "/carriers/detail">
   <div className={style.containerDetail}>
   <Map className={style.mapbox3} {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
-  <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={pic} date="2020 - present 19u20" />
+  <h2 className={style.detailTitle}>Tom's Journey</h2>
+  <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={pic} date="Hello test" borderTop="3px" />
   </div>
   
   </Route>
