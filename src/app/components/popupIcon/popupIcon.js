@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './popupIcon.module.css';
-import {useEffect} from 'react';
 
 const PopupIcon = ({icon, direction, text, click}) => {
    

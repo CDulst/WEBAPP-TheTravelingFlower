@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import Progressbar from '../../../../components/progressbar/progressbar';
 import style from './progress.module.css'
 import indicator from '../../../../../assets/challenge/indicatorChallenge.png'

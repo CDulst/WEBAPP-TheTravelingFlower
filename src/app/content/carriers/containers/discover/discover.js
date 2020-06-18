@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import style from './discover.module.css'
 import Button from '../../../../components/button/button';
 import {Link} from "react-router-dom";
-import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
     accessToken:

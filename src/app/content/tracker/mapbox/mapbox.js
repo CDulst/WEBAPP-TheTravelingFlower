@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';

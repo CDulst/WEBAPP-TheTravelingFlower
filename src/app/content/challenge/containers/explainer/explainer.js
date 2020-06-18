@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import style from './explainer.module.css';
 import Involvement from '../involvement/involvement';
 import InvolvementSlider from '../../components/involvementSlider/involvementSlider';

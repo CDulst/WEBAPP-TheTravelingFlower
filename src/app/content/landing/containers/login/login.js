@@ -13,7 +13,7 @@ function Login() {
   <>
   <div className = {style.login__container}>
   <div className = {style.login}>
-  <img src = {logo}/>
+  <img src = {logo} alt="logo"/>
   <h2 className = {style.title}> Time to connect !</h2>
   <form className = {style.form}>
   <Field value = "Email" icon = {email} />

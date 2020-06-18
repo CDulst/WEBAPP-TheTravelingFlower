@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import logo from '../../../../../assets/logo.svg'
 import email from '../../../../../assets/icons/email.svg'
 import password from '../../../../../assets/icons/password.svg'
 import name from '../../../../../assets/icons/name.svg'

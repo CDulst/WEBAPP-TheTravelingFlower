@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import ROUTES from "../../../routes/index";
 import NavItem from "./containers/navItem/navItem";
 import Carrier from "../../../assets/navbar/carrier.svg";
@@ -12,7 +11,6 @@ import ChallengeActive from "../../../assets/navbar/challengeSelected.svg"
 import CarrierActive from "../../../assets/navbar/carrierSelected.svg"
 import {useObserver} from 'mobx-react-lite';
 import style from "./index.module.css";
-import {useEffect} from 'react';
 
 
 

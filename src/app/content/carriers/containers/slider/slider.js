@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import style from './slider.module.css'
 import InvolvementSlider from '../../../challenge/components/involvementSlider/involvementSlider';
 import person from '../../../../../assets/carrier/carrier.png'

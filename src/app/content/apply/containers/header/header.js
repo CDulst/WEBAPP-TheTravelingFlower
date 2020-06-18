@@ -8,7 +8,7 @@ function Header({img,title,text}) {
   <>
   {
    ( img ?
-  <img className = {style.image} src = {img}/>
+  <img className = {style.image} src = {img} alt="title_image"/>
   :
   <>
   </>

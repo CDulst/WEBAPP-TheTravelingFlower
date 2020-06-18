@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
 import arrow from '../../../../../assets/settings/arrow.svg'
 import Button from '../../../../components/button/button'
 import style from "./setting.module.css"
 
 
 function Setting({title,value,edit}) {
-  const [editing,setEditing] = useState(false);
+  const [editing] = useState(false);
   return (
   <>
   <div className = {style.container}>

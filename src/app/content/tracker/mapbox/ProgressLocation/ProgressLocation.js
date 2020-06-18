@@ -4,7 +4,7 @@ import Progress from '../../../../components/progressbar/progressbar'
 import indicator from '../../../../../assets/tracker/pink_flower.png'
 import start from '../../../../../assets/tracker/start.png'
 import finish from '../../../../../assets/tracker/finish.png'
-import textballoon from '../../../../../assets/tracker/text_balloon.svg'
+
 
 const ProgressLocation = () => {
     return (

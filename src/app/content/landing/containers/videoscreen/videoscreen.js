@@ -21,7 +21,7 @@ function VideoScreen() {
      <source src = "/videos/promo.mp4" type="video/mp4"/>
   </video>
   </div>
-  <img className = {style.logo} src = {logo}/>
+  <img className = {style.logo} src = {logo} alt="logo"/>
   <div className = {style.button__container}>
   <div className = {style.buttons}>
   <Link to="/join" onClick = {e => handleClick(e)} ><Button value = "GET STARTED" type = "secondary"/></Link>

@@ -1,8 +1,6 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css'
-import test from '../../../../../assets/carrier/carrier.png'
 import style from './timeline.module.css'
 import Story from '../../components/story/story';
 import image from '../../../../../assets/feed/post/content pics/example.png'
