@@ -8,10 +8,10 @@
 }
 
 .progressbarLocation {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     left: 4%;
-    bottom: 10rem;
+    bottom: 7rem;
 }
 
 .iconMessage {

@@ -2,31 +2,40 @@
     width: 90vw;
 }
 
-.indicator {
-    position: relative;
-    
-    margin-left: -3.2rem;
-    bottom: 5rem;
-    height: 0rem;
+
+
+.textballoon, .indicator {
+    display: none;
 }
 
-.textballoon {
-    background-image: url('../../../../../assets//tracker/text_balloon.svg');
-    width: 10rem;
-    background-repeat: no-repeat;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: 100%;
-    position: absolute;
-    bottom:0rem;
-    left: 5rem;
-}
 
 @media only screen and (min-width:720px) {
     .progress {
         width: 60vw;
+    }
+
+    .indicator {
+        display: block;
+        position: relative;
+        
+        margin-left: -3.2rem;
+        bottom: 5rem;
+        height: 0rem;
+    }
+
+    .textballoon {
+        display: block;
+        background-image: url('../../../../../assets//tracker/text_balloon.svg');
+        width: 10rem;
+        background-repeat: no-repeat;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 100%;
+        position: absolute;
+        bottom:0rem;
+        left: 5rem;
     }
 
 
