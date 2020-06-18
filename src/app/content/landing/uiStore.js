@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {observable,action,decorate,configure} from "mobx"
 
 
@@ -26,5 +26,5 @@ decorate(UILanding,{
 
 configure({enforceActions: 'observed'});
 
-const uiLanding = new UILanding
+const uiLanding = new UILanding()
 export default uiLanding;

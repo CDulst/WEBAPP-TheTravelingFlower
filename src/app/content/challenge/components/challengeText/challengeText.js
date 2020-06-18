@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import style from './challengeText.module.css'
 
 
@@ -11,7 +10,7 @@ function ChallengeText({icon,title,flag,text}) {
   {/*<img src = {icon}/>*/}
   <div>
   <p>{title}</p>
-  <img src = {flag}/>
+  <img src = {flag} alt="flag"/>
   </div>
   <p>{text}</p>
   </div>

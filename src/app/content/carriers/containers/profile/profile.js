@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import style from './profile.module.css'
 import instagram from '../../../../../assets/social/instagram.svg'
 import twitter from '../../../../../assets/social/twitter.svg'

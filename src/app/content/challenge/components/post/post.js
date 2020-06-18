@@ -1,12 +1,11 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React from 'react'
 import style from "./post.module.css"
 
 
 function Post({pic, user,social,text,content}) {
   return (
   <>
-  <div class = {style.content}>
+  <div className = {style.content}>
   <div className = {style.container}>
   <div className = {style.profileWrapper}>
   <img src = {pic} alt = "pic"/>

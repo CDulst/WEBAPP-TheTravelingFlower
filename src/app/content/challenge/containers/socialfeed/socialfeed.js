@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import close from "../../../../../assets/feed/close.svg"
 import FeedHeader from "../../components/feedHeader/feedHeader";
 import Post from "../../components/post/post"

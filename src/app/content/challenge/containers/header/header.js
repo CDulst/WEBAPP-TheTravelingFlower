@@ -9,7 +9,7 @@ function Header({hashtags}) {
   return (
   <>
   <Link to = "challenge/explainer" className = {style.question}>
-  <img classname = {style.questionImage} src = {question} alt = "question"/>
+  <img className = {style.questionImage} src = {question} alt = "question"/>
   </Link>
   <div className={style.header}>
   <img className = {style.image} src = {icon} alt = "icon"/>

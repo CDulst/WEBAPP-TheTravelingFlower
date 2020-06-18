@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
-import {useEffect,useState} from 'react';
+import {useEffect} from 'react';
 import uiStore from '../../../UiStore';
 import VideoScreen from './containers/videoscreen/videoscreen';
 import Login from './containers/login/login';
@@ -26,7 +26,7 @@ function Landing() {
   <VideoScreen/>
   <div></div>
   <div className =  {( uiLanding.uiOut ? `${style.rightSide} ${style.out}` : !uiLanding.uiOut ? `${style.rightSide} ${style.in}` : style.rightSide )}>
-  <a onClick = {e => handleClick(e)}><img className = {style.arrow} src = {arrow}/></a>
+  <p onClick = {e => handleClick(e)}><img className = {style.arrow} src = {arrow} alt="arrow"/></p>
   <Switch>
   <Route path = "/join">
   <Register/>

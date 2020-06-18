@@ -3,7 +3,6 @@ import style from './progressBar.module.css';
 import lineInactive from '../../../../../assets/apply/lineInactive.png'
 import lineActive from '../../../../../assets/apply/lineActive.png'
 import activeStep from '../../../../../assets/apply/activeStep.svg'
-import doneStep from '../../../../../assets/apply/doneStep.png'
 import inactiveStep from '../../../../../assets/apply/inactiveStep.svg'
 
 
@@ -12,24 +11,24 @@ function ProgressBar({type}) {
   <>
   <div className = {style.progressWrapper}>
   <h2 className = {style.hidden}> ProgressBar </h2>
-  <img className = {style.line} src = {activeStep} />
+  <img className = {style.line} src = {activeStep} alt="active step" />
   <div className = {style.stepWrapper}>
-  <img  src = {inactiveStep} />
+  <img  src = {inactiveStep} alt="inactive step" />
   <p className = {style.step}> Step 1 </p>
   </div>
-  <img className = {style.line} src = {lineActive} />
+  <img className = {style.line} src = {lineActive} alt="line active" />
   <div className = {style.stepWrapper}>
-  <img src = {inactiveStep} />
+  <img src = {inactiveStep} alt="inactive step two" />
   <p className = {style.step}> Step 2 </p>
   </div>
-  <img className = {style.line} src = {lineInactive} />
+  <img className = {style.line} src = {lineInactive} alt="line inactive" />
   <div className = {style.stepWrapper}>
-  <img src = {inactiveStep} />
+  <img src = {inactiveStep} alt="inactive step three" />
   <p className = {style.step}> Step 3 </p>
   </div>
-  <img className = {style.line} src = {lineInactive} />
+  <img className = {style.line} src = {lineInactive} alt="lineInactive step two" />
   <div className = {style.stepWrapper}>
-  <img src = {inactiveStep} />
+  <img src = {inactiveStep} alt = "inactive step four" />
   <p className = {style.step}> Step 4 </p>
   </div>
   </div>

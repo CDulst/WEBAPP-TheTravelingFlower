@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import Setting from "../setting/setting";
-import Logout from "../logout/logout";
 import profileExample from "../../../../../assets/settings/profileExample.svg";
 import style from "./account.module.css";
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {Play} from "../../../../../assets/Play.svg"
 import style from './challengeVideo.module.css'
 
 

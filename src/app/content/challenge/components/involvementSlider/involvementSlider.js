@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {Link} from "react-router-dom";
 import Slider from '@material-ui/core/Slider'
 import style from './involvementSlider.module.css'
 

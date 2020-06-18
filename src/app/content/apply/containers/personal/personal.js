@@ -5,9 +5,6 @@ import FullNameIcon from "../../../../../assets/icons/name.svg"
 import EmailIcon from "../../../../../assets/icons/email.svg"
 import questionMark from "../../../../../assets/icons/popup.svg"
 import identityImage from "../../../../../assets/icons/identity.svg"
-import PopUpImage from "../../../../../assets/apply/identityPopup.svg"
-
-import Popup from "../../../../components/popup/popup"
 
 
 

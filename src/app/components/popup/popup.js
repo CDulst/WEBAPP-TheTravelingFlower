@@ -9,7 +9,7 @@ function Popup({title,text,image}) {
 <div className={style.popupWrapper}>
   <p className={style.popup__title}> {title} </p>
   <p className={style.popup__paragraph}> {text} </p>
-  <img className={style.popup__image} src = {image}/>
+  <img className={style.popup__image} src = {image} alt="popup icon"/>
   <Button value = "I got it" type = "secondary"/>
 </div>
   </>

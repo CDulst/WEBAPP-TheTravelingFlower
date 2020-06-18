@@ -1,10 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import line from "../../../../../assets/challenge/line.svg";
-import icon from "../../../../../assets/challenge/icon.svg";
-import flag from "../../../../../assets/challenge/flag.svg";
 import SwitchButton from "../../../../components/switch/switch";
-import ChallengeText from "../../components/challengeText/challengeText";
 import ChallengeVideo from "../../components/challengeVideo/challengeVideo";
 import style from './assignment.module.css'
 

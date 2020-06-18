@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
 import {Route,Switch} from "react-router-dom";
-import ChallengeText from '../challenge/components/challengeText/challengeText';
-import icon from '../../../assets/challenge/flag.svg'
 import flag from "../../../assets/challenge/flag.svg";
 import Slider from './containers/slider/slider';
 import style from './index.module.css'
@@ -11,9 +9,8 @@ import TimeLine from './containers/timeline/timeline';
 import Discover from './containers/discover/discover';
 import Profile from './containers/profile/profile'
 import pic from '../../../assets/carrier/carrier.png'
-import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
 
-import carrierPhoto from '../../../assets/feed/post/content pics/example.png'
 
 const Map = ReactMapboxGl({
   accessToken:
