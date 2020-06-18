@@ -8,6 +8,12 @@
     
 }
 
+.desktop {
+    display: none;
+}
+
+
+
 .sliderComponent {
     width: 100%;
 }
@@ -63,6 +69,14 @@
     .carriers {
         display: flex;
         flex-direction: column;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
     }
 
  }
