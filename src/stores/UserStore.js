@@ -8,11 +8,7 @@ class UserStore {
         this.users = [];
     }
 
-    getUsers = async () => {
-    await this.userService.getUsers();
-    console.log(this.users);
-    }
-
+   
 
     addUser (user) {
     this.users.push(user);

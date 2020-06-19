@@ -9,6 +9,9 @@ class ApplicationStore {
     addApplication (application) {
         this.applications.push(application);
     }
+    findApplicationById(id){
+        return this.applications.find(application => application.id === id);
+    }
 }
 
 decorate(ApplicationStore, {

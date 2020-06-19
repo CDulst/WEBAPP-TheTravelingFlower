@@ -1,18 +1,25 @@
 import { decorate, observable, action } from "mobx";
+import CarrierService from "../services/carrierService";
 
 class CarrierStore {
     constructor(rootStore) {
         this.rootStore = rootStore;
-        this.cariers = []
+        this.carrierService = new CarrierService (this.rootStore.firebase);
+        this.carriers = [];
     }
 
     addCarrier(carrier) {
-        this.cariers.push(carrier);
+        this.carriers.push(carrier);
+        console.log(this.carriers);
+    }
+
+    findCarrierById(id){
+        return this.carriers.find(carrier => carrier.id === id);
     }
 }
 
 decorate(CarrierStore, {
-    cariers: observable,
+    carriers: observable,
     addCarrier: action,
     rootStore: observable
 })
