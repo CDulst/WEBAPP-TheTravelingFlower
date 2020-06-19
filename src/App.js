@@ -7,6 +7,7 @@ import Challenge from "./app/content/challenge"
 import Carriers from "./app/content/carriers"
 import Settings from './app/content/settings'
 import Sidebar from './app/content/sidebar'
+import rootStore from "./stores/index";
 import uiStore from './UiStore'
 import { Switch, Route } from "react-router-dom";
 import {useObserver} from 'mobx-react-lite';
