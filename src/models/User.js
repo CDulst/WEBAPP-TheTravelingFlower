@@ -1,5 +1,5 @@
 import { configure, decorate, observable, action } from "mobx";
-
+import {rootStore} from "../stores/index.js";
 class User {
     constructor({id, email, name, phonenumber, avatar}) {
         this.id = id;
@@ -9,6 +9,7 @@ class User {
         if(!avatar) {
             this.avatar = `https://avatars.dicebear.com/v2/identicon/${name}.svg`;
         }
+        rootStore.userStore.addUser(this);
     }
 }
 
@@ -31,12 +32,15 @@ const userConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      return new User({
-        id: snapshot.id,
-        email: data.email,
-        name: data.name,
-        phone: data.phone,
-      });
+      if (!rootStore.userStore.findUserById(snapshot.id)){
+        return new User({
+          id: snapshot.id,
+          email: data.email,
+          name: data.name,
+          phonenumber: data.phone,
+        });
+      }
+     
     }
   };
 

@@ -11,7 +11,7 @@ function Progress({title, start, end, current, percentage}) {
   
   <div className={style.progress}>
     <div>
-    <img style={{left: `${percentage}%`}} className={style.indicator} src={indicator} alt="indicator"></img>
+    <img style={{left: `${percentage}%`}} className={style.indicator} src="https://i.ibb.co/9sdqFX8/indicator-Challenge.png"  alt="indicator"></img>
     <p>{current}</p>
     </div>
     <p className={style.progressTitle}>{title}</p>

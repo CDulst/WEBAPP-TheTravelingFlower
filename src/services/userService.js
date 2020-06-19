@@ -3,6 +3,7 @@ import {userConverter} from "../models/User";
 class UserService {
   constructor(firebase) {
     this.db = firebase.firestore();
+    this.realtimeUpdates()
   }
   /*
   create = async group => {
@@ -11,17 +12,21 @@ class UserService {
     return groupRef;
   };
 */
-  
+
+  realtimeUpdates = async () =>{
+    await this.db.collection("Users")
+    .withConverter(userConverter)
+    .onSnapshot(this.getUsers);
+ 
+  }
 
   getUsers = async () => {
-    console.log(this.db)
-    return await this.db
-    .collection("users")
+    const users = await this.db
+    .collection("Users")
     .withConverter(userConverter)
     .get();
 
-    
-
+    return users.docs.map(doc => doc.data());
 
   };
 
