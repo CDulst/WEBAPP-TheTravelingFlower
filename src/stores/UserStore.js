@@ -6,19 +6,15 @@ class UserStore {
         this.rootStore = rootStore;
         this.userService = new UserService (this.rootStore.firebase);
         this.users = [];
+        this.getUsers();
     }
 
     getUsers = async () => {
-
+       const users = await this.userService.getUsers();
+       console.log(users);
+       
     }
 
-    createUserFromJson = async () => {
-
-    }
-
-    findUserById = (userid) => {
-
-    }
 
     addUser (user) {
         this.users.push(user);
