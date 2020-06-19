@@ -1,6 +1,6 @@
 import { decorate, observable } from "mobx";
 
-class ChallengeModel {
+class Challenge {
     constructor({id, title, hashtag, description, videoSource, donationGoal = 0, currentSum = 0, routeId}) {
         this.id = id;
         this.title = title;
@@ -13,7 +13,7 @@ class ChallengeModel {
     }
 }
 
-decorate(ChallengeModel, {
+decorate(Challenge, {
     id: observable,
     title: observable,
     hashtag: observable,
@@ -24,4 +24,4 @@ decorate(ChallengeModel, {
     routeId: observable
 })
 
-export default ChallengeModel;
+export default Challenge;

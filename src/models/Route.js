@@ -1,6 +1,6 @@
 import { decorate, observable } from "mobx";
 
-class RouteModel {
+class Route {
     constructor({id, startCoordinate, endCoordinate, startName, endName, kmDone = 0, carrierId, status, distance}) {
         this.id = id;
         this.startCoordinate = startCoordinate;
@@ -14,7 +14,7 @@ class RouteModel {
     }
 }
 
-decorate(RouteModel, {
+decorate(Route, {
     id: observable,
     startCoordinate: observable,
     endCoordinate: observable,
@@ -27,4 +27,4 @@ decorate(RouteModel, {
     
 })
 
-export default RouteModel;
+export default Route;

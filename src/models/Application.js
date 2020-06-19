@@ -1,12 +1,12 @@
 import { decorate, observable } from "mobx";
 
-class ApplicationModel {
+class Application {
     constructor({id, name, email, identification, age, streetName, number, postalCode, country, route}) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.identification = identification;
-        this. age = age;
+        this.age = age;
         this.streetName = streetName;
         this.number = number;
         this.postalCode = postalCode;
@@ -15,7 +15,7 @@ class ApplicationModel {
     }
 }
 
-decorate(ApplicationModel, {
+decorate(Application, {
     id: observable,
     name: observable,
     email: observable,
@@ -28,4 +28,4 @@ decorate(ApplicationModel, {
     route: observable
 })
 
-export default ApplicationModel;
+export default Application;

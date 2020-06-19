@@ -1,6 +1,6 @@
 const { decorate, observable } = require("mobx");
 
-class JourneyModel {
+class Journey {
     constructor({id, location, title, images=[], text}) {
         this.id = id;
         this.location = location;
@@ -13,7 +13,7 @@ class JourneyModel {
     }
 }
 
-decorate(JourneyModel, {
+decorate(Journey, {
     id: observable,
     location: observable,
     title: observable,
@@ -21,4 +21,4 @@ decorate(JourneyModel, {
     text: observable
 })
 
-export default JourneyModel;
+export default Journey;

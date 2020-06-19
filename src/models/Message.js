@@ -1,6 +1,6 @@
 import { decorate, observable } from "mobx";
 
-class MessageModel {
+class Message {
     constructor({id, userId, content}) {
         this.id = id;
         this.userId = userId;
@@ -8,10 +8,10 @@ class MessageModel {
     }
 }
 
-decorate(MessageModel, {
+decorate(Message, {
     id: observable,
     userId: observable,
     content: observable
 })
 
-export default MessageModel;
+export default Message;

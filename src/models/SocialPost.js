@@ -1,6 +1,6 @@
 import { decorate, observable } from "mobx";
 
-class SocialPostModel {
+class SocialPost {
     constructor({id, title, pic, userName, type, content, hashTag}){
         this.id = id;
         this.title = title;
@@ -12,7 +12,7 @@ class SocialPostModel {
     }
 }
 
-decorate(SocialPostModel, {
+decorate(SocialPost, {
     id: observable,
     title: observable,
     pic: observable,
@@ -22,4 +22,4 @@ decorate(SocialPostModel, {
     hashTag: observable
 })
 
-export default SocialPostModel;
+export default SocialPost;

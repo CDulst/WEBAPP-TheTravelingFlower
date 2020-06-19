@@ -1,6 +1,6 @@
 import { configure, decorate, observable, action } from "mobx";
 
-class UserModel {
+class User {
     constructor({id, email, name, phonenumber, avatar}) {
         this.id = id;
         this.email = email;
@@ -12,7 +12,7 @@ class UserModel {
     }
 }
 
-decorate(UserModel, {
+decorate(User, {
     id: observable,
     email: observable,
     name: observable,
@@ -20,5 +20,25 @@ decorate(UserModel, {
     avatar: observable
     
 })
+
+const userConverter = {
+    toFirestore: function(user) {
+      return {
+        email: user.email,
+        name: user.name,
+        phone: user.phone
+      };
+    },
+    fromFirestore: function(snapshot, options) {
+      const data = snapshot.data(options);
+      return new User({
+        id: snapshot.id,
+        name: data.name,
+        pic: data.pic,
+        ownerId: data.ownerId,
+        creationDate: data.creationDate
+      });
+    }
+  };
 
 export default UserModel;

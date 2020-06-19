@@ -1,6 +1,6 @@
 const { decorate, observable, action } = require("mobx");
 
-class CarrierModel {
+class Carrier {
     constructor({id, name, journeys=[], avatar, age, transport, bio, flag, routeId}){
         this.id = id;
         this.name = name;
@@ -20,7 +20,7 @@ class CarrierModel {
     }
 }
 
-decorate(CarrierModel, {
+decorate(Carrier, {
     id: observable,
     name: observable,
     journeys: observable,
@@ -34,4 +34,4 @@ decorate(CarrierModel, {
     linkJourney: action
 })
 
-export default CarrierModel;
+export default Carrier;
