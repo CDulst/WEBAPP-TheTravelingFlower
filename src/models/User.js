@@ -41,4 +41,4 @@ const userConverter = {
     }
   };
 
-export default UserModel;
+export default User;
