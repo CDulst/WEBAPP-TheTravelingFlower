@@ -28,7 +28,7 @@ function Landing() {
   <div className =  {( uiLanding.uiOut ? `${style.rightSide} ${style.out}` : !uiLanding.uiOut ? `${style.rightSide} ${style.in}` : style.rightSide )}>
   <p onClick = {e => handleClick(e)}><img className = {style.arrow} src = {arrow} alt="arrow"/></p>
   <Switch>
-  <Route path = "/build/join">
+  <Route path = "/join">
   <Register/>
   </Route>
   <Route path = "/">
