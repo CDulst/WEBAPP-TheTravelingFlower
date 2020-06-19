@@ -1,4 +1,4 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, action } from "mobx";
 
 class UserStore {
     constructor(rootStore) {

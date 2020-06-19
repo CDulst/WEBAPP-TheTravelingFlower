@@ -9,7 +9,9 @@ import RouteStore from './RouteStore';
 import ServerValuesStore from './ServerValuesStore';
 import SocialPostStore from './SocialPostStore';
 import UserStore from './UserStore';
+import { configure } from 'mobx';
 configure({enforceActions: "observed"});
+
 class RootStore {
     constructor(){
         this.applicationStore = new ApplicationStore(this);
