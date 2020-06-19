@@ -1,5 +1,5 @@
 import "firebase/firestore";
-
+import {userConverter} from "../models/User";
 class UserService {
   constructor(firebase) {
     this.db = firebase.firestore();
@@ -15,11 +15,12 @@ class UserService {
 
   getUsers = async () => {
     console.log(this.db)
-    const snapshot = await this.db
-    .collection("Users")
+    return await this.db
+    .collection("users")
+    .withConverter(userConverter)
     .get();
 
-    return await snapshot.docs[0].data();
+    
 
 
   };

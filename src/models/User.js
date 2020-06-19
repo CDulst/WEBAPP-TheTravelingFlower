@@ -21,6 +21,24 @@ decorate(User, {
     
 })
 
+const userConverter = {
+    toFirestore: function(user) {
+      return {
+        email: user.email,
+        name: user.name,
+        phone: user.phone
+      };
+    },
+    fromFirestore: function(snapshot, options) {
+      const data = snapshot.data(options);
+      return new User({
+        id: snapshot.id,
+        email: data.email,
+        name: data.name,
+        phone: data.phone,
+      });
+    }
+  };
 
-
+export {userConverter};
 export default User;
