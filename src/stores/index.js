@@ -7,10 +7,12 @@ import MessageStore from './MessageStore';
 import RouteStore from './RouteStore';
 import ServerValuesStore from './ServerValuesStore';
 import SocialPostStore from './SocialPostStore';
+import UiStore from './UiStore';
 import UserStore from './UserStore';
 
 import * as firebase from "firebase/app";
 import { configure } from 'mobx';
+
 
 configure({enforceActions: "observed"});
 
@@ -36,6 +38,7 @@ class RootStore {
         this.socialPostStore = new SocialPostStore(this);
         this.userStore = new UserStore(this);
         this.journeyStore = new JourneyStore(this);
+        this.uiStore = new UiStore(this);
 
     }
 }

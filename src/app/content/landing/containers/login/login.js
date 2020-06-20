@@ -6,6 +6,7 @@ import Field from '../../../../components/field/field'
 import Button from '../../../../components/button/button'
 import style from './login.module.css'
 import {Link} from "react-router-dom"
+import {loginStore} from "../../stores/loginStore"
 
 
 function Login() {
@@ -16,8 +17,8 @@ function Login() {
   <img src = {logo} alt="logo"/>
   <h2 className = {style.title}> Time to connect !</h2>
   <form className = {style.form}>
-  <Field value = "Email" icon = {email} />
-  <Field value = "Password" icon = {password}/> 
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} />
+  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError}/> 
   </form>
   <Button value = "LOG IN" type = "secondary" disable = "true"/>
   <div className = {style.textContainer}>
