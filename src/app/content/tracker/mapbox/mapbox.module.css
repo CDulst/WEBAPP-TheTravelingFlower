@@ -42,6 +42,10 @@
     bottom: 7rem;
 }
 
+.containerPopup {
+    border-top: solid var(--colorSecondary) 3px;
+}
+
 .iconMessage {
     position: absolute;
     z-index: 3;

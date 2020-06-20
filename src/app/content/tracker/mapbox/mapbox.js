@@ -104,7 +104,7 @@ const Mapbox = () => {
 
             {checkpoints && uiTracker.selectedCarrier ? ( 
         
-                <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                <Popup className={style.containerPopup} coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
                    <h1 className={style.popupDestinations}>{`${checkpoints.startName}-${checkpoints.endName}`}</h1>
                    <div className={style.personalInformation}>
                    <img src={uiTracker.selectedCarrier.pic} className={style.popUpAvatar} alt={`${uiTracker.selectedCarrier.name}`}></img>
