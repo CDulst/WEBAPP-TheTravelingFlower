@@ -7,34 +7,52 @@ import Button from '../../../../components/button/button'
 import style from './login.module.css'
 import {Link} from "react-router-dom"
 import {loginStore} from "../../stores/loginStore"
+import { useObserver } from 'mobx-react-lite';
 
 
 function Login() {
 
+  const onClickhandle = (e) => {
+  loginStore.login();
+  }
 
   const onEmailChange = (e) =>{
+    loginStore.emailError = "";
     loginStore.email = e.currentTarget.value;
+    loginStore.checkEnable()
     console.log(loginStore.email);
   }
 
   const OnPasswordChange = (e) =>{
+    loginStore.passwordError = "";
     loginStore.password = e.currentTarget.value;
+    loginStore.checkEnable()
   }
 
 
 
   
-  return (
+  return useObserver(() => (
   <>
   <div className = {style.login__container}>
   <div className = {style.login}>
   <img src = {logo} alt="logo"/>
   <h2 className = {style.title}> Time to connect !</h2>
   <form className = {style.form}>
-  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange} />
+  { loginStore.emailError ?
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange}/>
+  :
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange} correct = "true"/>
+  }
   <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError} onChange = {OnPasswordChange}/> 
   </form>
-  <Button value = "LOG IN" type = "secondary" disable = "true"/>
+  {
+    (loginStore.enableButton ?
+    <Button value = "LOG IN" type = "secondary" onclick = {onClickhandle} />
+    :
+    <Button value = "LOG IN" type = "secondary" onclick = {onClickhandle} disable = "true"/>
+    )
+  }
   <div className = {style.textContainer}>
   <p> Don't have an account ? <Link to= "/join"> Sign Up </Link></p>
   <p className = {style.centerPara}> Want to be a carrier </p>
@@ -42,7 +60,7 @@ function Login() {
   </div>
   </div>
   </>
-  );
+  ));
 }
 
 export default Login;

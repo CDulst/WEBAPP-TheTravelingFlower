@@ -13,6 +13,7 @@ import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
 import carrierPic from '../../../../assets/settings/profileExample.svg'
 import flag from '../../../../assets/challenge/flag.svg'
+import {rootStore} from "../../../../stores/index";
 
 const store = new DataStore();
 
@@ -43,11 +44,12 @@ const Mapbox = () => {
           
         })
 
+        let currentCarrier;
         if(checkpoints) {
-            const result = carrierStore.findCarrierById(checkpoints.carrierId)
-            console.log(result)
-        
+            let result = carrierStore.findCarrierById(checkpoints.carrierId);
+            currentCarrier = result
         }
+
     
 
         const handleOnClick = (e) => {
@@ -96,16 +98,17 @@ const Mapbox = () => {
                 </>
                 ))}
 
-            {checkpoints ? (
+            {checkpoints ? ( 
+        
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{checkpoints.carrierId}</h1>
+                   <h1>{currentCarrier.name}</h1>
                    <div className={style.personalInformation}>
-                   <img src={carrierPic} className={style.popUpAvatar} alt="carrierPhoto"></img>
+                   <img src={currentCarrier.pic} className={style.popUpAvatar} alt={`${currentCarrier.name}`}></img>
                    <div className={style.righterpopup}>
-                   <p>Tom Van den Haag</p>
-                   <p>23 years old</p>
-                   <p>Bike</p>
-                   <img src={flag} alt="flag"></img>
+                   <p>{currentCarrier.name}</p>
+                   <p>{currentCarrier.age}</p>
+                    <p>{currentCarrier.transport}</p>
+                   <img className={style.popupFlag} src={currentCarrier.flag} alt="flag"></img>
                    </div>
                    </div>
 

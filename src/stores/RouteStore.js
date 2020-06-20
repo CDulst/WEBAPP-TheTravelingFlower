@@ -9,10 +9,6 @@ class RouteStore {
         this.routes = [];
     }
 
-    getRoutes() {
-        this.routeService.realtimeUpdates();
-    }
-
     addRoute(route) {
         this.routes.push(route);
         

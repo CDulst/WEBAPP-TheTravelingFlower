@@ -16,9 +16,6 @@ class CarrierStore {
     ggetCarrierById = id => this.carriers.find(carrier => carrier.id === id);
 
     findCarrierById(id){
-        console.log(id)
-        console.log(this.carriers[0].id)
-        console.log(this.carriers)
         return this.carriers.find(carrier => carrier.id === id);
         
     }
