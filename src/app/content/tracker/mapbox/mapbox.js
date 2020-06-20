@@ -9,6 +9,7 @@ import message from '../../../../assets/icons/message_white.svg'
 import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
+import {useObserver} from 'mobx-react-lite';
 import {rootStore } from '../../../../stores/index';
 import {useEffect} from "react";
 
@@ -26,11 +27,8 @@ const Map = ReactMapboxGl({
 
 const Mapbox = () => {
    
-    useEffect(() => {
-        rootStore.routeStore.routes.forEach(route=> {
-            console.log(route.endCoordinate.Ac);
-        })
-      });
+ 
+    
 
     const [viewport] = useState({
         containerStyle:{
@@ -46,8 +44,18 @@ const Mapbox = () => {
           }
     
 
-    return (
+          return useObserver(() => (
        
+        <>
+        {
+  
+            rootStore.routeStore.routes.forEach(route => {
+            console.log(route);
+            })
+           
+            
+            
+        }
         <div className={style.secondContainer}>
 
 
@@ -76,8 +84,9 @@ const Mapbox = () => {
            
             
         </div>
+        </>
     
-    );
+    ));
 };
 
 export default Mapbox;
