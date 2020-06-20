@@ -9,11 +9,13 @@ import message from '../../../../assets/icons/message_white.svg'
 import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
-import { rootStore } from '../../../../stores';
+import {rootStore } from '../../../../stores/index';
+import {useEffect} from "react";
 
 
 const Map = ReactMapboxGl({
 
+  
     
     accessToken:
       'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
@@ -23,13 +25,12 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
-    const  {routeStore} = useStore()
-
-
-    routeStore.routes.forEach(r => {
-        console.log(r)
-    });
-
+   
+    useEffect(() => {
+        rootStore.routeStore.routes.forEach(route=> {
+            console.log(route.endCoordinate.Ac);
+        })
+      });
 
     const [viewport] = useState({
         containerStyle:{

@@ -11,6 +11,7 @@ class RouteStore {
 
     addRoute(route) {
         this.routes.push(route);
+        
     }
 
     findRouteById(id){
