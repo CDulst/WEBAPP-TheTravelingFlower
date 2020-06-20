@@ -7,13 +7,13 @@ function Field({value,icon,width,border,errorMessage,onChange}) {
   <>
   {
   (errorMessage?
-  < p className = {style.errorMessage}>{errorMessage}</p>
+  <p className = {style.errorMessage}>{errorMessage}</p>
   :
   <>
   </>
   )
 }
-  <input className = {style.input} type = {(value === "Password" ? "password" : "text")} placeholder = {value} style = {{backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`}}/> 
+  <input onChange = {e => onChange(e)}  className = {style.input} type = {(value === "Password" ? "password" : "text")} placeholder = {value} style = {{backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`}}/> 
   </>
   );
 }

@@ -10,6 +10,20 @@ import {loginStore} from "../../stores/loginStore"
 
 
 function Login() {
+
+
+  const onEmailChange = (e) =>{
+    loginStore.email = e.currentTarget.value;
+    console.log(loginStore.email);
+  }
+
+  const OnPasswordChange = (e) =>{
+    loginStore.password = e.currentTarget.value;
+  }
+
+
+
+  
   return (
   <>
   <div className = {style.login__container}>
@@ -17,8 +31,8 @@ function Login() {
   <img src = {logo} alt="logo"/>
   <h2 className = {style.title}> Time to connect !</h2>
   <form className = {style.form}>
-  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} />
-  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError}/> 
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange} />
+  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError} onChange = {OnPasswordChange}/> 
   </form>
   <Button value = "LOG IN" type = "secondary" disable = "true"/>
   <div className = {style.textContainer}>
