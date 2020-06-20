@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapboxGl, {Layer, Feature, Image} from 'react-mapbox-gl';
+import ReactMapboxGl, {Layer, Feature ,Image} from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';
@@ -11,7 +11,9 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
-import marker from '../../../../assets/tracker/marker.svg'
+import someImage from './Image';
+import markerSrc from '../../../../assets/tracker/marker.svg'
+
 const store = new DataStore();
 
 const Map = ReactMapboxGl({
@@ -26,12 +28,10 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
-    
 
    const {routeStore} = useStore();
 
    store.calculatePoints();
- 
     const [carrierLocation, setCarrierLocation] = useState();
 
 
@@ -53,7 +53,6 @@ const Mapbox = () => {
         
         <>
         <div className={style.secondContainer}>
-
 
         
             <div className={style.donationCounter}>
@@ -78,15 +77,15 @@ const Mapbox = () => {
             
             <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
+                <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
+                
                 {routeStore.routes.map(checkpoint => (
 
                 <>
 
-                <Image id="marker-image" data={marker}></Image>
-                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-image" }}   key={checkpoint.distance}  >
+                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
-                </Layer> 
-  
+                </Layer>   
                 </>
                 ))}
 
