@@ -22,7 +22,7 @@ const Map = ReactMapboxGl({
     accessToken:
       'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
       
-      minZoom: [4]
+      minZoom: [4.6]
   });
 
 
@@ -37,7 +37,7 @@ const Mapbox = () => {
             height: '100vh',
             width: '100vw'
                 },
-            zoom: [4],
+            zoom: [3.5],
             pitch:[60],
             center:[4.3517, 50.8503]
           
@@ -82,7 +82,7 @@ const Mapbox = () => {
             <Livechat />
             </div>
             
-            <Map  {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
+            <Map maxBounds={[-36.843834, 147.897897] [64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
                 
