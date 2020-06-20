@@ -44,9 +44,10 @@ const Mapbox = () => {
         })
 
         if(checkpoints) {
-            const result = carrierStore.getCarrierById(checkpoints.carrierId);
+            const result = carrierStore.findCarrierById(checkpoints.carrierId)
             console.log(result);
-            console.log(checkpoints.carrierId)
+            console.log(carrierStore.carriers)
+            console.log(checkpoints);
         }
     
 

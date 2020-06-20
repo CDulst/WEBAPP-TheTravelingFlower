@@ -13,10 +13,12 @@ class CarrierStore {
         console.log(this.carriers);
     }
 
-    getCarrierById = id => {this.carriers.find(carrier => carrier.id ===id)}
+    getCarrierById = id => this.carriers.find(carrier => carrier.id ===id)
 
     findCarrierById(id){
-        
+        console.log(id)
+    
+        console.log(this.carriers);
         return this.carriers.find(carrier => carrier.id === id);
         
     }
@@ -26,7 +28,7 @@ decorate(CarrierStore, {
     carriers: observable,
     addCarrier: action,
     rootStore: observable,
-    findCarrier: action
+    findCarrier: action,
 })
 
 export default CarrierStore;
