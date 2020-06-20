@@ -17,14 +17,15 @@ function Login() {
   }
 
   const onEmailChange = (e) =>{
-    loginStore.emailError = "";
-    loginStore.email = e.currentTarget.value;
+    console.log('heya');
+    loginStore.putonNull();
     loginStore.checkEnable()
+    loginStore.email = e.currentTarget.value;
     console.log(loginStore.email);
   }
 
   const OnPasswordChange = (e) =>{
-    loginStore.passwordError = "";
+    loginStore.putonNull();
     loginStore.password = e.currentTarget.value;
     loginStore.checkEnable()
   }
@@ -40,11 +41,17 @@ function Login() {
   <h2 className = {style.title}> Time to connect !</h2>
   <form className = {style.form}>
   { loginStore.emailError ?
-  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange}/>
-  :
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange} wrong = "true"/>
+  : loginStore.emailCorrect ?
   <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange} correct = "true"/>
+  :
+  <Field value = "Email" icon = {email} errorMessage = {loginStore.emailError} onChange = {onEmailChange}/>
   }
-  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError} onChange = {OnPasswordChange}/> 
+  { loginStore.passwordError ?
+  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError} onChange = {OnPasswordChange} wrong = "true" />
+  :
+  <Field value = "Password" icon = {password} errorMessage = {loginStore.passwordError} onChange = {OnPasswordChange}/>
+  }
   </form>
   {
     (loginStore.enableButton ?
