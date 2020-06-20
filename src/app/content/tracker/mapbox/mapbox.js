@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapboxGl from 'react-mapbox-gl';
+import ReactMapboxGl, {Layer, Feature, Image} from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';
@@ -10,9 +10,9 @@ import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
-import {rootStore } from '../../../../stores/index';
-import {useEffect} from "react";
-
+import DataStore from '../stores/DataStore';
+import marker from '../../../../assets/tracker/marker.svg'
+const store = new DataStore();
 
 const Map = ReactMapboxGl({
 
@@ -26,9 +26,14 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
-   
- 
     
+
+   const {routeStore} = useStore();
+
+   store.calculatePoints();
+ 
+    const [carrierLocation, setCarrierLocation] = useState();
+
 
     const [viewport] = useState({
         containerStyle:{
@@ -47,15 +52,7 @@ const Mapbox = () => {
           return useObserver(() => (
        
         <>
-        {
-  
-            rootStore.routeStore.routes.forEach(route => {
-            console.log(route);
-            })
-           
-            
-            
-        }
+
         <div className={style.secondContainer}>
 
 
@@ -80,9 +77,21 @@ const Mapbox = () => {
             <Livechat />
             </div>
             
-            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
-           
-            
+            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
+
+                {routeStore.routes.map(checkpoint => (
+
+                <>
+
+                <Image id="marker-image" data={marker}></Image>
+                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-image" }}   key={checkpoint.distance}  >
+                    <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
+                </Layer> 
+  
+                </>
+                ))}
+
+            </Map>
         </div>
         </>
     
