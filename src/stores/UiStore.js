@@ -5,6 +5,7 @@ class UiStore {
   constructor(rootStore) {
     this.rootStore = rootStore;
     this.currentUser = undefined;
+    this.currentCarrier = undefined;
     this.authService = new AuthService(
       this.rootStore.firebase,
       this.onAuthStateChanged
@@ -26,6 +27,10 @@ class UiStore {
 
   setCurrentUser(user) {
     this.currentUser = user;
+  }
+
+  setCurrentCarrier(currentCarrier) {
+    this.currentCarrier = currentCarrier;
   }
 }
 

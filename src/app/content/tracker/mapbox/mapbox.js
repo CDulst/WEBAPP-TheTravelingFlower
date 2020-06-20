@@ -11,6 +11,7 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
+import UiStore from '../../../../stores/UiStore';
 
 const store = new DataStore();
 
@@ -41,7 +42,6 @@ const Mapbox = () => {
           
         })
 
-        let currentCarrier;
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
