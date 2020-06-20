@@ -13,8 +13,10 @@ class Carrier {
         this.routeId = routeId;
         rootStore.carrierStore.addCarrier(this);
     }
+
     linkJourney(journey) {
         !this.journeys.includes(journey) && this.journeys.push(journey);
+        console.log(this.journeys);
     }
    
 }

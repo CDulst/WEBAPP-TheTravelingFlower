@@ -26,10 +26,10 @@ class RouteService {
     .collection("Routes")
     .withConverter(routeConverter)
     .get();
-
     return routes.docs.map(doc => doc.data());
-
   };
+
+  
 
 
 }

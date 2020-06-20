@@ -45,17 +45,15 @@ const Mapbox = () => {
     
 
           return useObserver(() => (
-       
+        
         <>
-        {
-  
-            rootStore.routeStore.routes.forEach(route => {
-            console.log(route);
-            })
-           
-            
-            
-        }
+            {
+                
+                console.log(rootStore.routeStore.routes)
+               
+                
+                
+            }
         <div className={style.secondContainer}>
 
 

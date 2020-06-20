@@ -2,7 +2,7 @@
 import ApplicationStore from './ApplicationStore';
 import CarrierStore from './CarrierStore';
 import ChallengeStore from './ChallengeStore';
-
+import JourneyStore from "./JourneyStore";
 import MessageStore from './MessageStore';
 import RouteStore from './RouteStore';
 import ServerValuesStore from './ServerValuesStore';
@@ -35,6 +35,7 @@ class RootStore {
         this.serverValuesStore = new ServerValuesStore(this);
         this.socialPostStore = new SocialPostStore(this);
         this.userStore = new UserStore(this);
+        this.journeyStore = new JourneyStore(this);
 
     }
 }

@@ -28,8 +28,9 @@ class CarrierService {
     .get();
 
     return carriers.docs.map(doc => doc.data());
-
   };
+
+
 
 
 }
