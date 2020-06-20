@@ -11,6 +11,8 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
+import carrierPic from '../../../../assets/settings/profileExample.svg'
+import flag from '../../../../assets/challenge/flag.svg'
 
 const store = new DataStore();
 
@@ -44,6 +46,7 @@ const Mapbox = () => {
         if(checkpoints) {
             const result = carrierStore.getCarrierById(checkpoints.carrierId);
             console.log(result);
+            console.log(checkpoints.carrierId)
         }
     
 
@@ -96,6 +99,15 @@ const Mapbox = () => {
             {checkpoints ? (
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
                    <h1>{checkpoints.carrierId}</h1>
+                   <div className={style.personalInformation}>
+                   <img src={carrierPic} className={style.popUpAvatar} alt="carrierPhoto"></img>
+                   <div className={style.righterpopup}>
+                   <p>Tom Van den Haag</p>
+                   <p>23 years old</p>
+                   <p>Bike</p>
+                   <img src={flag} alt="flag"></img>
+                   </div>
+                   </div>
 
                </Popup> 
                ) : null}  
