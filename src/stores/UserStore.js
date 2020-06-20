@@ -23,6 +23,13 @@ class UserStore {
     findUserById(id){
         return this.users.find(user => user.id === id);
     }
+
+
+    findUserByEmail(email){
+        const user = this.users.find(user => user.email === email);
+        return user;
+        
+    }
 }
 
 decorate(UserStore, {

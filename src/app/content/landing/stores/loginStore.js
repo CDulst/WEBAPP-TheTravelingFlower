@@ -30,7 +30,7 @@ class LoginStore {
         this.emailError = "Email not found";
         this.enableButton = false;
     }
-  if (feedback === "auth/invalid-email"){
+  else if (feedback === "auth/invalid-email"){
     this.emailError = "invalid email";
     this.enableButton = false;
   } 
@@ -38,6 +38,11 @@ class LoginStore {
         this.emailCorrect = true;
         this.passwordError = "Wrong Password";
         this.enableButton = false;
+    }
+    else{
+       console.log(feedback.user.email);
+       rootStore.uiStore.setCurrentUser(rootStore.userStore.findUserByEmail(feedback.user.email))
+       console.log(rootStore.uiStore.currentUser);
     }
       
 

@@ -20,5 +20,14 @@ class AuthService {
     }
   };
 
+  logout = async () => {
+    try {
+      const result = await this.auth.signOut();
+      return result;
+    } catch (error) {
+      return error.code;
+    }
+  };
+
 }
 export default AuthService;
