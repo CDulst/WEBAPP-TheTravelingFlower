@@ -50,9 +50,8 @@ const Mapbox = () => {
     
 
           return useObserver(() => (
-       
+        
         <>
-
         <div className={style.secondContainer}>
 
 
