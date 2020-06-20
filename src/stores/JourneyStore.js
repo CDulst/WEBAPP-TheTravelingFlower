@@ -9,12 +9,12 @@ class JourneyStore {
 
     addJourney(journey) {
         this.journeys.push(journey);
-        console.log(this.journeys);
+
     
     }
 
     findJourneyById(id){
-        console.log("enters");
+        
         return this.journeys.find(journey => journey.id === id);
     }
 }
