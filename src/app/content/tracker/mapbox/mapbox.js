@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapboxGl, {Layer, Feature ,Image} from 'react-mapbox-gl';
+import ReactMapboxGl, {Layer, Feature ,Image, Popup} from 'react-mapbox-gl';
 import DonationCounter from './donationCounter/DonationCounter'
 import style from './mapbox.module.css';
 import ProgressbarLocation from './ProgressLocation/ProgressLocation';
@@ -11,8 +11,6 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
-import someImage from './Image';
-import markerSrc from '../../../../assets/tracker/marker.svg'
 
 const store = new DataStore();
 
@@ -29,11 +27,13 @@ const Map = ReactMapboxGl({
 
 const Mapbox = () => {
 
-   const {routeStore} = useStore();
-
-   store.calculatePoints();
+    const {routeStore, carrierStore} = useStore();
+    const [checkpoints, setCheckpoints] =useState(null);
     const [carrierLocation, setCarrierLocation] = useState();
 
+    store.calculatePoints();
+
+    console.log(carrierStore.carriers);
 
     const [viewport] = useState({
         containerStyle:{
@@ -44,6 +44,7 @@ const Mapbox = () => {
             pitch:[60]
           
         })
+
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
@@ -83,11 +84,19 @@ const Mapbox = () => {
 
                 <>
 
-                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
+
+                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
                 ))}
+
+            {checkpoints ? (
+                <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                   <h1>{checkpoints.distance}</h1>
+
+               </Popup> 
+               ) : null}  
 
             </Map>
         </div>
