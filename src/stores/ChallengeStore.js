@@ -10,7 +10,7 @@ class ChallengeStore {
 
     addChallenge(challenge) {
         this.challenges.push(challenge);
-        console.log(this.challenges);
+    
     }
 
     findChallengeById(id){

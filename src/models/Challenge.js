@@ -41,7 +41,6 @@ const challengeConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      console.log(options);
       if (!rootStore.challengeStore.findChallengeById(snapshot.id)){
         return new Challenge({
         id: snapshot.id,

@@ -10,7 +10,6 @@ class CarrierStore {
 
     addCarrier(carrier) {
         this.carriers.push(carrier);
-        console.log(this.carriers);
     }
 
     findCarrierById(id){

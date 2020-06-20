@@ -43,4 +43,3 @@ const rootStore = new RootStore();
 
 export {rootStore};
 
-export default RootStore;

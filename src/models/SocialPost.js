@@ -39,7 +39,6 @@ const socialConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      console.log(options);
       if (!rootStore.socialPostStore.findPostById(snapshot.id)){
         return new SocialPost({
           id: snapshot.id,

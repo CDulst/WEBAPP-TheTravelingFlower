@@ -44,7 +44,6 @@ const routeConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      console.log(options);
       if (!rootStore.routeStore.findRouteById(snapshot.id)){
         return new Route({
         id: snapshot.id,

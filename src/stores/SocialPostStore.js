@@ -10,7 +10,6 @@ class SocialPostStore {
 
     addPost(post) {
         this.posts.push(post);
-        console.log(this.posts);
     }
 
         findPostById(id){

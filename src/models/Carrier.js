@@ -47,7 +47,6 @@ const carrierConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      console.log(options);
       if (!rootStore.carrierStore.findCarrierById(snapshot.id)){
         return new Carrier({
         id: snapshot.id,

@@ -18,7 +18,6 @@ const messageConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      console.log(options);
       if (!rootStore.messageStore.findMessageById(snapshot.id)){
         return new Message({
         id: snapshot.id,

@@ -12,7 +12,6 @@ class UserStore {
 
     addUser (user) {
     this.users.push(user);
-    console.log(this.users);
     }
 
     removeUserById (id){
