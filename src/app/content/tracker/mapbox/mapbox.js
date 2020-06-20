@@ -30,11 +30,7 @@ const Mapbox = () => {
     const {routeStore, carrierStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
     const [carrierLocation, setCarrierLocation] = useState();
-
     store.calculatePoints();
-
-    console.log(carrierStore.carriers);
-
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
@@ -44,6 +40,12 @@ const Mapbox = () => {
             pitch:[60]
           
         })
+
+        if(checkpoints) {
+            const result = carrierStore.getCarrierById(checkpoints.carrierId);
+            console.log(result);
+        }
+    
 
         const handleOnClick = (e) => {
             uiTracker.UIOut();
@@ -93,7 +95,7 @@ const Mapbox = () => {
 
             {checkpoints ? (
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{checkpoints.distance}</h1>
+                   <h1>{checkpoints.carrierId}</h1>
 
                </Popup> 
                ) : null}  
