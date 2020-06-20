@@ -13,12 +13,12 @@ class CarrierStore {
         console.log(this.carriers);
     }
 
-    getCarrierById = id => this.carriers.find(carrier => carrier.id ===id)
+    ggetCarrierById = id => this.carriers.find(carrier => carrier.id === id);
 
     findCarrierById(id){
         console.log(id)
-    
-        console.log(this.carriers);
+        console.log(this.carriers[0].id)
+        console.log(this.carriers)
         return this.carriers.find(carrier => carrier.id === id);
         
     }
