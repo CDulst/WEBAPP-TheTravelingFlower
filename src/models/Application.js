@@ -1,4 +1,5 @@
 import { decorate, observable } from "mobx";
+import {rootStore} from "../stores/index.js";
 
 class Application {
     constructor({id, name, email, identification, age, streetName, number, postalCode, country, route}) {

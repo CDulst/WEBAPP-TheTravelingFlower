@@ -9,17 +9,40 @@ class LoginStore {
   this.emailError = ""
   this.passwordError = ""
   this.enableButton = false;
-  this.login();
   }
 
   login = async() => {
     const user = {email:this.email,password:this.password}
-    console.log(await rootStore.uiStore.loginUser(user));
+    const feedback = await rootStore.uiStore.loginUser(user);
+    this.checkFeedback(feedback);
+  }
+
+  checkFeedback(feedback){
+    console.log(feedback);
+    this.emailError = "";
+    this.password = "";
+    if (feedback === "auth/user-not-found"){
+        this.emailError = "Email not found";
+        this.enableButton = false;
+    }
+  if (feedback === "auth/invalid-email"){
+    this.emailError = "invalid email";
+    this.enableButton = false;
+  } 
+    else if (feedback === "auth/wrong-password"){
+        this.passwordError = "Wrong Password";
+        this.enableButton = false;
+    }
+      
+
   }
 
   checkEnable(){
       if (this.email !== "" && this.password !== ""){
-          this.enableButton = "true"
+          this.enableButton = true;
+      }
+      else{
+          this.enableButton = false;
       }
   }
  
@@ -27,6 +50,9 @@ class LoginStore {
 }
 
 decorate(LoginStore, {
+  checkEnable: action,
+  enableButton:observable,
+  checkFeedback: action,
   login:action
 });
 

@@ -31,6 +31,7 @@ class UiStore {
 
 decorate(UiStore, {
   currentUser: observable,
+  loginUser: action,
   setCurrentUser: action
 });
 
