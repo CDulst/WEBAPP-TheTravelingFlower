@@ -90,14 +90,14 @@ const Mapbox = () => {
 
                 <>
 
-                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
+                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true, "icon-offset": [0,-20] }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
                 ))}
 
             {checkpoints ? (
-                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4}}>
+                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.3}}>
                             <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
                     </Layer>
             ) : null}
