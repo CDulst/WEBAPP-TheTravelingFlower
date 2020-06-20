@@ -11,6 +11,9 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
+import carrierPic from '../../../../assets/settings/profileExample.svg'
+import flag from '../../../../assets/challenge/flag.svg'
+import {rootStore} from "../../../../stores/index";
 
 const store = new DataStore();
 
@@ -30,11 +33,7 @@ const Mapbox = () => {
     const {routeStore, carrierStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
     const [carrierLocation, setCarrierLocation] = useState();
-
     store.calculatePoints();
-
-    console.log(carrierStore.carriers);
-
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
@@ -44,6 +43,19 @@ const Mapbox = () => {
             pitch:[60]
           
         })
+
+        if(checkpoints) {
+            console.log(checkpoints.carrierId)
+            rootStore.carrierStore.carriers.forEach(carrier =>{
+                if (carrier.id !== checkpoints.carrierId){
+                    console.log(carrier.id);
+                    console.log(checkpoints.carrierId);
+                    console.log("found");
+                }
+            })
+            
+        }
+    
 
         const handleOnClick = (e) => {
             uiTracker.UIOut();
@@ -85,7 +97,7 @@ const Mapbox = () => {
                 <>
 
 
-                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
+                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
@@ -93,7 +105,16 @@ const Mapbox = () => {
 
             {checkpoints ? (
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{checkpoints.distance}</h1>
+                   <h1>{checkpoints.carrierId}</h1>
+                   <div className={style.personalInformation}>
+                   <img src={carrierPic} className={style.popUpAvatar} alt="carrierPhoto"></img>
+                   <div className={style.righterpopup}>
+                   <p>Tom Van den Haag</p>
+                   <p>23 years old</p>
+                   <p>Bike</p>
+                   <img src={flag} alt="flag"></img>
+                   </div>
+                   </div>
 
                </Popup> 
                ) : null}  

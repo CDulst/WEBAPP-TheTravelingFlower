@@ -7,6 +7,19 @@
     width: 0;
 }
 
+.personalInformation {
+    display: flex;
+}
+
+.popUpAvatar {
+    width: 50%;
+    border-radius: 6rem;
+}
+
+.righterpopup {
+    margin-left: 2rem;
+}
+
 .progressbarLocation {
     position: fixed;
     z-index: 2;
