@@ -83,7 +83,7 @@ const Mapbox = () => {
 
                 <>
 
-                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.6 }}   key={checkpoint.distance}  >
+                <Layer id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.6, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
