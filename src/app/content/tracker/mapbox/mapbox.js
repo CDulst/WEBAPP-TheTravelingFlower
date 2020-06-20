@@ -110,7 +110,13 @@ const Mapbox = () => {
                    </div>
 
                </Popup> 
-               ) : null}  
+               ) : null}
+            {checkpoints && !uiTracker.selectedCarrier ? (
+                    <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                            <h1>Carrier still needs to be decided</h1>
+                    </Popup>  
+            ) : null
+        }  
 
             </Map>
         </div>
