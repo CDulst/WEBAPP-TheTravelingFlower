@@ -11,9 +11,6 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
-import carrierPic from '../../../../assets/settings/profileExample.svg'
-import flag from '../../../../assets/challenge/flag.svg'
-import {rootStore} from "../../../../stores/index";
 
 const store = new DataStore();
 
@@ -44,17 +41,12 @@ const Mapbox = () => {
           
         })
 
+        let currentCarrier;
         if(checkpoints) {
-            console.log(checkpoints.carrierId)
-            rootStore.carrierStore.carriers.forEach(carrier =>{
-                if (carrier.id !== checkpoints.carrierId){
-                    console.log(carrier.id);
-                    console.log(checkpoints.carrierId);
-                    console.log("found");
-                }
-            })
-            
+            let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
+            uiTracker.setSelectedCarrier(selectedCarrier);
         }
+
     
 
         const handleOnClick = (e) => {
@@ -103,21 +95,28 @@ const Mapbox = () => {
                 </>
                 ))}
 
-            {checkpoints ? (
+            {checkpoints && uiTracker.selectedCarrier ? ( 
+        
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{checkpoints.carrierId}</h1>
+                   <h1>{uiTracker.selectedCarrier.name}</h1>
                    <div className={style.personalInformation}>
-                   <img src={carrierPic} className={style.popUpAvatar} alt="carrierPhoto"></img>
+                   <img src={uiTracker.selectedCarrier.pic} className={style.popUpAvatar} alt={`${uiTracker.selectedCarrier.name}`}></img>
                    <div className={style.righterpopup}>
-                   <p>Tom Van den Haag</p>
-                   <p>23 years old</p>
-                   <p>Bike</p>
-                   <img src={flag} alt="flag"></img>
+                   <p>{uiTracker.selectedCarrier.name}</p>
+                   <p>{uiTracker.selectedCarrier.age}</p>
+                    <p>{uiTracker.selectedCarrier.transport}</p>
+                   <img className={style.popupFlag} src={uiTracker.selectedCarrier.flag} alt="flag"></img>
                    </div>
                    </div>
 
                </Popup> 
-               ) : null}  
+               ) : null}
+            {checkpoints && !uiTracker.selectedCarrier ? (
+                    <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                            <h1>Carrier still needs to be decided</h1>
+                    </Popup>  
+            ) : null
+        }  
 
             </Map>
         </div>
