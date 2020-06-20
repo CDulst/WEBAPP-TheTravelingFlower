@@ -9,12 +9,25 @@
 
 .personalInformation {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+
+.popupDestinations {
+    color: var(--hoverButton);
+    display: flex;
+    justify-content: center;
+}
+
+.popupName {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .popUpAvatar {
-    width: 8rem;
-    height: 8rem;
-    
+    width: 4rem;
+    height: 4rem;
     border-radius: 20rem;
 }
 
@@ -38,7 +51,7 @@
 }
 
 .popupFlag {
-    width: 10vw;
+    width: 3rem;
 }
 
 .iconInfo {

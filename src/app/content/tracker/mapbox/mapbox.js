@@ -22,7 +22,7 @@ const Map = ReactMapboxGl({
     accessToken:
       'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
       
-      minZoom: [2.7]
+      minZoom: [4]
   });
 
 
@@ -38,7 +38,8 @@ const Mapbox = () => {
             width: '100vw'
                 },
             zoom: [4],
-            pitch:[60]
+            pitch:[60],
+            center:[4.3517, 50.8503]
           
         })
 
@@ -46,6 +47,7 @@ const Mapbox = () => {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
         }
+        console.log(checkpoints);
 
     
 
@@ -80,7 +82,7 @@ const Mapbox = () => {
             <Livechat />
             </div>
             
-            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
+            <Map  {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
                 
@@ -88,23 +90,28 @@ const Mapbox = () => {
 
                 <>
 
-
                 <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
                 ))}
 
+            {checkpoints ? (
+                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4}}>
+                            <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
+                    </Layer>
+            ) : null}
+
             {checkpoints && uiTracker.selectedCarrier ? ( 
         
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{uiTracker.selectedCarrier.name}</h1>
+                   <h1 className={style.popupDestinations}>{`${checkpoints.startName}-${checkpoints.endName}`}</h1>
                    <div className={style.personalInformation}>
                    <img src={uiTracker.selectedCarrier.pic} className={style.popUpAvatar} alt={`${uiTracker.selectedCarrier.name}`}></img>
                    <div className={style.righterpopup}>
-                   <p>{uiTracker.selectedCarrier.name}</p>
-                   <p>{uiTracker.selectedCarrier.age}</p>
-                    <p>{uiTracker.selectedCarrier.transport}</p>
+                   <p className={style.popupName}>{uiTracker.selectedCarrier.name}</p>
+                   <p className={style.popupAge}>{`Age: ${uiTracker.selectedCarrier.age}`}</p>
+                    <p className={style.popupTransport}>{`Transport: ${uiTracker.selectedCarrier.transport}`}</p>
                    <img className={style.popupFlag} src={uiTracker.selectedCarrier.flag} alt="flag"></img>
                    </div>
                    </div>
