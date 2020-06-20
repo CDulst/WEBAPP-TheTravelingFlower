@@ -11,9 +11,6 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import DataStore from '../stores/DataStore';
-import carrierPic from '../../../../assets/settings/profileExample.svg'
-import flag from '../../../../assets/challenge/flag.svg'
-import {rootStore} from "../../../../stores/index";
 
 const store = new DataStore();
 
@@ -46,8 +43,8 @@ const Mapbox = () => {
 
         let currentCarrier;
         if(checkpoints) {
-            let result = carrierStore.findCarrierById(checkpoints.carrierId);
-            currentCarrier = result
+            let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
+            uiTracker.setSelectedCarrier(selectedCarrier);
         }
 
     
@@ -101,14 +98,14 @@ const Mapbox = () => {
             {checkpoints ? ( 
         
                 <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
-                   <h1>{currentCarrier.name}</h1>
+                   <h1>{uiTracker.selectedCarrier.name}</h1>
                    <div className={style.personalInformation}>
-                   <img src={currentCarrier.pic} className={style.popUpAvatar} alt={`${currentCarrier.name}`}></img>
+                   <img src={uiTracker.selectedCarrier.pic} className={style.popUpAvatar} alt={`${uiTracker.selectedCarrier.name}`}></img>
                    <div className={style.righterpopup}>
-                   <p>{currentCarrier.name}</p>
-                   <p>{currentCarrier.age}</p>
-                    <p>{currentCarrier.transport}</p>
-                   <img className={style.popupFlag} src={currentCarrier.flag} alt="flag"></img>
+                   <p>{uiTracker.selectedCarrier.name}</p>
+                   <p>{uiTracker.selectedCarrier.age}</p>
+                    <p>{uiTracker.selectedCarrier.transport}</p>
+                   <img className={style.popupFlag} src={uiTracker.selectedCarrier.flag} alt="flag"></img>
                    </div>
                    </div>
 
