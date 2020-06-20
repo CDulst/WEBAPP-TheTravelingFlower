@@ -1,5 +1,5 @@
 import { decorate, observable, action } from "mobx";
-import AuthService from "../services/authService";
+import AuthService from "../services/AuthService";
 
 class UiStore {
   constructor(rootStore) {
