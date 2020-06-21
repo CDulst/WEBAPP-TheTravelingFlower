@@ -33,7 +33,7 @@ const Mapbox = () => {
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-    let percentage = 20000/121000*100
+    let percentage = 10000/121000*100
     
   
     const [viewport] = useState({
@@ -92,7 +92,7 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
                     <Feature coordinates={[6.08434, 52.51435]}></Feature>
                 </Layer>
 
@@ -102,7 +102,7 @@ const Mapbox = () => {
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
                         <div className={style.currentCarrier__wrapper}>
-                        <p>carrier: Tom</p>
+                        <p>carrier: {currentCarrier.name}</p>
                         <p>25 Km done</p>
                         </div>
 
@@ -120,7 +120,7 @@ const Mapbox = () => {
 
                 <>
 
-                <Layer onMouseEnter={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true, "icon-offset": [0,-20] }}   key={checkpoint.distance}  >
+                <Layer onClick={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true, "icon-offset": [0,-20] }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
