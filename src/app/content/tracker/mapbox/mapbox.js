@@ -35,9 +35,9 @@ const Mapbox = () => {
             height: '100vh',
             width: '100vw'
                 },
-            zoom: [3.5],
+            zoom: [12],
             pitch:[60],
-            center:[4.3517, 50.8503]
+            center:[6.0909, 52.52]
           
         })
 
@@ -93,6 +93,7 @@ const Mapbox = () => {
                 <Layer id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
                     <Feature coordinates={[6.0909, 52.52]}></Feature>
                 </Layer>
+
                 {routeStore.routes.map(checkpoint => (
 
                 <>
