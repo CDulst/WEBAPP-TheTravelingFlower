@@ -100,7 +100,7 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
                     <Feature coordinates={[13.08434, 52.51435]}></Feature>
                 </Layer>
 
@@ -127,7 +127,7 @@ const Mapbox = () => {
 
                 {currentCarrier ? (
                         <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
-                                <Feature coordinates={[[13.08434, 52.51435], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
+                                <Feature coordinates={[[13.08434, 52.51435], [uiStore.currentRoute.endCoordinate.Rc, uiStore.currentRoute.endCoordinate.Ac]]} />
                         </Layer>
                 ): null}
 
