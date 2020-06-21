@@ -10,10 +10,8 @@ import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
-import DataStore from '../stores/DataStore';
-import UiStore from '../../../../stores/UiStore';
+import {dataStore}from '../stores/DataStore';
 
-const store = new DataStore();
 
 const Map = ReactMapboxGl({
 
@@ -26,12 +24,18 @@ const Map = ReactMapboxGl({
   });
 
 
-const Mapbox = () => {
 
-    const {routeStore, carrierStore} = useStore();
+
+const Mapbox = () => {
+    
+
+    const {routeStore, carrierStore, uiStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
+    const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-    store.calculatePoints();
+    let percentage = 20000/121000*100
+    
+  
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
@@ -39,18 +43,18 @@ const Mapbox = () => {
                 },
             zoom: [3.5],
             pitch:[60],
-            center:[4.3517, 50.8503]
+            center:[6.0909, 52.52]
           
         })
+
 
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
+            
         }
-        console.log(checkpoints);
 
-    
-
+        uiStore.setCurrentCarrier(carrierStore.carriers[0]);
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
@@ -67,7 +71,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation  />
+                <ProgressbarLocation percentage={percentage}  />
             </div>
 
             <div className={style.iconMessage}>
@@ -85,7 +89,33 @@ const Mapbox = () => {
             <Map maxBounds={[-36.843834, 147.897897] [64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
+                <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
+
+                <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                    <Feature coordinates={[6.08434, 52.51435]}></Feature>
+                </Layer>
+
+                {currentCarrier ? (
+                    <Popup className={style.popupCurrent} coordinates={[6.08434, 52.51435]}>
+                        <div className={style.currentCarrier__container}>
+                    
+                        <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
+                        <div className={style.currentCarrier__wrapper}>
+                        <p>carrier: Tom</p>
+                        <p>25 Km done</p>
+                        </div>
+
+                        <div className={style.currentCarrier__wrapper}>
+                            <p>currentRoute:</p>
+                            <p>Brussels-Amsterdam</p>
+                        </div>
+
+                        <p>25Km to go</p>
+                        </div>
+                    </Popup>
+                ): null}
+
                 {routeStore.routes.map(checkpoint => (
 
                 <>
@@ -97,7 +127,9 @@ const Mapbox = () => {
                 ))}
 
             {checkpoints ? (
-                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.3}}>
+             
+
+                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                             <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
                     </Layer>
             ) : null}

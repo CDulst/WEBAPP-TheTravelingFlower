@@ -1,7 +1,8 @@
 import { decorate, observable, action } from "mobx";
 import AuthService from "../services/authService";
 import User from "../models/User";
-import {v4} from "uuid"
+import {dataStore} from '../app/content/tracker/stores/DataStore'
+import turf from 'turf';
 class UiStore {
   constructor(rootStore) {
     this.rootStore = rootStore;
@@ -11,6 +12,10 @@ class UiStore {
       this.rootStore.firebase,
       this.onAuthStateChanged
     );
+  }
+
+  setRoute(route) {
+    this.currentRoute = route;
   }
 
 
@@ -56,6 +61,7 @@ class UiStore {
 
   setCurrentCarrier(currentCarrier) {
     this.currentCarrier = currentCarrier;
+  
   }
   registerUser = async user => {
     const result = await this.authService.register(
@@ -91,11 +97,14 @@ class UiStore {
 
 }
 
+
 decorate(UiStore, {
   currentUser: observable,
   loginUser: action,
   logoutUser: action,
-  setCurrentUser: action
+  setCurrentUser: action,
+  setCurrentCarrier: action,
+  findCarrierByLocation: action
 });
 
 export default UiStore;
