@@ -10,10 +10,10 @@ function Profile({pic, name, flag, age, transport,bio}) {
   return (
   <>
   <div className={style.informationContainer}>
-    <img src={pic} alt="carrierphoto"></img>
+    <img className={style.carrierPage__profilePic} src={pic} alt="carrierphoto"></img>
       <div className={style.nameAndFlag}>
         <p className={style.nameCarrierInfo}>{name}</p>
-        <img src={flag} alt="carrierflag"></img>
+        <img className={style.carrierPageFlag} src={flag} alt="carrierflag"></img>
       </div>
 
     

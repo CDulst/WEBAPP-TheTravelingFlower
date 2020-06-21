@@ -10,6 +10,8 @@ import Discover from './containers/discover/discover';
 import Profile from './containers/profile/profile'
 import pic from '../../../assets/carrier/carrier.png'
 import ReactMapboxGl from 'react-mapbox-gl';
+import {uiStoreCarriers} from './stores/UiStore';
+import { useObserver } from 'mobx-react-lite';
 
 
 const Map = ReactMapboxGl({
@@ -21,6 +23,8 @@ const Map = ReactMapboxGl({
 
 function Carriers() {
 
+  console.log(uiStoreCarriers);
+
   const [viewport] = useState({
     zoom: [4],
     pitch:[60]
@@ -29,7 +33,7 @@ function Carriers() {
     useEffect(() => {
         uiStore.setPage("carriers")
       });
-  return (
+  return useObserver(() => (
   <>
   <Switch>
   <Route path = "/carriers/detail">
@@ -43,7 +47,12 @@ function Carriers() {
   <Route path = "/carriers">
   <div className={style.carrier__container}>
     <Discover/>
-    <Profile pic={pic} name="John Boss" flag={flag} age="12" transport="Bike" bio="I am john and I love nature. I am a young nature activist and I like to spend time in my garden. I hate my life and my wife. please kill me I dont want to particpate in this" />
+    {uiStoreCarriers.selectedCarrier ? (
+      <Profile pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport="Bike" bio="I am john and I love nature. I am a young nature activist and I like to spend time in my garden. I hate my life and my wife. please kill me I dont want to particpate in this" />
+    ): 
+    <p>carrier still not picked</p>
+    }
+    
     <div className={style.sliderPosition}>
     <Slider />
     </div>
@@ -51,7 +60,7 @@ function Carriers() {
   </Route>
   </Switch>
   </>
-  );
+  ));
 }
 
 export default Carriers;

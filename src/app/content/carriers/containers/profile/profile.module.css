@@ -7,16 +7,28 @@
     margin-top: 2rem;
 }
 
+.carrierPage__profilePic {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 10rem;
+}
+
 .informationContainer2 {
     width: 70%;
 }
 
 .nameAndFlag {
     display: flex;
+    align-items: center;
 }
 
 .nameCarrierInfo {
     margin-right: 2rem;
+}
+
+.carrierPageFlag {
+    width: 4rem;
+    height: 2rem;
 }
 
 .personalInfoWrapper {

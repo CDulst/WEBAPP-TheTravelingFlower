@@ -1,13 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './slider.module.css'
 import InvolvementSlider from '../../../challenge/components/involvementSlider/involvementSlider';
 import person from '../../../../../assets/carrier/carrier.png'
+import { useStore } from '../../../../../hooks';
+import {uiStoreCarriers} from '../../stores/UiStore';
 
 
 
-function Slider({onchange}) {
+function Slider() {
+  const {carrierStore, routeStore} = useStore();
+
+  const [selectedCarrier, setSelectedCarrier] = useState(null)
+
+  const [value, setValue] = useState(50)
+
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+    const r = value/100*routeStore.routes.length
+    const route = routeStore.routes[r];
+    if(route) {
+    setSelectedCarrier(carrierStore.findCarrierById(route.carrierId))
+    }
+    
+  }
+
+    uiStoreCarriers.setSelectedCarrier(selectedCarrier);
+    
+  
+
+ 
   return (
   <>
+
     <div className={style.slider}>
     <div className={style.carriers}>
       <img src={person} className={style.secondNextCarrier} alt="person"></img>
@@ -18,7 +42,7 @@ function Slider({onchange}) {
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
-      <InvolvementSlider orientation="vertical" height="80vh" />
+      <InvolvementSlider value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
       </div>
       <div className={style.mobile}>
       <InvolvementSlider orientation="horizontal"/>

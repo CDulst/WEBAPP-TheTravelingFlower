@@ -61,6 +61,7 @@ class UiStore {
     this.currentCarrier = currentCarrier;
   
   }
+
   registerUser = async user => {
     const result = await this.authService.register(
       user.name,

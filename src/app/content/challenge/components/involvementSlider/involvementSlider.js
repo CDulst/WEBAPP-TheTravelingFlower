@@ -4,13 +4,8 @@ import style from './involvementSlider.module.css'
 
 
 
-function InvolvementSlider({item1, item2, text, handleChange, orientation, height, classname, direction}) {
+function InvolvementSlider({item1, item2, text, handleChange, orientation, height, value, classname, direction}) {
 
-  const [value, setValue] = useState(50)
-
-  handleChange = (e, newValue) => {
-    setValue(newValue);
-  }
 
   return (
   <>
