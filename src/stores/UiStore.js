@@ -1,5 +1,5 @@
 import { decorate, observable, action } from "mobx";
-import AuthService from "../services/authService";
+import AuthService from "../services/AuthService";
 import User from "../models/User";
 import {dataStore} from '../app/content/tracker/stores/DataStore'
 import turf from 'turf';
