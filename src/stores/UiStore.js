@@ -36,7 +36,7 @@ class UiStore {
 
   logoutUser = async () => {
     const result = await this.authService.logout();
-    this.setCurrentUser("");
+    this.nullCurrentUser();
     return result;
   };
 
@@ -47,17 +47,14 @@ class UiStore {
   };
 
   setCurrentUser(user) {
-    if (user !== ""){
-        console.log(user.phonenumber);
-        const userr = this.rootStore.userStore.findUserByEmail(user.email)
-        this.rootStore.userStore.removeUserByEmail(userr.email);
-        const userc = this.rootStore.userStore.findUserByEmail(user.email)
-        this.currentUser = userc;
+    if (user){
+        this.currentUser = user;
         console.log(this.currentUser);
     }
-    else{
-    this.currentUser = "";
-    }
+  }
+  
+  nullCurrentUser(){
+      this.currentUser = "";
   }
 
   setCurrentCarrier(currentCarrier) {
@@ -103,6 +100,7 @@ decorate(UiStore, {
   currentUser: observable,
   loginUser: action,
   logoutUser: action,
+  nullCurrentUser: action,
   setCurrentUser: action,
   setCurrentCarrier: action,
   findCarrierByLocation: action

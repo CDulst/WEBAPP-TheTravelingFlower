@@ -35,8 +35,12 @@ class UserStore {
     findUserByEmail(email){
         const user = this.users.find(user => user.email === email);
         console.log(user);
+        return user;   
+    }
+    filterUsersByEmail(email){
+        const user = this.users.find(user => user.email === email && user.name !== undefined);
+        console.log(user);
         return user;
-        
     }
 }
 

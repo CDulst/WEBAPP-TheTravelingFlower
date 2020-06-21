@@ -10,6 +10,11 @@ class User {
             this.avatar = `https://avatars.dicebear.com/v2/identicon/${name}.svg`;
         }
         rootStore.userStore.addUser(this);
+        if (rootStore.uiStore.currentUser){
+          const user = rootStore.userStore.filterUsersByEmail(rootStore.uiStore.currentUser.email);
+          console.log(user);
+          rootStore.uiStore.setCurrentUser(user);
+        }
     }
 }
 
@@ -32,7 +37,7 @@ const userConverter = {
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      if (!rootStore.userStore.findUserByEmail(data.email)){
+      if (!rootStore.userStore.findUserByEmail(data.email) || data.phonenumber === undefined){
         return new User({
           id: snapshot.id,
           email: data.email,
@@ -40,7 +45,6 @@ const userConverter = {
           phonenumber: data.phone,
         });
       }
-     
     }
   };
 
