@@ -16,7 +16,6 @@ function Settings() {
 
   <h2 className = {style.title}> Settings</h2>
   <Account />
-
   <Logout/>
   </div>
   </div>

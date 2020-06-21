@@ -47,7 +47,7 @@ const Mapbox = () => {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
         }
-        console.log(checkpoints);
+        console.log(store.trajectory);
 
     
 
@@ -97,7 +97,7 @@ const Mapbox = () => {
                 ))}
 
             {checkpoints ? (
-                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.3}}>
+                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                             <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
                     </Layer>
             ) : null}
