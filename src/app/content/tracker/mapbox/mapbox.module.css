@@ -35,6 +35,24 @@
     margin-left: 2rem;
 }
 
+.currentCarrier__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30rem;
+}
+
+.style.currentCarrier__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.currentCarrierImage {
+    width: 20%;
+    border-radius: 6rem;
+}
+
 .progressbarLocation {
     position: fixed;
     z-index: 2;

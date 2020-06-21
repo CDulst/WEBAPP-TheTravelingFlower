@@ -28,14 +28,21 @@ const Mapbox = () => {
 
     const {routeStore, carrierStore, uiStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
+    const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
+
+    console.log(dataStore.trajectory)
+
+    
+
+   
     dataStore.calculatePoints();
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
             width: '100vw'
                 },
-            zoom: [12],
+            zoom: [3.5],
             pitch:[60],
             center:[6.0909, 52.52]
           
@@ -47,7 +54,6 @@ const Mapbox = () => {
         }
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
-        console.log(uiStore.currentCarrier)
 
       
 
@@ -90,9 +96,30 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
                     <Feature coordinates={[6.0909, 52.52]}></Feature>
                 </Layer>
+
+                {currentCarrier ? (
+                    <Popup className={style.popupCurrent} coordinates={[6.0909, 52.52]}>
+                        <div className={style.currentCarrier__container}>
+                    
+                        <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
+                        <div className={style.currentCarrier__wrapper}>
+                        <p>carrier: Tom</p>
+                        <p>25 Km done</p>
+                        </div>
+
+                        <div className={style.currentCarrier__wrapper}>
+                            <p>currentRoute:</p>
+                            <p>Brussels-Amsterdam</p>
+                        </div>
+
+                        <p>25Km to go</p>
+                        </div>
+                    </Popup>
+                ): null}
+
 
                 {routeStore.routes.map(checkpoint => (
 
