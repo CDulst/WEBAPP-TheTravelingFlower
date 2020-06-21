@@ -46,6 +46,30 @@ class UiStore {
   setCurrentCarrier(currentCarrier) {
     this.currentCarrier = currentCarrier;
   }
+  registerUser = async user => {
+    const result = await this.authService.register(
+      user.name,
+      user.email,
+      user.phone,
+      user.password
+    );
+    
+    const newRegisteredUser = new User({
+      id: result.uid,
+      name: result.displayName,
+      avatar: result.photoURL,
+      store: this.rootStore.userStore,
+      email: result.email
+    });
+    /*
+    if (result) {
+      //user toevoegen aan onze users collection
+      this.rootStore.userStore.createUser(newRegisteredUser);
+    }
+    */
+    return result;
+  };
+
 }
 
 decorate(UiStore, {
