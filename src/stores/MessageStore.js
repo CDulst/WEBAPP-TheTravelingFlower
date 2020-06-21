@@ -12,7 +12,7 @@ class MessageStore {
 
     addMessage (message) {
         this.messages.push(message);
-        console.log(this.messages);
+
     }
 
     findMessageById(id){

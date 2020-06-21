@@ -6,6 +6,7 @@ class ChallengeStore {
         this.rootStore = rootStore;
         this.challengeService = new ChallengeService (this.rootStore.firebase);
         this.challenges = [];
+        this.currentChallenge = undefined;
     }
 
     addChallenge(challenge) {
@@ -16,12 +17,17 @@ class ChallengeStore {
     findChallengeById(id){
         return this.challenges.find(challenge => challenge.id === id);
     }
+
+    setcurrentChallenge(challenge) {
+        this.currentChallenge = challenge;
+    }
 }
 
 decorate(ChallengeStore, {
     challenges: observable,
     rootStore: observable,
-    addChallenge: action
+    addChallenge: action,
+    setcurrentChallenge: action
 })
 
 export default ChallengeStore;

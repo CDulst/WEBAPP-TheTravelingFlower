@@ -13,7 +13,7 @@ function ChallengeText({icon,title,flag,text}) {
   <img className={style.challengeTextIcon} src = {icon} alt="icon"/>
   <div className={style.challengeTextWrapper}>
   <p className={style.challengeTextTitle}>{title}</p>
-  <img src = {flag} alt="flag"/>
+  <img className={style.challengeTextFlag} src = {flag} alt="flag"/>
   </div>
   <p className={style.challengeTextParagraph}>{text}</p>
   </div>
