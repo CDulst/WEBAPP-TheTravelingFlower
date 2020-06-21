@@ -6,11 +6,11 @@ import start from '../../../../../assets/tracker/start.png'
 import finish from '../../../../../assets/tracker/finish.png'
 
 
-const ProgressLocation = () => {
+const ProgressLocation = ({percentage}) => {
     return (
         
         <div className={style.progress}>
-           <div className={style.indicator} style={{left: "20%"}}>
+           <div className={style.indicator} style={{left: `${percentage}%`}}>
                 <img src={indicator} alt="indicator"></img>
                 <div className={style.textballoon}>#Amsterdam</div>
             </div>
@@ -22,7 +22,7 @@ const ProgressLocation = () => {
                 <img src={finish} alt="indicator"></img>
                
     </div>
-            <Progress percentage="20" />
+            <Progress percentage={percentage} />
         </div>
     );
 };

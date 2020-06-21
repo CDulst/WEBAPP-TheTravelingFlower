@@ -55,9 +55,8 @@ const Mapbox = () => {
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
 
-      
+        let percentage = 40000/dataStore.trajectory.length*100;
 
-    
 
         const handleOnClick = (e) => {
             uiTracker.UIOut();
@@ -75,7 +74,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation  />
+                <ProgressbarLocation percentage={percentage}  />
             </div>
 
             <div className={style.iconMessage}>
@@ -97,11 +96,11 @@ const Mapbox = () => {
                 
 
                 <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
-                    <Feature coordinates={[6.0909, 52.52]}></Feature>
+                    <Feature coordinates={dataStore.trajectory[40000]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={[6.0909, 52.52]}>
+                    <Popup className={style.popupCurrent} coordinates={dataStore.trajectory[40000]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
@@ -119,7 +118,6 @@ const Mapbox = () => {
                         </div>
                     </Popup>
                 ): null}
-
 
                 {routeStore.routes.map(checkpoint => (
 
