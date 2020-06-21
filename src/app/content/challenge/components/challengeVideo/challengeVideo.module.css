@@ -9,3 +9,11 @@
 display: flex;
 align-items: center;
 }
+
+.VideoDisplayNone {
+    display: none;
+}
+
+.videoDisplayBlock {
+    display: block;
+}

@@ -1,11 +1,14 @@
 import React from 'react';
 import style from './challengeVideo.module.css'
+import uiStore from '../../stores/uiStore';
+import { useObserver } from 'mobx-react-lite';
 
 
 function ChallengeVideo({video}) {
-  return (
+  console.log(uiStore.TextOut)
+  return useObserver(() => (
   <>
-  <div className={style.videoContainer}>
+  <div className={( uiStore.TextOut ? `${style.videoContainer} ${style.VideoDisplayNone }` : `${style.videoContainer} ${style.videoDisplayBlock}` )}>
   <video className={style.video}  controls>
   <source src={video} type="video/mp4"/>
   <source src={video} type="video/ogg"/>
@@ -16,7 +19,7 @@ function ChallengeVideo({video}) {
   </div>
   </div>
   </>
-  );
+  ));
 }
 
 export default ChallengeVideo;

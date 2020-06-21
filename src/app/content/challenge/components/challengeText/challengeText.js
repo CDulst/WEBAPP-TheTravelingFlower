@@ -1,21 +1,26 @@
 import React from 'react';
 import style from './challengeText.module.css'
+import uiStore from '../../stores/uiStore';
+import { useObserver } from 'mobx-react-lite';
 
 
 
 function ChallengeText({icon,title,flag,text}) {
-  return (
+
+  return useObserver(() =>(
   <>
-  <div className={style.challengeText__container}>
-  {/*<img src = {icon}/>*/}
-  <div>
-  <p>{title}</p>
+  <div className={( uiStore.TextOut ? `${style.challengeText__container} ${style.ChallengeTextDisplayBlock}` : `${style.challengeText__container} ${style.ChallengeTextDisplayNone}` )}>
+  <img className={style.challengeTextIcon} src = {icon} alt="icon"/>
+  <div className={style.challengeTextWrapper}>
+  <p className={style.challengeTextTitle}>{title}</p>
   <img src = {flag} alt="flag"/>
   </div>
-  <p>{text}</p>
+  <p className={style.challengeTextParagraph}>{text}</p>
   </div>
   </>
-  );
+
+  
+  ));
 }
 
 export default ChallengeText;

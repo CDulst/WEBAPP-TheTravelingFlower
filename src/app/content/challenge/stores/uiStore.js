@@ -5,6 +5,15 @@ import {observable,action,decorate,configure} from "mobx"
 class UIChallenge {
   constructor(){
   this.uiOut = false;
+  this.TextOut = false;
+  }
+
+  textOut() {
+    this.TextOut = true;
+  }
+
+  textIn() {
+    this.TextOut = false;
   }
 
   UIOut(){
@@ -20,7 +29,10 @@ class UIChallenge {
 decorate(UIChallenge,{
  uiOut: observable,
  UIOut: action,
- UIIn: action
+ UIIn: action,
+ TextOut: observable,
+ textIn: action,
+ textOut: action
 });
 
 configure({enforceActions: 'observed'});
