@@ -1,6 +1,8 @@
 import { decorate, observable, action } from "mobx";
 import AuthService from "../services/authService";
 import User from "../models/User";
+import {dataStore} from '../app/content/tracker/stores/DataStore'
+import turf from 'turf';
 class UiStore {
   constructor(rootStore) {
     this.rootStore = rootStore;
@@ -10,6 +12,10 @@ class UiStore {
       this.rootStore.firebase,
       this.onAuthStateChanged
     );
+  }
+
+  setRoute(route) {
+    this.currentRoute = route;
   }
 
 
@@ -41,18 +47,23 @@ class UiStore {
 
   setCurrentUser(user) {
     this.currentUser = user;
+    
   }
 
   setCurrentCarrier(currentCarrier) {
     this.currentCarrier = currentCarrier;
+  
   }
 }
+
 
 decorate(UiStore, {
   currentUser: observable,
   loginUser: action,
   logoutUser: action,
-  setCurrentUser: action
+  setCurrentUser: action,
+  setCurrentCarrier: action,
+  findCarrierByLocation: action
 });
 
 export default UiStore;

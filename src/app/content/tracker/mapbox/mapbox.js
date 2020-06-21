@@ -10,10 +10,8 @@ import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
-import DataStore from '../stores/DataStore';
-import UiStore from '../../../../stores/UiStore';
+import {dataStore}from '../stores/DataStore';
 
-const store = new DataStore();
 
 const Map = ReactMapboxGl({
 
@@ -28,10 +26,10 @@ const Map = ReactMapboxGl({
 
 const Mapbox = () => {
 
-    const {routeStore, carrierStore} = useStore();
+    const {routeStore, carrierStore, uiStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
     const [carrierLocation, setCarrierLocation] = useState();
-    store.calculatePoints();
+    dataStore.calculatePoints();
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
@@ -47,7 +45,11 @@ const Mapbox = () => {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
         }
-        console.log(store.trajectory);
+
+        uiStore.setCurrentCarrier(carrierStore.carriers[0]);
+        console.log(uiStore.currentCarrier)
+
+      
 
     
 
@@ -85,7 +87,12 @@ const Mapbox = () => {
             <Map maxBounds={[-36.843834, 147.897897] [64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
+                <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
+
+                <Layer id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                    <Feature coordinates={[6.0909, 52.52]}></Feature>
+                </Layer>
                 {routeStore.routes.map(checkpoint => (
 
                 <>
@@ -97,6 +104,8 @@ const Mapbox = () => {
                 ))}
 
             {checkpoints ? (
+             
+
                     <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                             <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
                     </Layer>
