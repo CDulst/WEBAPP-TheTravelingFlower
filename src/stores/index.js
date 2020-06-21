@@ -32,11 +32,11 @@ class RootStore {
         this.applicationStore = new ApplicationStore(this);
         this.carrierStore = new CarrierStore(this);
         this.challengeStore = new ChallengeStore(this);
+        this.userStore = new UserStore(this);
         this.messageStore = new MessageStore(this);
         this.routeStore = new RouteStore(this);
         this.serverValuesStore = new ServerValuesStore(this);
         this.socialPostStore = new SocialPostStore(this);
-        this.userStore = new UserStore(this);
         this.journeyStore = new JourneyStore(this);
         this.uiStore = new UiStore(this);
 

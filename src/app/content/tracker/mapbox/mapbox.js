@@ -11,6 +11,10 @@ import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import {dataStore}from '../stores/DataStore';
+import cross from '../../../../assets/tracker/cross.svg'
+import popup from './components/popup/popup';
+import Popupinfo from './components/popup/popup';
+
 
 
 const Map = ReactMapboxGl({
@@ -33,7 +37,7 @@ const Mapbox = () => {
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-    let percentage = 10000/121000*100
+
     
   
     const [viewport] = useState({
@@ -55,8 +59,20 @@ const Mapbox = () => {
         }
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
+
+        if(currentCarrier){
+            const currentRoute = routeStore.findRouteById(uiStore.currentCarrier.routeId);
+            uiStore.setRoute(currentRoute);
+        }
+
+        
         const handleOnClick = (e) => {
             uiTracker.UIOut();
+          }
+
+          const handleInfoClick = (e) => {
+              uiTracker.popupOut();
+              console.log(uiTracker.popup);
           }
     
 
@@ -70,8 +86,12 @@ const Mapbox = () => {
             <DonationCounter />
             </div>
 
+            <div className={(uiTracker.popup ? `${style.positioningPopup} ${style.animationDisplayBlock}` : `${style.positioningPopup} ${style.animationDisplayNone}`)}>
+                <Popupinfo toGo="2000 km" done="1000 km"/>
+            </div>
+
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage={percentage}  />
+                <ProgressbarLocation percentage="20"  />
             </div>
 
             <div className={style.iconMessage}>
@@ -79,7 +99,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.iconInfo}>
-                <PopupIcon icon={info} />
+                <PopupIcon icon={info} click={handleInfoClick} />
             </div>
 
             <div className={style.livechat}>
@@ -92,35 +112,42 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
-                    <Feature coordinates={[6.08434, 52.51435]}></Feature>
+                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
+                    <Feature coordinates={[13.08434, 52.51435]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={[6.08434, 52.51435]}>
+                    <Popup className={style.popupCurrent} coordinates={[13.08434, 52.51435]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
                         <div className={style.currentCarrier__wrapper}>
-                        <p>carrier: {currentCarrier.name}</p>
-                        <p>25 Km done</p>
+                        <p className={style.currentCarrierName}>{currentCarrier.name}</p>
+                        <p className={style.currentCarrierKmDone}>200km/310km</p>
                         </div>
 
                         <div className={style.currentCarrier__wrapper}>
-                            <p>currentRoute:</p>
-                            <p>Brussels-Amsterdam</p>
+                            <p className={style.currentCarrierName}>current Route:</p>
+                            <p className={style.currentCarrierKmDone}>{`${uiStore.currentRoute.startName}-${uiStore.currentRoute.endName}`}</p>
                         </div>
 
-                        <p>25Km to go</p>
+                        <img onClick={e => {setCurrentCarrier(null)}} src={cross} alt="cross"></img>
+
                         </div>
                     </Popup>
+                ): null}
+
+                {currentCarrier ? (
+                        <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
+                                <Feature coordinates={[[13.08434, 52.51435], [uiStore.currentRoute.endCoordinate.Rc, uiStore.currentRoute.endCoordinate.Ac]]} />
+                        </Layer>
                 ): null}
 
                 {routeStore.routes.map(checkpoint => (
 
                 <>
 
-                <Layer onClick={e => {setCheckpoints(checkpoint)}} onMouseLeave={e=>{setCheckpoints(null)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true, "icon-offset": [0,-20] }}   key={checkpoint.distance}  >
+                <Layer onClick={e => {setCheckpoints(checkpoint)}} id="marker" id={checkpoint.id} layout={{"icon-image": "marker-icon", "icon-size": 0.8, "icon-ignore-placement": true, "icon-offset": [0,-20] }}   key={checkpoint.distance}  >
                     <Feature coordinates={[checkpoint.startCoordinate.Rc, checkpoint.startCoordinate.Ac]}></Feature>
                 </Layer>   
                 </>
@@ -137,6 +164,9 @@ const Mapbox = () => {
             {checkpoints && uiTracker.selectedCarrier ? ( 
         
                 <Popup className={style.containerPopup} coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                    <div className={style.crossPopUp}>
+                    <img onClick={e=>{setCheckpoints(null)}} src={cross} alt="close"></img>
+                    </div>
                    <h1 className={style.popupDestinations}>{`${checkpoints.startName}-${checkpoints.endName}`}</h1>
                    <div className={style.personalInformation}>
                    <img src={uiTracker.selectedCarrier.pic} className={style.popUpAvatar} alt={`${uiTracker.selectedCarrier.name}`}></img>

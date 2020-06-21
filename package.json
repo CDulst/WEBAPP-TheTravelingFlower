@@ -18,7 +18,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-vertical-timeline-component": "^3.0.2",
-    "turf": "^3.0.14"
+    "turf": "^3.0.14",
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

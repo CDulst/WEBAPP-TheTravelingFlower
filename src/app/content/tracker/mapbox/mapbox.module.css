@@ -39,17 +39,50 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 30rem;
+    width: 40rem;
+    height: 5rem;
+    
 }
 
-.style.currentCarrier__wrapper {
+.currentCarrierName {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--hoverButton);
+}
+
+.positioningPopup {
+    position: fixed;
+    top: 8rem;
+    left: 8%;
+    z-index: 99;
+}
+
+.animationDisplayNone {
+    display: none;
+}
+
+.animationDisplayBlock {
+    display: block;
+}
+
+.currentCarrierKmToGO {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.currentCarrierKmDone {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.currentCarrier__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .currentCarrierImage {
-    width: 20%;
+    width: 10%;
     border-radius: 6rem;
 }
 
@@ -60,9 +93,11 @@
     bottom: 7rem;
 }
 
-.containerPopup {
-    border-top: solid var(--colorSecondary) 3px;
+.crossPopUp {
+    display: flex;
+    justify-content: flex-end;
 }
+
 
 .iconMessage {
     position: absolute;
@@ -81,8 +116,8 @@
     z-index: 3;
     top: 20%;
     left: 2rem;
-
 }
+
 
 @media only screen and (min-width:720px) {
     .donationCounter {
