@@ -39,7 +39,6 @@ class AuthService {
         try {
           await userCredential.user.updateProfile({
             displayName: name,
-            eb: phone
           });
           return userCredential.user;
         } catch (error) {

@@ -35,7 +35,6 @@ class UserService {
     .get();
 
     return users.docs.map(doc => doc.data());
-
   };
 
 
