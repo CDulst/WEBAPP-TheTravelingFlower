@@ -11,19 +11,25 @@ function Slider() {
   const {carrierStore, routeStore} = useStore();
 
   const [selectedCarrier, setSelectedCarrier] = useState(null)
+  const [selectedRoute, setSelectedRoute] = useState(null);
 
-  const [value, setValue] = useState(50)
+  const [value, setValue] = useState(80)
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
     const r = value/100*routeStore.routes.length
     const route = routeStore.routes[r];
+
+    setSelectedRoute(route);
+
     if(route) {
     setSelectedCarrier(carrierStore.findCarrierById(route.carrierId))
     }
     
   }
 
+
+    uiStoreCarriers.setSelectedRoute(selectedRoute);
     uiStoreCarriers.setSelectedCarrier(selectedCarrier);
     
   
@@ -45,7 +51,7 @@ function Slider() {
       <InvolvementSlider value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
       </div>
       <div className={style.mobile}>
-      <InvolvementSlider orientation="horizontal"/>
+      <InvolvementSlider  value={value} handleChange={handleChange} orientation="horizontal"/>
       </div>
     </div>
     </div>

@@ -48,7 +48,7 @@ function Carriers() {
   <div className={style.carrier__container}>
     <Discover/>
     {uiStoreCarriers.selectedCarrier ? (
-      <Profile pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport="Bike" bio="I am john and I love nature. I am a young nature activist and I like to spend time in my garden. I hate my life and my wife. please kill me I dont want to particpate in this" />
+      <Profile pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport={uiStoreCarriers.selectedCarrier.transport} bio={uiStoreCarriers.selectedCarrier.bio} />
     ): 
     <p>carrier still not picked</p>
     }
