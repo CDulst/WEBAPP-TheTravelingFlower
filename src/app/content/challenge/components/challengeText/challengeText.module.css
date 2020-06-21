@@ -3,5 +3,41 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 90%;
     
+}
+
+.ChallengeTextDisplayNone {
+    display: none;
+}
+
+.ChallengeTextDisplayBlock {
+    display: block;
+}
+
+.challengeTextWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.challengeTextTitle {
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.challengeTextIcon {
+    width: 4rem;
+}
+
+.challengeTextParagraph {
+    line-height: 2.5rem;
+}
+
+@media only screen and (min-width:1100px) {
+
+    .challengeText__container {
+        width: 50%;
+        
+    }
+
 }
