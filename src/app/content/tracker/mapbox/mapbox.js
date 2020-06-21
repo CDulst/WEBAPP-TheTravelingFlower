@@ -69,6 +69,11 @@ const Mapbox = () => {
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
+
+          const handleInfoClick = (e) => {
+              uiTracker.popupOut();
+              console.log(uiTracker.popup);
+          }
     
 
           return useObserver(() => (
@@ -81,8 +86,8 @@ const Mapbox = () => {
             <DonationCounter />
             </div>
 
-            <div className={style.positioningPopup}>
-                <Popupinfo toGo="2000km" done="1000"/>
+            <div className={(uiTracker.popup ? `${style.positioningPopup} ${style.animationDisplayBlock}` : `${style.positioningPopup} ${style.animationDisplayNone}`)}>
+                <Popupinfo toGo="2000 km" done="1000 km"/>
             </div>
 
             <div className={style.progressbarLocation}>
@@ -94,7 +99,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.iconInfo}>
-                <PopupIcon icon={info} />
+                <PopupIcon icon={info} click={handleInfoClick} />
             </div>
 
             <div className={style.livechat}>
