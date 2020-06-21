@@ -8,6 +8,7 @@ class UiStore {
     this.rootStore = rootStore;
     this.currentUser = undefined;
     this.currentCarrier = undefined;
+    this.currentRoute = undefined;
     this.authService = new AuthService(
       this.rootStore.firebase,
       this.onAuthStateChanged

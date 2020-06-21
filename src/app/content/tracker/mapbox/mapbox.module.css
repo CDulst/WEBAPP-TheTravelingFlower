@@ -39,17 +39,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 30rem;
+    width: 40rem;
+    height: 5rem;
+    
 }
 
-.style.currentCarrier__wrapper {
+.currentCarrierName {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--colorSecondary);
+}
+
+.currentCarrierKmToGO {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.currentCarrierKmDone {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.currentCarrier__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .currentCarrierImage {
-    width: 20%;
+    width: 10%;
     border-radius: 6rem;
 }
 
@@ -60,9 +78,11 @@
     bottom: 7rem;
 }
 
-.containerPopup {
-    border-top: solid var(--colorSecondary) 3px;
+.crossPopUp {
+    display: flex;
+    justify-content: flex-end;
 }
+
 
 .iconMessage {
     position: absolute;
