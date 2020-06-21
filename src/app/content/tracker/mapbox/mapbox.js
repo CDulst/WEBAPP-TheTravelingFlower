@@ -12,6 +12,9 @@ import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import {dataStore}from '../stores/DataStore';
 import cross from '../../../../assets/tracker/cross.svg'
+import popup from './components/popup/popup';
+import Popupinfo from './components/popup/popup';
+
 
 
 const Map = ReactMapboxGl({
@@ -34,7 +37,7 @@ const Mapbox = () => {
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-    let percentage = 10000/121000*100
+
     
   
     const [viewport] = useState({
@@ -78,8 +81,12 @@ const Mapbox = () => {
             <DonationCounter />
             </div>
 
+            <div className={style.positioningPopup}>
+                <Popupinfo toGo="2000km" done="1000"/>
+            </div>
+
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage={percentage}  />
+                <ProgressbarLocation percentage="20"  />
             </div>
 
             <div className={style.iconMessage}>

@@ -50,6 +50,13 @@
     color: var(--hoverButton);
 }
 
+.positioningPopup {
+    position: absolute;
+    top: 10rem;
+    left: 6%;
+    z-index: 99;
+}
+
 .currentCarrierKmToGO {
     font-size: 1rem;
     font-weight: bold;
