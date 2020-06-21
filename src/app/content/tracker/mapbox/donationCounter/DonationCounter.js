@@ -8,7 +8,7 @@ import ROUTES from "../../../../../routes/index";
 const DonationCounter = () => {
     return (
         <div className={style.donationCounter__container}>
-            <p className={style.donation__paragraph}><span className={style.donation}>$123.32</span><span className={style.raised}>raised!</span></p>
+            <p className={style.donation__paragraph}><span className={style.donation}>€12000.32</span><span className={style.raised}>raised!</span></p>
             <div className={style.treesSaved}>
                 <p className={style.trees}>Good Job!</p>
                 <Link className={style.challengeLink} to = {ROUTES.challenge}>Challenge</Link>
