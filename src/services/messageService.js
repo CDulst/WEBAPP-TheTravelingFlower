@@ -28,6 +28,14 @@ class MessageService {
     return messages.docs.map(doc => doc.data());
   };
 
+  create = async message => {
+    return await this.db
+      .collection("Messages")
+      .doc(message.id)
+      .withConverter(messageConverter)
+      .set(message);
+  };
+
 
 }
 export default MessageService;

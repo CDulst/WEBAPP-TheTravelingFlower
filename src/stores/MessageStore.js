@@ -12,11 +12,17 @@ class MessageStore {
 
     addMessage (message) {
         this.messages.push(message);
+        console.log(this.messages);
     }
 
     findMessageById(id){
         return this.messages.find(message => message.id === id);
     }
+
+    
+    createMessage = async message => {
+        return await this.messageService.create(message);
+      };
 }
 
 decorate(MessageStore, {

@@ -2,9 +2,9 @@ import { decorate, observable } from "mobx";
 import {rootStore} from "../stores/index.js";
 
 class Message {
-    constructor({id, userId, content}) {
+    constructor({id, userEmail, content}) {
         this.id = id;
-        this.userId = userId;
+        this.userEmail = userEmail;
         this.content = content
         rootStore.messageStore.addMessage(this);
     }
@@ -13,7 +13,7 @@ const messageConverter = {
     toFirestore: function(message) {
       return {
       content: message.content,
-      userid: message.userId,
+      useremail: message.userEmail,
       };
     },
     fromFirestore: function(snapshot, options) {
@@ -21,7 +21,7 @@ const messageConverter = {
       if (!rootStore.messageStore.findMessageById(snapshot.id)){
         return new Message({
         id: snapshot.id,
-        userId: data.userid,
+        userEmail: data.useremail,
         content: data.content
         });
       }

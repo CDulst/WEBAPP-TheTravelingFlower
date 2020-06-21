@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./field.module.css"
 
-function Field({value,icon,width,border,errorMessage,correctMessage,onChange,onClick,correct,wrong}) {
+function Field({value,icon,width,border,errorMessage,correctMessage,onChange,onClick,onEnter,correct,wrong}) {
   return (
   <>
   {
@@ -23,6 +23,9 @@ function Field({value,icon,width,border,errorMessage,correctMessage,onChange,onC
       <input onChange = {e =>onChange(e)}  className = {style.input} type = {(value === "Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
     )
   :
+    onEnter ?
+    <input onKeyDown = {e => onEnter(e)} className = {style.input} type = {(value === "Password" ? "password" : value === "Repeat Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
+    :
   <input className = {style.input} type = {(value === "Password" ? "password" : value === "Repeat Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
   )
 }
