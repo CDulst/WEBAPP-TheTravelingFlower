@@ -2,7 +2,10 @@
     width: 90vw;
 }
 
-
+.textballoon {
+    color: white;
+    font-weight: bold;
+}
 
 .textballoon, .indicator {
     display: none;

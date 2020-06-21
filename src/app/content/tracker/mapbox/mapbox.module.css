@@ -50,6 +50,21 @@
     color: var(--hoverButton);
 }
 
+.positioningPopup {
+    position: fixed;
+    top: 8rem;
+    left: 8%;
+    z-index: 99;
+}
+
+.animationDisplayNone {
+    display: none;
+}
+
+.animationDisplayBlock {
+    display: block;
+}
+
 .currentCarrierKmToGO {
     font-size: 1rem;
     font-weight: bold;
@@ -101,8 +116,8 @@
     z-index: 3;
     top: 20%;
     left: 2rem;
-
 }
+
 
 @media only screen and (min-width:720px) {
     .donationCounter {

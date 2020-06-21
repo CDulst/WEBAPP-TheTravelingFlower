@@ -12,6 +12,9 @@ import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
 import {dataStore}from '../stores/DataStore';
 import cross from '../../../../assets/tracker/cross.svg'
+import popup from './components/popup/popup';
+import Popupinfo from './components/popup/popup';
+
 
 
 const Map = ReactMapboxGl({
@@ -34,7 +37,7 @@ const Mapbox = () => {
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-    let percentage = 10000/121000*100
+
     
   
     const [viewport] = useState({
@@ -66,6 +69,11 @@ const Mapbox = () => {
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
+
+          const handleInfoClick = (e) => {
+              uiTracker.popupOut();
+              console.log(uiTracker.popup);
+          }
     
 
           return useObserver(() => (
@@ -78,8 +86,12 @@ const Mapbox = () => {
             <DonationCounter />
             </div>
 
+            <div className={(uiTracker.popup ? `${style.positioningPopup} ${style.animationDisplayBlock}` : `${style.positioningPopup} ${style.animationDisplayNone}`)}>
+                <Popupinfo toGo="2000 km" done="1000 km"/>
+            </div>
+
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage={percentage}  />
+                <ProgressbarLocation percentage="20"  />
             </div>
 
             <div className={style.iconMessage}>
@@ -87,7 +99,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.iconInfo}>
-                <PopupIcon icon={info} />
+                <PopupIcon icon={info} click={handleInfoClick} />
             </div>
 
             <div className={style.livechat}>
@@ -100,7 +112,7 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
+                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
                     <Feature coordinates={[13.08434, 52.51435]}></Feature>
                 </Layer>
 
@@ -127,7 +139,7 @@ const Mapbox = () => {
 
                 {currentCarrier ? (
                         <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
-                                <Feature coordinates={[[13.08434, 52.51435], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
+                                <Feature coordinates={[[13.08434, 52.51435], [uiStore.currentRoute.endCoordinate.Rc, uiStore.currentRoute.endCoordinate.Ac]]} />
                         </Layer>
                 ): null}
 

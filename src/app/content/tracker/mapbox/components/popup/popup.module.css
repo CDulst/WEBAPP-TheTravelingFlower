@@ -1,0 +1,11 @@
+.popup__container {
+    background-color: var(--colorSecondary);
+    color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.popupBold {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
