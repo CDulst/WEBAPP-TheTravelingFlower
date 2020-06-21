@@ -56,8 +56,12 @@ const Mapbox = () => {
         }
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
-        const currentRoute = routeStore.findRouteById(uiStore.currentCarrier.routeId);
-        uiStore.setRoute(currentRoute);
+
+        if(currentCarrier){
+            const currentRoute = routeStore.findRouteById(uiStore.currentCarrier.routeId);
+            uiStore.setRoute(currentRoute);
+        }
+
         
         const handleOnClick = (e) => {
             uiTracker.UIOut();
@@ -119,6 +123,12 @@ const Mapbox = () => {
 
                         </div>
                     </Popup>
+                ): null}
+
+                {currentCarrier ? (
+                        <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
+                                <Feature coordinates={[[13.08434, 52.51435], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
+                        </Layer>
                 ): null}
 
                 {routeStore.routes.map(checkpoint => (
