@@ -35,6 +35,17 @@ class AuthService {
         email,
         password
       );
+      if (userCredential) {
+        try {
+          await userCredential.user.updateProfile({
+            displayName: name,
+            eb: phone
+          });
+          return userCredential.user;
+        } catch (error) {
+          return error;
+        }
+    }
       console.log("heya");
       return userCredential.user;
   }catch (error) {

@@ -1,6 +1,7 @@
 import { decorate, observable, action } from "mobx";
 import AuthService from "../services/authService";
 import User from "../models/User";
+import {v4} from "uuid"
 class UiStore {
   constructor(rootStore) {
     this.rootStore = rootStore;
@@ -40,7 +41,17 @@ class UiStore {
   };
 
   setCurrentUser(user) {
-    this.currentUser = user;
+    if (user !== ""){
+        console.log(user.phonenumber);
+        const userr = this.rootStore.userStore.findUserByEmail(user.email)
+        this.rootStore.userStore.removeUserByEmail(userr.email);
+        const userc = this.rootStore.userStore.findUserByEmail(user.email)
+        this.currentUser = userc;
+        console.log(this.currentUser);
+    }
+    else{
+    this.currentUser = "";
+    }
   }
 
   setCurrentCarrier(currentCarrier) {
@@ -53,22 +64,30 @@ class UiStore {
       user.phone,
       user.password
     );
-    
-    const newRegisteredUser = new User({
-      id: result.uid,
-      name: result.displayName,
-      avatar: result.photoURL,
-      store: this.rootStore.userStore,
-      email: result.email
-    });
-    /*
-    if (result) {
-      //user toevoegen aan onze users collection
-      this.rootStore.userStore.createUser(newRegisteredUser);
-    }
-    */
+
+    console.log(result);
+
     return result;
   };
+
+  createUser = async (result,phone) => {
+    const newRegisteredUser = new User({
+        id: result.uid,
+        email: result.email,
+        name: result.displayName,
+        phonenumber: phone
+      });
+  
+      console.log(newRegisteredUser)
+      
+      if (result) {
+        console.log("check");
+        await this.rootStore.userStore.createUser(newRegisteredUser);
+      }
+
+      this.setCurrentUser(newRegisteredUser)
+  
+  }
 
 }
 

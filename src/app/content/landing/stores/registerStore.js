@@ -35,8 +35,23 @@ class RegisterStore {
       this.emailCorrect = "";
       this.emailError = "(☝◞‸◟)☞ Email already in use!";
   }
+  else if(feedback === "auth/invalid-email"){
+    this.emailCorrect = "";
+    this.emailError = "(☝◞‸◟)☞ Invalid Email";
   }
-
+  else{
+    this.putallonNull()
+    console.log("feedback");
+    rootStore.uiStore.createUser(feedback,this.phone);
+  }
+  }
+ putallonNull(){
+    this.nameCorrect = "";
+    this.emailCorrect = "";
+    this.phoneCorrect = "";
+    this.passwordCorrect = "";
+    this.repeatCorrect = "";
+ }
   putonNull(value){
    if (value === "name"){
        this.nameCorrect = "";

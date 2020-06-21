@@ -27,12 +27,12 @@ const userConverter = {
       return {
         email: user.email,
         name: user.name,
-        phone: user.phone
+        phone: user.phonenumber
       };
     },
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
-      if (!rootStore.userStore.findUserById(snapshot.id)){
+      if (!rootStore.userStore.findUserByEmail(data.email)){
         return new User({
           id: snapshot.id,
           email: data.email,

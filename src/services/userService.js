@@ -20,6 +20,14 @@ class UserService {
  
   }
 
+  create = async user => {
+    return await this.db
+      .collection("Users")
+      .doc(user.email)
+      .withConverter(userConverter)
+      .set(user);
+  };
+
   getUsers = async () => {
     const users = await this.db
     .collection("Users")

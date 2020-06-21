@@ -40,7 +40,7 @@ class LoginStore {
         this.enableButton = false;
     }
     else{
-       console.log(feedback.user.email);
+       console.log(feedback.user.name);
        rootStore.uiStore.setCurrentUser(rootStore.userStore.findUserByEmail(feedback.user.email))
        console.log(rootStore.uiStore.currentUser);
     }
