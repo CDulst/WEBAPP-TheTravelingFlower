@@ -16,7 +16,7 @@ function Header({img,title,text}) {
   }
   <h2 className = {style.title}> {title} </h2>
   <p className = {style.text}> {text} </p>
-
+  
   </>
   );
 }
