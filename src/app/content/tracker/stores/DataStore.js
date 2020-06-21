@@ -15,12 +15,16 @@ class DataStore {
             const distance = turf.distance([route.startCoordinate.Rc, route.startCoordinate.Ac], [route.endCoordinate.Rc, route.endCoordinate.Ac], options)
     
             
-            for (let i = 20; i < distance; i++) {
+            for (let i = 40; i < distance; i++) {
                 const along = turf.along(line, i, options);
                 this.trajectory.push(along.geometry.coordinates);
                
             }
         })
+    }
+
+    empty () {
+        this.trajectory = [];
     }
 
     

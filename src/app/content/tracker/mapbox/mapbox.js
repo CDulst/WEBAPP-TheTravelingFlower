@@ -30,13 +30,9 @@ const Mapbox = () => {
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
-
-    console.log(dataStore.trajectory)
-
+    let percentage = 20000/121000*100
     
-
-   
-    dataStore.calculatePoints();
+  
     const [viewport] = useState({
         containerStyle:{
             height: '100vh',
@@ -51,13 +47,12 @@ const Mapbox = () => {
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
+            
         }
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
-
-        let percentage = 40000/dataStore.trajectory.length*100;
-
-
+        dataStore.calculatePoints();
+        console.log(dataStore.trajectory);
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
@@ -96,11 +91,11 @@ const Mapbox = () => {
                 
 
                 <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
-                    <Feature coordinates={dataStore.trajectory[40000]}></Feature>
+                    <Feature coordinates={dataStore.trajectory[800]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={dataStore.trajectory[40000]}>
+                    <Popup className={style.popupCurrent} coordinates={dataStore.trajectory[800]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
