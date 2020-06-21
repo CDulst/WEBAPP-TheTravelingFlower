@@ -24,7 +24,10 @@ const Map = ReactMapboxGl({
   });
 
 
+
+
 const Mapbox = () => {
+    
 
     const {routeStore, carrierStore, uiStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
@@ -44,6 +47,7 @@ const Mapbox = () => {
           
         })
 
+
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
@@ -51,8 +55,6 @@ const Mapbox = () => {
         }
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
-        dataStore.calculatePoints();
-        console.log(dataStore.trajectory);
         const handleOnClick = (e) => {
             uiTracker.UIOut();
           }
@@ -91,11 +93,11 @@ const Mapbox = () => {
                 
 
                 <Layer  onMouseEnter={e => {setCurrentCarrier(uiStore.currentCarrier)}} onMouseLeave={e => {setCurrentCarrier(null)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="currentCarrier">
-                    <Feature coordinates={dataStore.trajectory[800]}></Feature>
+                    <Feature coordinates={[6.08434, 52.51435]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={dataStore.trajectory[800]}>
+                    <Popup className={style.popupCurrent} coordinates={[6.08434, 52.51435]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>

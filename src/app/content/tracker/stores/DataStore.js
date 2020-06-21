@@ -1,5 +1,6 @@
 import {rootStore} from '../../../../stores/index'
 import turf from 'turf'
+import { decorate, observable, action } from 'mobx';
 
 class DataStore {
     constructor() {
@@ -15,7 +16,7 @@ class DataStore {
             const distance = turf.distance([route.startCoordinate.Rc, route.startCoordinate.Ac], [route.endCoordinate.Rc, route.endCoordinate.Ac], options)
     
             
-            for (let i = 40; i < distance; i++) {
+            for (let i = 30; i < distance; i++) {
                 const along = turf.along(line, i, options);
                 this.trajectory.push(along.geometry.coordinates);
                
@@ -30,8 +31,17 @@ class DataStore {
     
 }
 
+decorate(DataStore, {
+    trajectory:observable,
+    calculatePoints: action
+})
+
+
+
 const dataStore = new DataStore();
 
 export {dataStore}
+
+
 
 export default DataStore;
