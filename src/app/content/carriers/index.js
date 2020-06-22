@@ -12,6 +12,7 @@ import pic from '../../../assets/carrier/carrier.png'
 import ReactMapboxGl from 'react-mapbox-gl';
 import {uiStoreCarriers} from './stores/UiStore';
 import { useObserver } from 'mobx-react-lite';
+import { useStore } from '../../../hooks';
 
 
 const Map = ReactMapboxGl({
@@ -21,9 +22,10 @@ const Map = ReactMapboxGl({
     minZoom: [2.7]
 });
 
+
+
 function Carriers() {
 
-  console.log(uiStoreCarriers);
 
   const [viewport] = useState({
     zoom: [4],

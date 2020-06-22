@@ -17,6 +17,10 @@ class RouteStore {
     findRouteById(id){
         return this.routes.find(route => route.id === id);
     }
+
+    sortRoute() {
+        console.log('hey');
+    }
 }
 
 decorate(RouteStore, {

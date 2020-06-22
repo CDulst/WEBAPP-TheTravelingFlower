@@ -18,8 +18,10 @@ function Slider() {
   const handleChange = (e, newValue) => {
     setValue(newValue);
     const r = value/100*routeStore.routes.length
-    const route = routeStore.routes[r];
+  
 
+    //Here you need to sort an array
+    const route = routeStore.routes[r];
     setSelectedRoute(route);
 
     if(route) {
@@ -27,6 +29,8 @@ function Slider() {
     }
     
   }
+  
+
 
     uiStoreCarriers.setSelectedRoute(selectedRoute);
     uiStoreCarriers.setSelectedCarrier(selectedCarrier);
