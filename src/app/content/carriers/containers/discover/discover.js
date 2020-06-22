@@ -42,8 +42,7 @@ const Discover = ({start, end, type}) => {
            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (
                 <div className={style.flowerArival__container}>
                 <img style={style.awaiting__image} src={awaiting}></img>
-                <p className={style.awaitingText}>Awaiting flower arival</p>
-                <Link to={`/tracker`}><Button value="Flower location"/></Link>
+                <p className={style.awaitingText}>Awaiting flower arival ...</p>
                 </div>
                 
             ): null}
@@ -81,9 +80,20 @@ const Discover = ({start, end, type}) => {
                 <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                                 <Feature coordinates={[[uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac], [uiStoreCarriers.selectedRoute.endCoordinate.Rc, uiStoreCarriers.selectedRoute.endCoordinate.Ac]]} />
                 </Layer>
+                
 
         </>
-    ):null}
+    ):
+    null
+    }
+
+<Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
+
+<Layer id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="jumpingCarrier3">
+    <Feature coordinates={[13.08434, 52.51435]}></Feature>
+</Layer>
+
+
 </Map>
         
             

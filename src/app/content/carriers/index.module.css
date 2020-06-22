@@ -9,10 +9,33 @@
     width: 100%;
 }
 
+.noCarrier__text {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+    line-height: 2.3rem;
+}
+
+.pink__text {
+    color: var(--hoverButton);
+}
+
 .containerDetail {
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.noCarrier__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noCarrierSelected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sliderFeedback {
