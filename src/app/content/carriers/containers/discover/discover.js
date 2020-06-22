@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import ReactMapboxGl, { Layer, Feature, Image } from 'react-mapbox-gl';
 import { useObserver } from 'mobx-react-lite';
 import {uiStoreCarriers} from '../../stores/UiStore';
+import awaiting from '../../../../../assets/carrier/awaiting.svg'
 
 
 const Map = ReactMapboxGl({
@@ -18,6 +19,12 @@ const Map = ReactMapboxGl({
 
 const Discover = ({start, end, type}) => {
 
+    if(uiStoreCarriers.selectedCarrier){
+        console.log(uiStoreCarriers.selectedCarrier.status)
+    }
+
+
+
     const [viewport] = useState({
             container: 'map',
             zoom: [6],
@@ -30,10 +37,30 @@ const Discover = ({start, end, type}) => {
     return useObserver(() =>   (
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
-            {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedRoute ? (
+
+
+           {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (
+                <div className={style.flowerArival__container}>
+                <img style={style.awaiting__image} src={awaiting}></img>
+                <p className={style.awaitingText}>Awaiting flower arival</p>
+                <Link to={`/tracker`}><Button value="Flower location"/></Link>
+                </div>
+                
+            ): null}
+
+            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (
+               <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
+            ): null}
+
+            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ? (
                 <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
-            ) :  null}
+            ): null}
+
+
+           
+ 
             
+
             </div>
 
         

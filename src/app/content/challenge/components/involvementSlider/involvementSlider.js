@@ -11,7 +11,6 @@ function InvolvementSlider({item1, item2, text, handleChange, orientation, heigh
   const {routeStore} = useStore();
 
   const s = 100/routeStore.routes.length
-  console.log(s);
 
 
   return (
