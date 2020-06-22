@@ -11,7 +11,7 @@ const Map = ReactMapboxGl({
     accessToken:
       'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
       
-      minZoom: [3]
+      minZoom: [2]
   });
 
 
@@ -37,7 +37,7 @@ const Discover = ({start, end, type}) => {
             </div>
 
         
-<Map center={(uiStoreCarriers.selectedRoute ? ([uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac+2]): [13.08434, 52.51435])} className={style.mapbox2} {...viewport} style="mapbox://styles/yorbengoor/ckbqhut424xj51iqattj488n8">
+<Map center={(uiStoreCarriers.selectedRoute ? ([uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac+1]): [13.08434, 52.51435])} className={style.mapbox2} {...viewport} style="mapbox://styles/yorbengoor/ckbqhut424xj51iqattj488n8">
     {uiStoreCarriers.selectedRoute ? (
         <>
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
