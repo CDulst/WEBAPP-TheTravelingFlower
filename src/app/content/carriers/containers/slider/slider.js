@@ -63,7 +63,7 @@ function Slider() {
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
-      <InvolvementSlider item1={(uiStoreCarriers.selectedRoute ? (`${uiStoreCarriers.selectedRoute.startName}`) : null)} value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
+      <InvolvementSlider item1={(uiStoreCarriers.selectedRoute ? (`${uiStoreCarriers.selectedRoute.startName}-${uiStoreCarriers.selectedRoute.endName}`) : null)} value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
       </div>
       <div className={style.mobile}>
       <InvolvementSlider  value={value} handleChange={handleChange} orientation="horizontal"/>

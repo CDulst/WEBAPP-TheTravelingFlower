@@ -48,7 +48,10 @@ const Discover = ({start, end, type}) => {
             ): null}
 
             {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (
+                <>
                <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
+               <p className={style.completedStatus}>Completed</p>
+               </>
             ): null}
 
             {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ? (
