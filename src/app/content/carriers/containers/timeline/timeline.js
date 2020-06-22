@@ -15,7 +15,7 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
   <>
     <div>
 
-      {uiStoreCarriers.selectedCarrier.journeys ? (
+      {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedCarrier.journeys ? (
 
         <VerticalTimeline layout={"1-column"}>
         {uiStoreCarriers.selectedCarrier.journeys.map(journey => (

@@ -20,7 +20,7 @@ const Discover = ({start, end, type}) => {
 
     const [viewport] = useState({
             container: 'map',
-            zoom: [9],
+            zoom: [6],
             pitch:[60]
           
         })
