@@ -4,70 +4,35 @@ import 'react-vertical-timeline-component/style.min.css'
 import style from './timeline.module.css'
 import Story from '../../components/story/story';
 import image from '../../../../../assets/feed/post/content pics/example.png'
+import { uiStoreCarriers } from '../../stores/UiStore';
 
 
 
 
 function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTop}) {
+
   return (
   <>
     <div>
-      <VerticalTimeline layout={"1-column"}>
+
+      {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedCarrier.journeys ? (
+
+        <VerticalTimeline layout={"1-column"}>
+        {uiStoreCarriers.selectedCarrier.journeys.map(journey => (
         <VerticalTimelineElement
-        contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
-        contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
-        date={date}
-        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
-        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys. and i like this a lot. this is just some placeholder text to visualise the visuals on the desktop computer, please sent help because I am honnestly going to kill mysellf after this week" image={image} />
-
-    </VerticalTimelineElement>
-
-    <VerticalTimelineElement
-        contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
-        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
-        date={date}
-        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
-        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys. and i like this a lot. this is just some placeholder text to visualise the visuals on the desktop computer, please sent help because I am honnestly going to kill mysellf after this week" image={image} />
-
-    </VerticalTimelineElement>
-
-    <VerticalTimelineElement
-        contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
-        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
-        date={date}
-        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
-        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys. and i like this a lot. this is just some placeholder text to visualise the visuals on the desktop computer, please sent help because I am honnestly going to kill mysellf after this week" image={image} />
-
-    </VerticalTimelineElement>
-
-    <VerticalTimelineElement
-        contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
-        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
-        date={date}
-        
-        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
-        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys. and i like this a lot. this is just some placeholder text to visualise the visuals on the desktop computer, please sent help because I am honnestly going to kill mysellf after this week" image={image} />
-
-    </VerticalTimelineElement>
-
-    <VerticalTimelineElement
-        contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
-        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
-        date={date}
-        iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
-        icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-      <Story title= "a beautifull day in Holland!" date="2019-12-9" location="Amsterdam" content="this is such an awesome place and I wanted to share this with you guys. and i like this a lot. this is just some placeholder text to visualise the visuals on the desktop computer, please sent help because I am honnestly going to kill mysellf after this week" image={image} />
-
-    </VerticalTimelineElement>
-
-    
-
+          contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
+          contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
+          date={date}
+          iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
+          icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
+        <Story title= {journey.title} date={journey.date} location={journey.location} content={journey.text} image={journey.images} />
+  
+      </VerticalTimelineElement>
+        ))}
     
   </VerticalTimeline>
+      ):null}
+      
     </div>
   </>
   );

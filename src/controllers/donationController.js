@@ -79,7 +79,7 @@ class DonationController {
     this.setSwitch();
     }
     this.currentdonation += 0.01;
-    console.log(this.currentdonation.toFixed(2));
+
   }
   else{
     this.enabled = false;

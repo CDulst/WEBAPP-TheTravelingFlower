@@ -6,12 +6,13 @@
 }
 
 .slider {
-    display: flex;
-    align-items: center;
+
     width: 80%;
 }
 
 
 .paragraph {
     font-weight: bold;
+    position: absolute;
+    top: 1rem;
 }

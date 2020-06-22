@@ -10,23 +10,31 @@ import {uiStoreCarriers} from '../../stores/UiStore';
 function Slider() {
   const {carrierStore, routeStore} = useStore();
 
+
   const [selectedCarrier, setSelectedCarrier] = useState(null)
   const [selectedRoute, setSelectedRoute] = useState(null);
 
-  const [value, setValue] = useState(80)
+  const [value, setValue] = useState(100)
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
     const r = value/100*routeStore.routes.length
-    const route = routeStore.routes[r];
 
+    if(uiStoreCarriers.selectedCarrier){
+      console.log(uiStoreCarriers.selectedCarrier)
+    }
+   
+
+    //Here you need to sort an array
+    const route = routeStore.routes[r];
     setSelectedRoute(route);
 
     if(route) {
     setSelectedCarrier(carrierStore.findCarrierById(route.carrierId))
     }
-    
   }
+  
+
 
     uiStoreCarriers.setSelectedRoute(selectedRoute);
     uiStoreCarriers.setSelectedCarrier(selectedCarrier);
@@ -47,7 +55,7 @@ function Slider() {
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
-      <InvolvementSlider value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
+      <InvolvementSlider item1={(uiStoreCarriers.selectedRoute ? (`${uiStoreCarriers.selectedRoute.startName}`) : null)} value={value} handleChange={handleChange} orientation="vertical" height="80vh" />
       </div>
       <div className={style.mobile}>
       <InvolvementSlider  value={value} handleChange={handleChange} orientation="horizontal"/>

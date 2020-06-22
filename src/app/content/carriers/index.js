@@ -12,6 +12,7 @@ import pic from '../../../assets/carrier/carrier.png'
 import ReactMapboxGl from 'react-mapbox-gl';
 import {uiStoreCarriers} from './stores/UiStore';
 import { useObserver } from 'mobx-react-lite';
+import { useStore } from '../../../hooks';
 
 
 const Map = ReactMapboxGl({
@@ -21,9 +22,9 @@ const Map = ReactMapboxGl({
     minZoom: [2.7]
 });
 
-function Carriers() {
 
-  console.log(uiStoreCarriers);
+
+function Carriers() {
 
   const [viewport] = useState({
     zoom: [4],
@@ -50,7 +51,20 @@ function Carriers() {
     {uiStoreCarriers.selectedCarrier ? (
       <Profile pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport={uiStoreCarriers.selectedCarrier.transport} bio={uiStoreCarriers.selectedCarrier.bio} />
     ): 
-    <p>carrier still not picked</p>
+    <div className={style.noCarrierSelected}>
+    
+    {uiStoreCarriers.selectedRoute ? (
+      <>
+      <img src={`https://avatars.dicebear.com/v2/identicon/${uiStoreCarriers.selectedRoute.id}.svg`}></img>
+      <p>no carrier selected</p>
+      </>
+    ) : null}
+   
+    
+    {!uiStoreCarriers.selectedRoute ? (
+      <p className={style.sliderFeedback}>USE THE SLIDER!</p>
+    ) : null}
+    </div>
     }
     
     <div className={style.sliderPosition}>

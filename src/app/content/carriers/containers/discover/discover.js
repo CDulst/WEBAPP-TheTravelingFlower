@@ -3,8 +3,8 @@ import style from './discover.module.css'
 import Button from '../../../../components/button/button';
 import {Link} from "react-router-dom";
 import ReactMapboxGl from 'react-mapbox-gl';
-import { uiStoreCarriers } from '../../stores/UiStore';
 import { useObserver } from 'mobx-react-lite';
+import {uiStoreCarriers} from '../../stores/UiStore';
 
 
 const Map = ReactMapboxGl({
@@ -20,7 +20,7 @@ const Discover = ({start, end, type}) => {
 
     const [viewport] = useState({
             container: 'map',
-            zoom: [9],
+            zoom: [8],
             pitch:[60]
           
         })
@@ -30,7 +30,10 @@ const Discover = ({start, end, type}) => {
     return useObserver(() =>   (
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
-            <Link to="/carriers/detail"><Button value="discover journey"/></Link>
+            {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedRoute ? (
+                <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
+            ) :  null}
+            
             </div>
 
         
