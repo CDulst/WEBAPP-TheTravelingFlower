@@ -89,6 +89,11 @@
         bottom: 2rem;
         right: 4rem;
         display: block;
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 4px var(--hoverButton) solid;
 
     }
 

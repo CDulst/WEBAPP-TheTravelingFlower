@@ -6,6 +6,7 @@ import ReactMapboxGl, { Layer, Feature, Image } from 'react-mapbox-gl';
 import { useObserver } from 'mobx-react-lite';
 import {uiStoreCarriers} from '../../stores/UiStore';
 import awaiting from '../../../../../assets/carrier/awaiting.svg'
+import { useStore } from '../../../../../hooks';
 
 
 const Map = ReactMapboxGl({
@@ -18,6 +19,7 @@ const Map = ReactMapboxGl({
 
 
 const Discover = ({start, end, type}) => {
+    const {serverValuesStore} = useStore();
 
     if(uiStoreCarriers.selectedCarrier){
         console.log(uiStoreCarriers.selectedCarrier.status)
@@ -65,7 +67,7 @@ const Discover = ({start, end, type}) => {
             </div>
 
         
-<Map center={(uiStoreCarriers.selectedRoute ? ([uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac+1]): [13.08434, 52.51435])} className={style.mapbox2} {...viewport} style="mapbox://styles/yorbengoor/ckbqhut424xj51iqattj488n8">
+<Map center={(uiStoreCarriers.selectedRoute ? ([uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac+1]): serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435])} className={style.mapbox2} {...viewport} style="mapbox://styles/yorbengoor/ckbqhut424xj51iqattj488n8">
     {uiStoreCarriers.selectedRoute ? (
         <>
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
