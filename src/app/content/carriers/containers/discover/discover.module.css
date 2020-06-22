@@ -16,23 +16,17 @@
 }
 
 .completedStatus {
-    color: var( --hoverButton);
-    position: absolute;
-    bottom: 2rem;
-    right: 4rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 1rem;
-    font-size: 3rem;
-    border: 6px var( --hoverButton) solid;
+    display: none;
 }
 
-.flowerArival__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0.5;
 
+.flowerArival__container {
+    display: none;
+    opacity: 0.8;
+}
+
+.awaiting__image {
+    width: 5rem;
 }
 
 .mapboxButton {
@@ -59,6 +53,8 @@
 }
 
 @media only screen and (min-width:720px) {
+
+
    .mapboxButton {
        position: unset;
        height: 23vh;
@@ -74,6 +70,28 @@
 }
 
 @media only screen and (min-width:1300px) {
+    .flowerArival__container {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 3rem;
+        opacity: 0.8;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+
+    .completedStatus {
+        color: var( --hoverButton);
+        position: absolute;
+        top: unset;
+        bottom: 2rem;
+        right: 4rem;
+        display: block;
+
+    }
+
     .mapboxButton {
         height: 100%;
         width: 40vw;

@@ -38,10 +38,9 @@ const Discover = ({start, end, type}) => {
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
 
-
            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (
                 <div className={style.flowerArival__container}>
-                <img style={style.awaiting__image} src={awaiting}></img>
+                <img className={style.awaiting__image} src={awaiting}></img>
                 <p className={style.awaitingText}>Awaiting flower arival ...</p>
                 </div>
                 

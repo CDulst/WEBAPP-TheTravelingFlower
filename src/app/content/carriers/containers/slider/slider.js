@@ -72,11 +72,11 @@ function Slider() {
 
     <div className={style.slider}>
     <div className={style.carriers}>
-      <img src={routeposition != "" && routeArray[routeposition + 2]  && carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId).pic : question } className={style.secondNextCarrier} alt="person"></img>
-      <img src={routeposition != "" && routeArray[routeposition + 1]  && carrierStore.findCarrierById(routeArray[routeposition + 1 ].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition+ 1].carrierId).pic : question  } className={style.nextCarrier} alt="person"></img>
-      <img src={(selectedRoute && carrierStore.findCarrierById(selectedRoute.carrierId) ? carrierStore.findCarrierById(selectedRoute.carrierId).pic : question)} className={style.currentCarrier} alt="person"></img>
-      <img src={routeposition != "" && routeArray[routeposition - 1]  && carrierStore.findCarrierById(routeArray[routeposition - 1].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition - 1].carrierId).pic : question  } className={style.nextCarrier} alt="person"></img>
-      <img src={routeposition != "" && routeArray[routeposition - 2]  && carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId).pic : question } className={style.secondNextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition + 2]  && carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId).pic : `https://avatars.dicebear.com/v2/identicon/unknown.svg` } className={style.secondNextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition + 1]  && carrierStore.findCarrierById(routeArray[routeposition + 1 ].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition+ 1].carrierId).pic : `https://avatars.dicebear.com/v2/identicon/unknown.svg`  } className={style.nextCarrier} alt="person"></img>
+      <img src={(selectedRoute && carrierStore.findCarrierById(selectedRoute.carrierId) ? carrierStore.findCarrierById(selectedRoute.carrierId).pic : `https://avatars.dicebear.com/v2/identicon/unknown.svg`)} className={style.currentCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition - 1]  && carrierStore.findCarrierById(routeArray[routeposition - 1].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition - 1].carrierId).pic : `https://avatars.dicebear.com/v2/identicon/unknown.svg`  } className={style.nextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition - 2]  && carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId).pic : `https://avatars.dicebear.com/v2/identicon/unknown.svg` } className={style.secondNextCarrier} alt="person"></img>
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
