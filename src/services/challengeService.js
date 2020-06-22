@@ -5,6 +5,7 @@ class ChallengeService {
   constructor(firebase) {
     this.db = firebase.firestore();
     this.realtimeUpdates()
+    
   }
   /*
   create = async group => {

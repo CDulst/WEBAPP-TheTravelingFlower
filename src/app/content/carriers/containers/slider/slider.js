@@ -5,6 +5,8 @@ import person from '../../../../../assets/carrier/carrier.png'
 import { useStore } from '../../../../../hooks';
 import {uiStoreCarriers} from '../../stores/UiStore';
 import { rootStore } from '../../../../../stores';
+import question from "../../../../../assets/question.svg"
+import CarrierStore from '../../../../../stores/CarrierStore';
 
 
 
@@ -14,26 +16,29 @@ function Slider() {
 
   const [selectedCarrier, setSelectedCarrier] = useState(null)
   const [selectedRoute, setSelectedRoute] = useState(null);
+  const [routeArray, setArray] = useState(null);
 
   const [value, setValue] = useState(100)
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
-    const r = value/100*routeStore.routes.length
+   
 
-    if(uiStoreCarriers.selectedCarrier){
-      console.log(uiStoreCarriers.selectedCarrier)
-    }
    
     let routeArray = [];
     for (let i = 1; i<= rootStore.routeStore.routes.length; i++){
       let rout = rootStore.routeStore.routes.find(route => route.sorted === i);
       routeArray.unshift(rout);
     }
+
+    setArray(routeArray);
+    const r = Math.round(value/100*routeStore.routes.length)
     
-    console.log(routeArray);
+    const route = routeArray[r];
+
     
-    const route = routeArray[r.toFixed(0)];
+
+    console.log(route)
     setSelectedRoute(route);
 
     if(route) {
@@ -45,8 +50,19 @@ function Slider() {
 
     uiStoreCarriers.setSelectedRoute(selectedRoute);
     uiStoreCarriers.setSelectedCarrier(selectedCarrier);
+
+    let routeposition = ""
+
+    if (selectedRoute){
+      routeposition = routeArray.indexOf(selectedRoute);
+      console.log("works")
+    }
+    else{
+      console.log("not work");
+    }
+
+   
     
-  
 
  
   return (
@@ -54,11 +70,11 @@ function Slider() {
 
     <div className={style.slider}>
     <div className={style.carriers}>
-      <img src={person} className={style.secondNextCarrier} alt="person"></img>
-      <img src={person} className={style.nextCarrier} alt="person"></img>
-      <img src={person} className={style.currentCarrier} alt="person"></img>
-      <img src={person} className={style.nextCarrier} alt="person"></img>
-      <img src={person} className={style.secondNextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition - 2]  && carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition - 2].carrierId).pic : question } className={style.secondNextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition - 1]  && carrierStore.findCarrierById(routeArray[routeposition - 1 ].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition- 1].carrierId).pic : question  } className={style.nextCarrier} alt="person"></img>
+      <img src={(selectedRoute && carrierStore.findCarrierById(selectedRoute.carrierId) ? carrierStore.findCarrierById(selectedRoute.carrierId).pic : question)} className={style.currentCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition + 1]  && carrierStore.findCarrierById(routeArray[routeposition + 1].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition + 1].carrierId).pic : question  } className={style.nextCarrier} alt="person"></img>
+      <img src={routeposition != "" && routeArray[routeposition + 2]  && carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId) ? carrierStore.findCarrierById(routeArray[routeposition + 2].carrierId).pic : question } className={style.secondNextCarrier} alt="person"></img>
     </div>
     <div className={style.sliderComponent}>
       <div className={style.desktop}>
