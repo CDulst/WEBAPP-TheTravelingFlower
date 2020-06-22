@@ -30,7 +30,7 @@ const Discover = ({start, end, type}) => {
     return useObserver(() =>   (
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
-            {uiStoreCarriers.selectedRoute ? (
+            {uiStoreCarriers.selectedCarrier ? (
                 <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
             ) : null}
             
