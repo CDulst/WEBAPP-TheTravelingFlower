@@ -19,21 +19,22 @@ function Slider() {
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
-    const r = value/100*routeStore.routes.length
+   
 
-    if(uiStoreCarriers.selectedCarrier){
-      console.log(uiStoreCarriers.selectedCarrier)
-    }
    
     let routeArray = [];
     for (let i = 1; i<= rootStore.routeStore.routes.length; i++){
       let rout = rootStore.routeStore.routes.find(route => route.sorted === i);
       routeArray.unshift(rout);
     }
-    
-    console.log(routeArray);
+
+    const r = Math.round(value/100*routeStore.routes.length)
     
     const route = routeArray[r];
+
+    
+
+    console.log(route)
     setSelectedRoute(route);
 
     if(route) {
