@@ -46,7 +46,7 @@ function Challenge() {
   <Involvement/>
   </div>
   <div className={style.progress}>
-  <Progress title="Distance untill next challenge" start="Amsterdam" end="Berlin" percentage="40"/>
+  <Progress title="Distance untill next challenge" start="Amsterdam" end="Berlin" percentage="80"/>
   <Progress title="Challenge goal" start="$0" end={`${challengeStore.currentChallenge.donationGoal}`} percentage={`${challengeStore.currentChallenge.currentSum/challengeStore.currentChallenge.donationGoal*100}`}/>
   </div>
   <SocialFeed/>

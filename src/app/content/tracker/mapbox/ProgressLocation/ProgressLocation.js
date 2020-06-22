@@ -12,7 +12,7 @@ const ProgressLocation = ({percentage}) => {
         <div className={style.progress}>
            <div className={style.indicator} style={{left: `${percentage}%`}}>
                 <img src={indicator} alt="indicator"></img>
-                <div className={style.textballoon}>#Berlijn</div>
+                <div className={style.textballoon}>@Berlin</div>
             </div>
             <div className={style.indicator} style={{left: "6%", bottom: "4rem"}}>
                 <img src={start} alt="indicator"></img>

@@ -2,7 +2,7 @@ import { decorate, observable } from "mobx";
 import {rootStore} from "../stores/index.js";
 
 class Route {
-    constructor({id, startCoordinate, endCoordinate, startName, endName, kmDone = 0, carrierId, status, distance}) {
+    constructor({id, startCoordinate, endCoordinate, startName, endName, kmDone = 0, carrierId, status, distance, sort}) {
         this.id = id;
         this.startCoordinate = startCoordinate;
         this.endCoordinate = endCoordinate;
@@ -12,6 +12,7 @@ class Route {
         this.carrierId = carrierId;
         this.status = status;
         this.distance = distance;
+        this.sort = sort;
         rootStore.routeStore.addRoute(this);
     }
 }
@@ -39,6 +40,8 @@ const routeConverter = {
       start: socialPost.startName,
       startGEO: socialPost.startCoordinate,
       status: socialPost.status,
+      sort: socialPost.sort
+
 
       };
     },
@@ -54,7 +57,8 @@ const routeConverter = {
         kmDone: data.kmDone,
         carrierId: data.carrierID,
         status: data.status,
-        distance: data.distance
+        distance: data.distance,
+        sort: data.sort
         });
       }
      

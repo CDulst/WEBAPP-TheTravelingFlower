@@ -16,14 +16,16 @@ const Livechat = () => {
 
     const handleEnter = (e) => {
         if (e.key === "Enter"){
-        const message = {
-            id: v4(),
-            content: e.currentTarget.value,
-            userEmail: rootStore.uiStore.currentUser.email
-        }
-        rootStore.messageStore.createMessage(message);
-        e.currentTarget.value = "";
-        }
+          if (e.currentTarget.value !== ""){
+            const message = {
+              id: v4(),
+              content: e.currentTarget.value,
+              userEmail: rootStore.uiStore.currentUser.email
+          }
+          rootStore.messageStore.createMessage(message);
+          e.currentTarget.value = "";
+          }
+          }
     }
 
     const handleOnClick = (e) => {
