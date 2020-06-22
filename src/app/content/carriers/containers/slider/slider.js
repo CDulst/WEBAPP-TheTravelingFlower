@@ -33,7 +33,7 @@ function Slider() {
     
     console.log(routeArray);
     
-    const route = routeArray[r];
+    const route = routeArray[r.toFixed(0)];
     setSelectedRoute(route);
 
     if(route) {
