@@ -26,7 +26,6 @@ const Map = ReactMapboxGl({
 
 function Carriers() {
 
-
   const [viewport] = useState({
     zoom: [4],
     pitch:[60]

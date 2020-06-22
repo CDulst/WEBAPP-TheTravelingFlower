@@ -30,7 +30,7 @@ class DonationController {
   donationCounter(){
   if (this.toAddMoney > 0){
     this.currentdonation += 0.01;
-    console.log(this.currentdonation.toFixed(2));
+
   }
   else{
     this.toAddMoney = 0;

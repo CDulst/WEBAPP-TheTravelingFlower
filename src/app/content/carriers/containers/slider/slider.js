@@ -10,6 +10,7 @@ import {uiStoreCarriers} from '../../stores/UiStore';
 function Slider() {
   const {carrierStore, routeStore} = useStore();
 
+
   const [selectedCarrier, setSelectedCarrier] = useState(null)
   const [selectedRoute, setSelectedRoute] = useState(null);
 
@@ -18,7 +19,11 @@ function Slider() {
   const handleChange = (e, newValue) => {
     setValue(newValue);
     const r = value/100*routeStore.routes.length
-  
+
+    if(uiStoreCarriers.selectedCarrier){
+      console.log(uiStoreCarriers.selectedCarrier)
+    }
+   
 
     //Here you need to sort an array
     const route = routeStore.routes[r];
@@ -27,7 +32,6 @@ function Slider() {
     if(route) {
     setSelectedCarrier(carrierStore.findCarrierById(route.carrierId))
     }
-    
   }
   
 
