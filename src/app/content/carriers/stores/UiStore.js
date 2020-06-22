@@ -1,9 +1,11 @@
 import { decorate, observable, action } from "mobx";
+import { rootStore } from "../../../../stores";
+
 
 class UiStore {
     constructor() {
-        this.selectedCarrier = undefined
-        this.selectedRoute = undefined
+        this.selectedCarrier = rootStore.carrierStore.carriers[0]
+        this.selectedRoute = undefined;
     }
 
     setSelectedCarrier(carrier) {

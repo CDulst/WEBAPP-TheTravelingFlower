@@ -14,7 +14,7 @@ function Slider() {
   const [selectedCarrier, setSelectedCarrier] = useState(null)
   const [selectedRoute, setSelectedRoute] = useState(null);
 
-  const [value, setValue] = useState(80)
+  const [value, setValue] = useState(100)
 
   const handleChange = (e, newValue) => {
     setValue(newValue);

@@ -20,7 +20,7 @@ const Discover = ({start, end, type}) => {
 
     const [viewport] = useState({
             container: 'map',
-            zoom: [6],
+            zoom: [8],
             pitch:[60]
           
         })
@@ -32,7 +32,7 @@ const Discover = ({start, end, type}) => {
             <div className={style.mapboxButton}>
             {uiStoreCarriers.selectedCarrier ? (
                 <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
-            ) : null}
+            ) :  null}
             
             </div>
 

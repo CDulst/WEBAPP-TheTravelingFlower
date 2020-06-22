@@ -15,6 +15,34 @@
     overflow-x: hidden;
 }
 
+.sliderFeedback {
+    margin-top: 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--hoverButton);
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    
+
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
 .mapbox3 {
     height: 13rem;
 }
@@ -55,6 +83,14 @@
     .sliderPosition {
         position: unset;
         width: unset;
+    }
+
+
+    .sliderFeedback {
+
+        height: 100vh;
+  
+    
     }
  }
 
