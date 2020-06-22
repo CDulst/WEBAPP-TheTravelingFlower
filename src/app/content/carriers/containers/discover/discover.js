@@ -5,18 +5,25 @@ import {Link} from "react-router-dom";
 import ReactMapboxGl, { Layer, Feature, Image } from 'react-mapbox-gl';
 import { useObserver } from 'mobx-react-lite';
 import {uiStoreCarriers} from '../../stores/UiStore';
+import awaiting from '../../../../../assets/carrier/awaiting.svg'
 
 
 const Map = ReactMapboxGl({
     accessToken:
       'pk.eyJ1IjoieW9yYmVuZ29vciIsImEiOiJja2IwcGE1Mm4wNTBuMzJtaXIwMjU3aHc2In0.URiltHb9cC88qeRt2HcbBA',
       
-      minZoom: [3]
+      minZoom: [2]
   });
 
 
 
 const Discover = ({start, end, type}) => {
+
+    if(uiStoreCarriers.selectedCarrier){
+        console.log(uiStoreCarriers.selectedCarrier.status)
+    }
+
+
 
     const [viewport] = useState({
             container: 'map',
@@ -30,10 +37,29 @@ const Discover = ({start, end, type}) => {
     return useObserver(() =>   (
         <div id='map' className={style.mapboxContainer}>
             <div className={style.mapboxButton}>
-            {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedRoute ? (
+
+
+           {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (
+                <div className={style.flowerArival__container}>
+                <img style={style.awaiting__image} src={awaiting}></img>
+                <p className={style.awaitingText}>Awaiting flower arival ...</p>
+                </div>
+                
+            ): null}
+
+            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (
+               <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
+            ): null}
+
+            {uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ? (
                 <Link to={`/carriers/detail/${uiStoreCarriers.selectedRoute.id}`}><Button value="discover journey"/></Link>
-            ) :  null}
+            ): null}
+
+
+           
+ 
             
+
             </div>
 
         
@@ -54,9 +80,20 @@ const Discover = ({start, end, type}) => {
                 <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                                 <Feature coordinates={[[uiStoreCarriers.selectedRoute.startCoordinate.Rc, uiStoreCarriers.selectedRoute.startCoordinate.Ac], [uiStoreCarriers.selectedRoute.endCoordinate.Rc, uiStoreCarriers.selectedRoute.endCoordinate.Ac]]} />
                 </Layer>
+                
 
         </>
-    ):null}
+    ):
+    null
+    }
+
+<Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
+
+<Layer id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-20] }}  id="jumpingCarrier3">
+    <Feature coordinates={[13.08434, 52.51435]}></Feature>
+</Layer>
+
+
 </Map>
         
             

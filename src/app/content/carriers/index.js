@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
-import {Route,Switch} from "react-router-dom";
+import {Route,Switch, Link} from "react-router-dom";
 import flag from "../../../assets/challenge/flag.svg";
 import Slider from './containers/slider/slider';
 import style from './index.module.css'
@@ -13,7 +13,8 @@ import ReactMapboxGl from 'react-mapbox-gl';
 import {uiStoreCarriers} from './stores/UiStore';
 import { useObserver } from 'mobx-react-lite';
 import { useStore } from '../../../hooks';
-
+import Button from '../../components/button/button';
+import bike from '../../../assets/apply/Bike.svg'
 
 const Map = ReactMapboxGl({
   accessToken:
@@ -54,10 +55,11 @@ function Carriers() {
     <div className={style.noCarrierSelected}>
     
     {uiStoreCarriers.selectedRoute ? (
-      <>
-      <img src={`https://avatars.dicebear.com/v2/identicon/${uiStoreCarriers.selectedRoute.id}.svg`}></img>
-      <p>no carrier selected</p>
-      </>
+      <div className={style.noCarrier__container}>
+      <img src={bike}></img>
+    <p className={style.noCarrier__text}>There hasn't been a carrier selected for this location: <span className={style.pink__text}> {uiStoreCarriers.selectedRoute.startName} to {uiStoreCarriers.selectedRoute.endName} </span> </p>
+      <Link to={`/apply`}><Button value="Become a carrier"/></Link>
+      </div>
     ) : null}
    
     
