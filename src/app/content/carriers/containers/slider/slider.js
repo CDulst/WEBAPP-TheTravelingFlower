@@ -28,7 +28,6 @@ function Slider() {
     
   }
 
-
     uiStoreCarriers.setSelectedRoute(selectedRoute);
     uiStoreCarriers.setSelectedCarrier(selectedCarrier);
     
