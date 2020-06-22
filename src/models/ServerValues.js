@@ -23,7 +23,7 @@ const serverValuesConverter = {
     fromFirestore: function(snapshot, options) {
       const data = snapshot.data(options);
         return new ServerValues({
-        location: data.location,
+        location: data.currentlocation,
         donation: data.donation,
         carrierID: data.carrierID,
         challengeID: data.challengeID

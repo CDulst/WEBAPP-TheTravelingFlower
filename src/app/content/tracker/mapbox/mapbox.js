@@ -33,7 +33,7 @@ const Map = ReactMapboxGl({
 const Mapbox = () => {
     
 
-    const {routeStore, carrierStore, uiStore} = useStore();
+    const {routeStore, carrierStore, uiStore,serverValuesStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
@@ -106,18 +106,18 @@ const Mapbox = () => {
             <Livechat />
             </div>
             
-            <Map maxBounds={[-36.843834, 147.897897] [64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
+            <Map maxBounds={[-36.843834, 147.897897][64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
                 <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
-                    <Feature coordinates={[13.08434, 52.51435]}></Feature>
+                    <Feature coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={[13.08434, 52.51435]}>
+                    <Popup className={style.popupCurrent} coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
