@@ -4,6 +4,7 @@ import InvolvementSlider from '../../../challenge/components/involvementSlider/i
 import person from '../../../../../assets/carrier/carrier.png'
 import { useStore } from '../../../../../hooks';
 import {uiStoreCarriers} from '../../stores/UiStore';
+import { rootStore } from '../../../../../stores';
 
 
 
@@ -24,8 +25,15 @@ function Slider() {
       console.log(uiStoreCarriers.selectedCarrier)
     }
    
-
-    //Here you need to sort an array
+    let newArray = [];
+    for (let i = 1; i<= rootStore.routeStore.routes.length; i++){
+      let rout = rootStore.routeStore.routes.find(route => route.sorted === i);
+      newArray.push(rout);
+    }
+    console.log(newArray);
+    
+    
+    
     const route = routeStore.routes[r];
     setSelectedRoute(route);
 
