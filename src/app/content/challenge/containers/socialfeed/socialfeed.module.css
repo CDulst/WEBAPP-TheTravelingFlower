@@ -21,8 +21,13 @@ transition: all ease-in-out 0.3s;
 }
 
 .postWrapper{
- overflow:scroll;
- height:65vh;
+
+        height: 65vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
+        overflow: scroll;
+       
 }
 
 .close{
@@ -40,9 +45,14 @@ cursor:pointer;
     
         }
         .postWrapper{
-            overflow:scroll;
-            height:80vh;
-           }
+           
+
+                height: 80vh;
+                display:flex;
+                flex-direction:column;
+                justify-content:flex-end;
+                overflow: scroll;
+               }
            
  }
 
@@ -53,8 +63,11 @@ cursor:pointer;
         width:40vw;
         }
         .postWrapper{
-            overflow:scroll;
-            height:80vh;
+            height: 78vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-end;
+            overflow: scroll;
            }
            
  }

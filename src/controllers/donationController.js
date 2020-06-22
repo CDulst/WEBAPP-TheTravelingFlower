@@ -4,6 +4,7 @@ import {observable,action,decorate,configure} from "mobx"
 
 class DonationController {
   constructor(root){
+  this.root = root;
   this.currentdonation = "";
   this.livedonationSum = ""
   this.setswitch = true;
@@ -12,7 +13,7 @@ class DonationController {
   this.toAddMoney = 0;
   this.changeStatic = 0;
   this.enabled = false;
-  this.waitTime = 5;
+  this.waitTime = 10;
   this.changed = false;
   this.EnableCounter();
   }
@@ -79,6 +80,7 @@ class DonationController {
     this.setSwitch();
     }
     this.currentdonation += 0.01;
+    this.root.challengeStore.challenges[0].currentSum += 0.01;
 
   }
   else{

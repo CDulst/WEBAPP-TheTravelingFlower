@@ -8,7 +8,7 @@ function Post({pic, user,social,text,content}) {
   <div className = {style.content}>
   <div className = {style.container}>
   <div className = {style.profileWrapper}>
-  <img src = {pic} alt = "pic"/>
+  <img className = {style.pic} src = {pic} alt = "pic"/>
   <p className = {style.user}> {user} </p>
   </div>
   <img className = {style.social} src = {social} alt = "social" />

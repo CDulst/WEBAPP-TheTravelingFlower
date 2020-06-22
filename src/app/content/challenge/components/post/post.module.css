@@ -12,7 +12,7 @@
 }
 .profileWrapper{
     display:flex;
-    width:12rem;
+    width:16rem;
     align-items:center;
     justify-content:space-between;
 }
@@ -25,6 +25,12 @@
 .user{
     font-weight:1000;
     margin-top:2rem;
+    width:18rem;
+    margin-left:2rem;
+}
+.pic{
+width:3rem;
+border-radius: 2rem;
 }
 .text{
     max-width:30rem;
@@ -51,7 +57,7 @@
     
     .image{
         width:35vw;
-        height:30vh;
+        height:40vh;
     }
     .content{
         margin-top: 0rem;
