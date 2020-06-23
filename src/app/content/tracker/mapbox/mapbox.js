@@ -46,18 +46,23 @@ const Mapbox = () => {
 
     let Kmdone = undefined;
     let KmToGo = undefined;
-    
-    if(routeStore.routes[0] && serverValuesStore.serverValues[0]) {
-        const resultKmDone = dataStore.calculatePoints(routeStore.routes[0], serverValuesStore.serverValues);
+
+    console.log(routeStore.routes)
+    if(routeStore.routes[3] && serverValuesStore.serverValues[0]) {
+        const resultKmDone = dataStore.calculatePoints(routeStore.routes[3], serverValuesStore.serverValues);
         Kmdone = resultKmDone.toFixed(2)
     }
 
     if(routeStore.routes[routeStore.routes.length-1] && serverValuesStore.serverValues[0]) {
         const resultKmToGo = dataStore.calculatePoints(routeStore.routes[routeStore.routes.length-1], serverValuesStore.serverValues);
-        KmToGo = resultKmToGo.toFixed(2)
+        KmToGo = resultKmToGo.toFixed(2);
+        
     }
 
+    let percentage = Kmdone/KmToGo*100;
 
+
+    
     console.log(serverValuesStore.serverValues)
     
   
@@ -118,7 +123,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage="20"  />
+                <ProgressbarLocation percentage={percentage.toString()}  />
             </div>
 
             <div className={style.iconMessage}>
