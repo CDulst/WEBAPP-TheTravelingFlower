@@ -6,6 +6,11 @@ class UiStore {
     constructor() {
         this.selectedCarrier = rootStore.carrierStore.carriers[0]
         this.selectedRoute = undefined;
+        this.selectedCarrierFromTracker = undefined;
+    }
+
+    setSelectedCarrierFromTracker (carrier) {
+        this.selectedCarrierFromTracker = carrier
     }
 
     setSelectedCarrier(carrier) {

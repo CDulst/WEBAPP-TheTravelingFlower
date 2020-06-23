@@ -38,14 +38,14 @@ function Carriers() {
   return useObserver(() => (
   <>
   <Switch>
-  <Route path = "/carriers/detail">
-  {uiStoreCarriers.selectedCarrier ? (
+  <Route path = "/carriers/detail/:id">
+  
   <div className={style.containerDetail}>
   <Map className={style.mapbox3} {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb"/>
-  <h2 className={style.detailTitle}>{`${uiStoreCarriers.selectedCarrier.name} Journey`}</h2>
-  <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrier.pic} date="Hello test" borderTop="3px" />
+  <h2 className={style.detailTitle}>{`title Journey`}</h2>
+  <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto="something" date="Hello test" borderTop="3px" />
   </div>
-  ) : null}
+  
 
   
   </Route>
