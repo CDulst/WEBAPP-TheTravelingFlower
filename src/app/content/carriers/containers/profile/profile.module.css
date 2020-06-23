@@ -21,7 +21,7 @@
     position: relative;
     top: 10rem;
     right:-9rem;
-    z-index: 3;
+    z-index: 2;
 }
 
 .currentCarrierState {
@@ -32,8 +32,9 @@
 
 .awaitingCarrierState {
     background: url('../../../../../assets/carrier//awaiting_flower.svg');
-    background-size: 5rem;
     background-repeat: no-repeat;
+    background-size: 2.4rem;
+    right: -11rem;
 }
 
 .completedState {
@@ -57,6 +58,7 @@
 
 .profilePicAwaiting__Border {
     filter: grayscale(20);
+
 }
 
 .profilePicCurrent__Border {

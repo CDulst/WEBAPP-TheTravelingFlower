@@ -5,6 +5,7 @@
     width: 100%;
     background-color: var(--colorBGMain);
     box-shadow: 0px -5px 38px 0px rgba(0,0,0,0.33);
+    padding-top: 1rem;
 }
 
 .desktop {
@@ -24,7 +25,7 @@
 }
 
 .sliderCurrentCarrierBorder {
-    border: var(--colorSecondary) 3px solid;
+    border: var(--colorSecondary) 4px solid;
 }
 
 .sliderAwaitingCarrier {
@@ -32,13 +33,14 @@
 }
 
 .slideCompletedCarrier {
-    border: var(--colorH3Dark) 3px solid ;
+    border: var(--colorH3Dark) 4px solid ;
 }
 
 .carriers {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 1rem;
 }
 
 .nextCarrier {
