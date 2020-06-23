@@ -7,6 +7,8 @@ import { useObserver } from 'mobx-react-lite';
 import {uiStoreCarriers} from '../../stores/UiStore';
 import awaiting from '../../../../../assets/carrier/awaiting.svg'
 import { useStore } from '../../../../../hooks';
+import {uiStore} from '../../../../../UiStore'
+import UiStore from '../../../../../stores/UiStore';
 
 
 const Map = ReactMapboxGl({
@@ -19,14 +21,15 @@ const Map = ReactMapboxGl({
 
 
 const Discover = ({start, end, type}) => {
-    const {serverValuesStore} = useStore();
 
-    if(uiStoreCarriers.selectedCarrier){
-        console.log(uiStoreCarriers.selectedCarrier.status)
+    if(uiStore.activePage != "carriers") {
+        uiStoreCarriers.setSelectedRoute(undefined)
     }
 
+    console.log(uiStore.activePage);
 
 
+    const {serverValuesStore} = useStore();
     const [viewport] = useState({
             container: 'map',
             zoom: [6],
