@@ -1,6 +1,8 @@
 .video {
-    width: 100%;
+    width: 60%;
     height: 80%;
+    border-radius:2rem;
+    margin:auto;
     display: flex;
     align-items: center;
 }

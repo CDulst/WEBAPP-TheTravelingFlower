@@ -65,7 +65,7 @@
 }
 
 
-@media only screen and (min-width:720px) ,(min-height: 600px) {
+@media only screen and (min-width:720px) and (min-height: 600px) {
     
         
     .active{
@@ -135,7 +135,42 @@
         .activeAC{
             top:84vh;
         }
-        
+        .activeCA{
+            top:59vh;
+        }
         
          }
+
+         @media only screen and (min-width:720px) and (min-height:1000px) {
+    
+   
+            .activeAC{
+                top:86vh;
+            }
+            .activeTR{
+                top:8vh;
+            }
+            .activeCH{
+                top:33vh;
+            }
+            
+             }
+        
+             @media only screen and (min-width:720px) and (min-height:1200px) {
+    
+   
+                .activeAC{
+                    top:89vh;
+                }
+                .activeTR{
+                    top:6vh;
+                }
+                .activeCH{
+                    top:34vh;
+                }
+                .activeCA{
+                    top:61vh;
+                }
+                 }
+            
     
