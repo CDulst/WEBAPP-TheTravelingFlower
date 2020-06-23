@@ -34,9 +34,7 @@ function Challenge() {
   <>
   <div className={style.challenge__container}>
   <Switch>
-  <Route path = "/challenge/explainer">
-   <Explainer/>
-   </Route>
+
   <Route path = "/challenge">
   <div className = {style.popUP}>
   <PopupIcon icon = {FeedIcon} direction = "-1" text = "Social Feed" click = {handleOnClick}/>
