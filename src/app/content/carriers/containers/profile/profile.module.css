@@ -22,9 +22,6 @@
     top: 10rem;
     right:-9rem;
     z-index: 3;
-   
-
-    
 }
 
 .currentCarrierState {
@@ -52,6 +49,18 @@
     border-radius: 10rem;
     grid-column: 1;
     grid-row: 1;
+}
+
+.profilePicCompleted__Border {
+    border: 5px var(--colorH3Dark) solid;
+}
+
+.profilePicAwaiting__Border {
+    filter: grayscale(20);
+}
+
+.profilePicCurrent__Border {
+    border: 5px var(--colorSecondary) solid;
 }
 
 .informationContainer2 {

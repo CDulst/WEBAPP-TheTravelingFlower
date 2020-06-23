@@ -14,7 +14,7 @@ function Profile({pic, name, flag, age, transport,bio}) {
   <div className={style.informationContainer}>
     <div className={style.stateContainer}>
     <div className={(uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (`${style.statePicture} ${style.completedState}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (`${style.statePicture} ${style.awaitingCarrierState}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ?(`${style.statePicture} ${style.currentCarrierState}`):null )}></div>
-    <img className={style.carrierPage__profilePic} src={pic} alt="carrierphoto"></img>
+    <img className={(uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (`${style.carrierPage__profilePic} ${style.profilePicCompleted__Border}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (`${style.carrierPage__profilePic} ${style.profilePicAwaiting__Border}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ?(`${style.carrierPage__profilePic} ${style.profilePicCurrent__Border}`):null )} src={pic} alt="carrierphoto"></img>
     </div>
       <div className={style.nameAndFlag}>
         <p className={style.nameCarrierInfo}>{name}</p>
