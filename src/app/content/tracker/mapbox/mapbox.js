@@ -53,18 +53,15 @@ const Mapbox = () => {
             center:[6.0909, 52.52]
           
         })
-
-        if (checkpoints) {
-            console.log(checkpoints.status)
-        }
-       
-
+        
 
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
             uiTracker.setSelectedCarrier(selectedCarrier);
+            uiStoreCarriers.setSelectedCarrierFromTracker(selectedCarrier);
             
         }
+
 
         uiStore.setCurrentCarrier(carrierStore.carriers[0]);
 
@@ -86,6 +83,8 @@ const Mapbox = () => {
           if(checkpoints) {
             console.log(carrierStore.findCarrierById(checkpoints.carrierId))
           }
+
+          
           
     
 

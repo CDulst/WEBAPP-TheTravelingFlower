@@ -24,6 +24,7 @@ const Discover = ({start, end, type}) => {
 
     if(uiStore.activePage != "carriers") {
         uiStoreCarriers.setSelectedRoute(undefined)
+        uiStoreCarriers.setSelectedCarrier(undefined);
     }
 
     console.log(uiStore.activePage);
