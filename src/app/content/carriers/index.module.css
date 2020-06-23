@@ -9,6 +9,15 @@
     width: 100%;
 }
 
+.journeyCompleted {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--hoverButton);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 .backArrow {
     position: absolute;
     top: 2rem;

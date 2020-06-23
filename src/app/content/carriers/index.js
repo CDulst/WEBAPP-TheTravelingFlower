@@ -72,6 +72,8 @@ function Carriers() {
                 </Layer>
       </Map>
       <h2 className={style.detailTitle}>{`${uiStoreCarriers.selectedCarrierFromTracker.name} Journey`}</h2>
+      {routeByTracker.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>):null}
+      
       <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrierFromTracker.pic} date="Hello test" borderTop="3px" />
       </div>
   ) : null}
@@ -94,6 +96,7 @@ function Carriers() {
                 </Layer>
       </Map>
       <h2 className={style.detailTitle}>{`${uiStoreCarriers.selectedCarrier.name} Journey`}</h2>
+      {uiStoreCarriers.selectedRoute.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>):null}
       <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrier.pic} date="Hello test" borderTop="3px" />
       </div>
   ) : null}
