@@ -26,7 +26,7 @@ function Sidebar() {
   <div className = {`${style.navWrapper}`}>
   <NavItem text = "Tracking" icon = {Tracker} link = {ROUTES.tracker} active = "true"/>
   <NavItem text = "Challenge" icon = {Challenge} link = {ROUTES.challenge}/>
-  <NavItem text = "Carrier" icon = {Carrier} link = {ROUTES.carriers}/>
+  <NavItem text = "Carriers" icon = {Carrier} link = {ROUTES.carriers}/>
   <NavItem text = "Account" icon =  {(rootStore.uiStore.currentUser ? rootStore.uiStore.currentUser.avatar : "")} link = {ROUTES.settings}/>
   </div>
   </div>

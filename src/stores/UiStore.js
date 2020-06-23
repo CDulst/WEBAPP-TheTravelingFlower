@@ -52,6 +52,10 @@ class UiStore {
         console.log(this.currentUser);
     }
   }
+
+  changeCurrentUser(target,value) {
+  this.currentUser[target] = value;
+  }
   
   nullCurrentUser(){
       this.currentUser = "";
@@ -101,6 +105,7 @@ decorate(UiStore, {
   currentUser: observable,
   loginUser: action,
   logoutUser: action,
+  changeCurrentUser: action,
   nullCurrentUser: action,
   setCurrentUser: action,
   setCurrentCarrier: action,
