@@ -7,7 +7,7 @@ import { useObserver } from 'mobx-react-lite';
 const SwitchButton = ({item1, item2}) => {
 
     const [state, setState] = useState({
-        checkedA: true,
+        checkedA: false,
         checkedB: true,
     })
 
