@@ -2,14 +2,35 @@
 .hidden{
     display:none;
 }
-
 .progressWrapper{
     display:none;
 }
-
 .step {
 
 }
+.active{
+    width:2rem;
+    position:relative;
+}
+.activestep1{
+    left:4rem;
+    transition: ease-in-out all 0.5s; 
+}
+
+.activestep2{
+    left:14rem;
+    transition: ease-in-out all 0.5s; 
+}
+.activestep3{
+    left: 24rem;
+    transition: ease-in-out all 0.5s; 
+}
+.activestep4{
+    left:34.5rem;
+    transition: ease-in-out all 0.5s; 
+}
+
+
 
 
 @media only screen and (min-width:720px) {
@@ -51,6 +72,33 @@
     .line{
         transform:rotate(0deg);
         width:20%;
+    }
+    .active{
+        width:2rem;
+        position:relative;
+    }
+    .activestep1{
+        top:3.5rem;
+        left:-0.8rem;
+        transition: ease-in-out all 0.5s; 
+    }
+    
+    .activestep2{
+        top:15.2rem;
+        left:-0.8rem;
+        transition: ease-in-out all 0.5s; 
+    }
+
+    .activestep3{
+        top:27rem;
+        left:-0.8rem;
+        transition: ease-in-out all 0.5s; 
+    }
+
+    .activestep4{
+        top:38.5rem;
+        left:-0.8rem;
+        transition: ease-in-out all 0.5s; 
     }
 }
 

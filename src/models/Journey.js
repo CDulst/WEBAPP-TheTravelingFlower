@@ -2,7 +2,7 @@ import{ decorate, observable} from "mobx"
 import {rootStore} from "../stores/index.js";
 
 class Journey {
-    constructor({id, location, title, images, text, carrierID,date}) {
+    constructor({id, location,sorted, title, images, text, carrierID,date}) {
         this.id = id;
         this.location = location;
         this.title = title;
@@ -10,6 +10,7 @@ class Journey {
         this.text = text;
         this.carrierID = carrierID;
         this.date = date;
+        this.sorted = sorted;
         rootStore.journeyStore.addJourney(this);
         rootStore.carrierStore.findCarrierById(this.carrierID).linkJourney(this);
 
@@ -24,7 +25,8 @@ const journeyConverter = {
       images:journey.images,
       location:journey.location,
       text: journey.text,
-      title: journey.title
+      title: journey.title,
+      sorted: journey.sorted
       };
     },
     fromFirestore: function(snapshot, options) {
@@ -34,6 +36,7 @@ const journeyConverter = {
         return new Journey({
         id: snapshot.id,
         location: data.location,
+        sorted: data.sorted,
         title: data.title,
         images: data.images,
         text: data.text,
