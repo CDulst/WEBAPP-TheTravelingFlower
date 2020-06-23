@@ -5,7 +5,7 @@ import {observable,action,decorate,configure} from "mobx"
 class UIChallenge {
   constructor(){
   this.uiOut = false;
-  this.TextOut = false;
+  this.TextOut = true;
   }
 
   textOut() {

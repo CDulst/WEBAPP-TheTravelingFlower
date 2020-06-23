@@ -14,6 +14,10 @@ import Bike from '../../../assets/apply/Bike.svg';
 import Adres from './containers/adres/adres';
 import Rout from './containers/route/route';
 import Motivation from './containers/motivation/motivation';
+import uiApply from "./stores/uiStore";
+import { useObserver } from 'mobx-react-lite';
+
+
 
 function Apply() {
 
@@ -21,19 +25,28 @@ function Apply() {
     useEffect(() => {
         uiStore.setPage("apply")
       });
-  return (
+  return useObserver(() =>(
   <>
   <div className = {style.container}>
   <div className = {style.container__wrapper}>
   <div className = {style.wrapper}>
+  { 
+  (uiApply.currentStep !== "finished" && uiApply.currentStep !==  "landing" ?
   <div className = {style.progressWrapper}>
   <ProgressBar/>
   </div>
+  :
+  <>
+  </>
+  )
+  }
   <Switch>
   <Route path = {ROUTES.finished}>
+  <div className = {style.specialWrapper}>
   <div className = {style.underground}>
   <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
-  <Link className = {style.button}><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
+  <Link className = {style.button} to = {"/tracker"}><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
+  </div>
   </div>
   </Route>
   <Route path = {ROUTES.motivation}>
@@ -74,9 +87,11 @@ function Apply() {
   </div>
   </Route>
   <Route path = {ROUTES.landing}>
+  <div className = {style.specialWrapper}>
   <div className = {style.underground}>
   <Header title = "Become a carrier" img = {Bike} />
   <Link to = {ROUTES.personal}><Button className = {style.button} value = "Sign Up" type= "secondary"/></Link>
+  </div>
   </div>
   </Route>
   </Switch>
@@ -84,7 +99,7 @@ function Apply() {
   </div>
   </div>
   </>
-  );
+  ));
 }
 
 export default Apply;
