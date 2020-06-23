@@ -16,6 +16,7 @@ import { useStore } from '../../../hooks';
 import Button from '../../components/button/button';
 import bike from '../../../assets/apply/Bike.svg'
 import backArrow from '../../../assets/carrier/backarrow.svg'
+import {BallBeat} from 'react-pure-loaders'
 
 const Map = ReactMapboxGl({
   accessToken:
@@ -72,7 +73,7 @@ function Carriers() {
                 </Layer>
       </Map>
       <h2 className={style.detailTitle}>{`${uiStoreCarriers.selectedCarrierFromTracker.name} Journey`}</h2>
-      {routeByTracker.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>):null}
+      {routeByTracker.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>):  <BallBeat loading={true} color={'#d54283'}/>}
       
       <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrierFromTracker.pic} date="Hello test" borderTop="3px" />
       </div>
@@ -96,7 +97,7 @@ function Carriers() {
                 </Layer>
       </Map>
       <h2 className={style.detailTitle}>{`${uiStoreCarriers.selectedCarrier.name} Journey`}</h2>
-      {uiStoreCarriers.selectedRoute.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>):null}
+      {uiStoreCarriers.selectedRoute.status === "completed" ? (<p className={style.journeyCompleted}>This journey is completed</p>): <BallBeat loading={true} color={'#d54283'}/>}
       <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrier.pic} date="Hello test" borderTop="3px" />
       </div>
   ) : null}

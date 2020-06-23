@@ -9,6 +9,16 @@
     width: 100%;
 }
 
+.ballbeat {
+    position: fixed;
+    left: -50rem;
+}
+
+.ballbeatComponent {
+    display: flex;
+    justify-content: center;
+}
+
 .journeyCompleted {
     display: flex;
     justify-content: center;
