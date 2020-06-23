@@ -7,10 +7,51 @@
     margin-top: 2rem;
 }
 
+.stateContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.statePicture {
+    grid-row: 1;
+    grid-column: 1;
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    top: 10rem;
+    right:-9rem;
+    z-index: 3;
+   
+
+    
+}
+
+.currentCarrierState {
+    background: url('../../../../../assets//logo.svg');
+    background-size: 6rem;
+    background-repeat: no-repeat;
+}
+
+.awaitingCarrierState {
+    background: url('../../../../../assets/carrier//awaiting_flower.svg');
+    background-size: 5rem;
+    background-repeat: no-repeat;
+}
+
+.completedState {
+    background: url('../../../../../assets/carrier/completedState.svg');
+    background-repeat: no-repeat;
+    background-size: 4rem;
+
+}
+
 .carrierPage__profilePic {
     width: 15rem;
     height: 15rem;
     border-radius: 10rem;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .informationContainer2 {

@@ -3,14 +3,19 @@ import style from './profile.module.css'
 import instagram from '../../../../../assets/social/instagram.svg'
 import twitter from '../../../../../assets/social/twitter.svg'
 import facebook from '../../../../../assets/social/facebook.svg'
-
+import {uiStoreCarriers} from '../../stores/UiStore';
+import { useObserver } from 'mobx-react-lite';
 
 
 function Profile({pic, name, flag, age, transport,bio}) {
-  return (
+
+  return useObserver(() => (
   <>
   <div className={style.informationContainer}>
+    <div className={style.stateContainer}>
+    <div className={(uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "completed" ? (`${style.statePicture} ${style.completedState}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "awaiting" ? (`${style.statePicture} ${style.awaitingCarrierState}`) : uiStoreCarriers.selectedRoute && uiStoreCarriers.selectedRoute.status === "happening" ?(`${style.statePicture} ${style.currentCarrierState}`):null )}></div>
     <img className={style.carrierPage__profilePic} src={pic} alt="carrierphoto"></img>
+    </div>
       <div className={style.nameAndFlag}>
         <p className={style.nameCarrierInfo}>{name}</p>
         <img className={style.carrierPageFlag} src={flag} alt="carrierflag"></img>
@@ -50,7 +55,7 @@ function Profile({pic, name, flag, age, transport,bio}) {
    
   </div>
   </>
-  );
+  ));
 }
 
 export default Profile;
