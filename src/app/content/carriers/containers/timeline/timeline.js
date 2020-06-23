@@ -5,20 +5,35 @@ import style from './timeline.module.css'
 import Story from '../../components/story/story';
 import image from '../../../../../assets/feed/post/content pics/example.png'
 import { uiStoreCarriers } from '../../stores/UiStore';
+import { useObserver } from 'mobx-react-lite';
+import { useParams } from 'react-router-dom';
+import { useStore } from '../../../../../hooks';
+
 
 
 
 
 function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTop}) {
 
-  return (
+
+  const { id } = useParams();
+
+  const {carrierStore ,routeStore} = useStore()
+  const selectedRoute = routeStore.findRouteById(id)
+  const selectedCarrier = carrierStore.findCarrierById(selectedRoute.carrierId);
+
+  uiStoreCarriers.setSelectedCarrierFromTracker(selectedCarrier);
+  
+ 
+
+  return useObserver(() => (
   <>
     <div>
 
-      {uiStoreCarriers.selectedCarrier && uiStoreCarriers.selectedCarrier.journeys ? (
+      {selectedCarrier && selectedCarrier.journeys ? (
 
         <VerticalTimeline layout={"1-column"}>
-        {uiStoreCarriers.selectedCarrier.journeys.map(journey => (
+        {selectedCarrier.journeys.map(journey => (
         <VerticalTimelineElement
           contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
           contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
@@ -35,7 +50,7 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
       
     </div>
   </>
-  );
+  ));
 }
 
 export default TimeLine;

@@ -14,6 +14,9 @@ import {dataStore}from '../stores/DataStore';
 import cross from '../../../../assets/tracker/cross.svg'
 import popup from './components/popup/popup';
 import Popupinfo from './components/popup/popup';
+import Button from '../../../components/button/button'
+import { uiStoreCarriers } from '../../carriers/stores/UiStore';
+import { Link } from 'react-router-dom';
 
 
 
@@ -51,6 +54,11 @@ const Mapbox = () => {
           
         })
 
+        if (checkpoints) {
+            console.log(checkpoints.status)
+        }
+       
+
 
         if(checkpoints) {
             let selectedCarrier = carrierStore.findCarrierById(checkpoints.carrierId);
@@ -74,6 +82,11 @@ const Mapbox = () => {
               uiTracker.popupOut();
               console.log(uiTracker.popup);
           }
+
+          if(checkpoints) {
+            console.log(carrierStore.findCarrierById(checkpoints.carrierId))
+          }
+          
     
 
           return useObserver(() => (
@@ -175,9 +188,26 @@ const Mapbox = () => {
                    <p className={style.popupAge}>{`Age: ${uiTracker.selectedCarrier.age}`}</p>
                     <p className={style.popupTransport}>{`Transport: ${uiTracker.selectedCarrier.transport}`}</p>
                    <img className={style.popupFlag} src={uiTracker.selectedCarrier.flag} alt="flag"></img>
+                    
                    </div>
                    </div>
+                   {checkpoints.status === "completed" ? (
+                     <Link to={`/carriers/detail/${checkpoints.id}`}><Button value="discover journey"/></Link>
+                   ) : null}
 
+                    {checkpoints.status == "happening" ? (
+                     <Link to={`/carriers/detail/${checkpoints.id}`}><Button value="discover journey"/></Link>
+                   ) : null}
+
+                    {checkpoints.status == "awaiting" ? (
+                     <Link><Button disable="treu" value="Awaiting flower arival"/></Link>
+                   ) : null}
+
+
+                      
+                  
+                   
+                   
                </Popup> 
                ) : null}
             {checkpoints && !uiTracker.selectedCarrier ? (
