@@ -32,7 +32,13 @@ function Carriers() {
 
   const {routeStore} = useStore()
 
-  const routeByTracker = routeStore.findRouteById(uiStoreCarriers.selectedCarrierFromTracker.routeId);
+  let routeByTracker = undefined
+  if(uiStoreCarriers.selectedCarrierFromTracker) {
+    const route = routeStore.findRouteById(uiStoreCarriers.selectedCarrierFromTracker.routeId);
+    routeByTracker = route
+  }
+
+  
 
 
   const [viewport] = useState({
