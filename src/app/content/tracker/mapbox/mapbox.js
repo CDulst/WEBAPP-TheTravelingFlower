@@ -60,10 +60,6 @@ const Mapbox = () => {
     }
 
     let percentage = Kmdone/KmToGo*100;
-
-
-    
-    console.log(serverValuesStore.serverValues)
     
   
     const [viewport] = useState({

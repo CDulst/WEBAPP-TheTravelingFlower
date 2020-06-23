@@ -23,8 +23,14 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
   const selectedCarrier = carrierStore.findCarrierById(selectedRoute.carrierId);
 
   uiStoreCarriers.setSelectedCarrierFromTracker(selectedCarrier);
-  
- 
+
+  //sorted journeys
+
+  let journeyArray = [];
+  for (let i = 1; i<= selectedCarrier.journeys.length; i++){
+    let journey = selectedCarrier.journeys.find(journey => journey.sorted === i);
+    journeyArray.push(journey);
+  }
 
   return useObserver(() => (
   <>
@@ -33,7 +39,7 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
       {selectedCarrier && selectedCarrier.journeys ? (
 
         <VerticalTimeline layout={"1-column"}>
-        {selectedCarrier.journeys.map(journey => (
+        {journeyArray.map(journey => (
         <VerticalTimelineElement
           contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
           contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
