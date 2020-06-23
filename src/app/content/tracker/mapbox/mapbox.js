@@ -10,13 +10,14 @@ import info from '../../../../assets/icons/info.svg'
 import uiTracker from "../stores/uiStore"
 import {useStore} from '../../../../hooks/index';
 import {useObserver} from 'mobx-react-lite';
-import {dataStore}from '../stores/DataStore';
 import cross from '../../../../assets/tracker/cross.svg'
 import popup from './components/popup/popup';
 import Popupinfo from './components/popup/popup';
 import Button from '../../../components/button/button'
 import { uiStoreCarriers } from '../../carriers/stores/UiStore';
 import { Link } from 'react-router-dom';
+import {dataStore} from '../stores/DataStore'
+
 
 
 
@@ -34,6 +35,8 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
+
+    
     
 
     const {routeStore, carrierStore, uiStore,serverValuesStore} = useStore();
@@ -41,6 +44,16 @@ const Mapbox = () => {
     const [currentCarrier, setCurrentCarrier] = useState(null)
     const [carrierLocation, setCarrierLocation] = useState();
 
+    let Kmdone = undefined;
+    
+    if(routeStore.routes[0] && serverValuesStore.serverValues[0]) {
+        const resultKmDone = dataStore.calculatePoints(routeStore.routes[0], serverValuesStore.serverValues);
+        Kmdone = resultKmDone.toFixed(2)
+    }
+
+    console.log(Kmdone)
+
+    console.log(serverValuesStore.serverValues)
     
   
     const [viewport] = useState({
@@ -83,11 +96,8 @@ const Mapbox = () => {
           if(checkpoints) {
             console.log(carrierStore.findCarrierById(checkpoints.carrierId))
           }
-
           
-          
-    
-
+        
           return useObserver(() => (
         
         <>
@@ -99,7 +109,7 @@ const Mapbox = () => {
             </div>
 
             <div className={(uiTracker.popup ? `${style.positioningPopup} ${style.animationDisplayBlock}` : `${style.positioningPopup} ${style.animationDisplayNone}`)}>
-                <Popupinfo toGo="2000 km" done="1000 km"/>
+                <Popupinfo toGo="2000 km" done={`${Kmdone} Km`}/>
             </div>
 
             <div className={style.progressbarLocation}>

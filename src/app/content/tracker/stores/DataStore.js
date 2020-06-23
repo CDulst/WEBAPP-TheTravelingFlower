@@ -8,20 +8,12 @@ class DataStore {
     }
 
     
-    
-    calculatePoints () {
-        rootStore.routeStore.routes.forEach(route => {
-            let line = turf.lineString([[route.startCoordinate.Rc, route.startCoordinate.Ac],[route.endCoordinate.Rc, route.endCoordinate.Ac]])
-            let options = 'kilometers'
-            const distance = turf.distance([route.startCoordinate.Rc, route.startCoordinate.Ac], [route.endCoordinate.Rc, route.endCoordinate.Ac], options)
-    
-            
-            for (let i = 30; i < distance; i++) {
-                const along = turf.along(line, i, options);
-                this.trajectory.push(along.geometry.coordinates);
-               
-            }
-        })
+
+    calculatePoints (startRoute, endRoute) {
+        const line = turf.lineString([[startRoute.startCoordinate.Rc, startRoute.startCoordinate.Ac],[endRoute[endRoute.length - 1].location.Rc, endRoute[endRoute.length - 1].location.Ac]])
+        let options = 'kilometers'
+        const distance = turf.distance([startRoute.startCoordinate.Rc, startRoute.startCoordinate.Ac],[endRoute[endRoute.length - 1].location.Rc, endRoute[endRoute.length - 1].location.Ac], options)
+        return distance
     }
 
     empty () {
