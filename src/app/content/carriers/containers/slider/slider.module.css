@@ -96,6 +96,7 @@
         box-shadow: unset;
         justify-content: center;
         flex-direction: row;
+        padding: 0;
         
     
     }
