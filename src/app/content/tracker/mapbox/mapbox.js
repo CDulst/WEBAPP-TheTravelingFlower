@@ -45,13 +45,18 @@ const Mapbox = () => {
     const [carrierLocation, setCarrierLocation] = useState();
 
     let Kmdone = undefined;
+    let KmToGo = undefined;
     
     if(routeStore.routes[0] && serverValuesStore.serverValues[0]) {
         const resultKmDone = dataStore.calculatePoints(routeStore.routes[0], serverValuesStore.serverValues);
         Kmdone = resultKmDone.toFixed(2)
     }
 
-    console.log(Kmdone)
+    if(routeStore.routes[routeStore.routes.length-1] && serverValuesStore.serverValues[0]) {
+        const resultKmToGo = dataStore.calculatePoints(routeStore.routes[routeStore.routes.length-1], serverValuesStore.serverValues);
+        KmToGo = resultKmToGo.toFixed(2)
+    }
+
 
     console.log(serverValuesStore.serverValues)
     
@@ -109,7 +114,7 @@ const Mapbox = () => {
             </div>
 
             <div className={(uiTracker.popup ? `${style.positioningPopup} ${style.animationDisplayBlock}` : `${style.positioningPopup} ${style.animationDisplayNone}`)}>
-                <Popupinfo toGo="2000 km" done={`${Kmdone} Km`}/>
+                <Popupinfo toGo={KmToGo} done={Kmdone}/>
             </div>
 
             <div className={style.progressbarLocation}>

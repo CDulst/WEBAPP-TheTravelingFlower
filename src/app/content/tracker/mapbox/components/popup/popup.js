@@ -16,7 +16,7 @@ const Popupinfo = ({done, toGo}) => {
                 <p>From Brussels (BEL)</p>
                 <p>to Yuchan (CHN)</p>
             </div>
-        <p className={style.popupBold}>{`${toGo} To go`}</p>
+        <p className={style.popupBold}>{`${toGo} Km To go`}</p>
         </div>
     );
 };
