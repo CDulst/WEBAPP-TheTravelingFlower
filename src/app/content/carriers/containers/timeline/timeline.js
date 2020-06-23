@@ -29,7 +29,7 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
   let journeyArray = [];
   for (let i = 1; i<= selectedCarrier.journeys.length; i++){
     let journey = selectedCarrier.journeys.find(journey => journey.sorted === i);
-    journeyArray.push(journey);
+    journeyArray.unshift(journey);
   }
 
   return useObserver(() => (

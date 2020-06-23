@@ -9,6 +9,14 @@
     width: 100%;
 }
 
+.backArrow {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    z-index: 4;
+    cursor: pointer;
+}
+
 .noCarrier__text {
     font-size: 1.4rem;
     text-align: center;
@@ -84,6 +92,10 @@
 }
 
 @media only screen and (min-width:720px) {
+
+    .backArrow {
+        left: 10rem;
+    }
     .carrier__container {
         display: flex;
         flex-direction: column;
