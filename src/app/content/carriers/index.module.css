@@ -9,6 +9,18 @@
     width: 100%;
 }
 
+.updatesJourneys {
+    margin-right: 1rem;
+    color: var(--hoverButton);
+    font-weight: bold;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .ballbeat {
     position: fixed;
     left: -50rem;
