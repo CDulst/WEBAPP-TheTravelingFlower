@@ -12,7 +12,6 @@ class DataStore {
     calculatePoints (startRoute, endRoute) {
         const line = turf.lineString([[startRoute.startCoordinate.Rc, startRoute.startCoordinate.Ac],[endRoute[endRoute.length - 1].location.Rc, endRoute[endRoute.length - 1].location.Ac]])
         let options = 'kilometers'
-        console.log(line)
         const distance = turf.distance([startRoute.startCoordinate.Rc, startRoute.startCoordinate.Ac],[endRoute[endRoute.length - 1].location.Rc, endRoute[endRoute.length - 1].location.Ac], options)
         return distance
     }

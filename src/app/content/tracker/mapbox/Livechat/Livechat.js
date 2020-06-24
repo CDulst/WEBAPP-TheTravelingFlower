@@ -42,7 +42,7 @@ const Livechat = () => {
       {
 
            rootStore.messageStore.messages.map(message => (
-            <Message avatar = {rootStore.userStore.findUserByEmail(message.userEmail).avatar} content = {message.content}  name={rootStore.userStore.filterUsersByEmail(message.userEmail).name} />
+            <Message key={message.id} avatar = {rootStore.userStore.findUserByEmail(message.userEmail).avatar} content = {message.content}  name={rootStore.userStore.filterUsersByEmail(message.userEmail).name} />
            ))
         
       }

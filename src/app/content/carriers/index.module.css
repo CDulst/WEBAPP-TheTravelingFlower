@@ -9,6 +9,45 @@
     width: 100%;
 }
 
+.updatesJourneys {
+    margin-right: 1rem;
+    color: var(--hoverButton);
+    font-weight: bold;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ballbeat {
+    position: fixed;
+    left: -50rem;
+}
+
+.ballbeatComponent {
+    display: flex;
+    justify-content: center;
+}
+
+.journeyCompleted {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--hoverButton);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.backArrow {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    z-index: 4;
+    cursor: pointer;
+}
+
 .noCarrier__text {
     font-size: 1.4rem;
     text-align: center;
@@ -84,6 +123,10 @@
 }
 
 @media only screen and (min-width:720px) {
+
+    .backArrow {
+        left: 10rem;
+    }
     .carrier__container {
         display: flex;
         flex-direction: column;
