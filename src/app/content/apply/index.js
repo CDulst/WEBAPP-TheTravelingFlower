@@ -19,15 +19,32 @@ import arrow from '../../../assets/Arrow.svg'
 import personalStore from './stores/personal';
 import { useObserver } from 'mobx-react-lite';
 import adresStore from './stores/adres';
-
+import {v4} from "uuid";
+import {rootStore} from '../../../stores/index'
 
 
 function Apply() {
 
+    const handleClick = () => {
+    const app = {
+    id: v4(),
+    age: personalStore.age,
+    country: adresStore.country,
+    email: personalStore.email,
+    identification:personalStore.identification,
+    name: personalStore.name,
+    postalcode: adresStore.postalcode,
+    route: "*",
+    streetname: adresStore.streetname,
+    streetnr: adresStore.streetnr
+    }
+    rootStore.applicationStore.createApplication(app)
+    }
 
     useEffect(() => {
         uiStore.setPage("apply")
       });
+
   return useObserver(() =>(
   <>
 
@@ -51,7 +68,7 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
   <Link className = {style.button} to = {"/tracker"}><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
-   <Button className = {style.button} value = "Back to home" type= "secondary" disabled = "true" />
+   
 
   </div>
   </div>
@@ -62,7 +79,7 @@ function Apply() {
   <Motivation/>
   <div className = {style.buttonsWrapper}>
   <Link to = {ROUTES.route}><Button className = {style.button} value = "Previous Step" type= "primary"/></Link>
-  <Link className = {style.leftButton} to = {ROUTES.finished}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  <Link onClick = {handleClick}  className = {style.leftButton} to = {ROUTES.finished}> <Button className = {style.button} value = "Complete" type= "secondary"/></Link>
   </div>
   </div>
   </Route>

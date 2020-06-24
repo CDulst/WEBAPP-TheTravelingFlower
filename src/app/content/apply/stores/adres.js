@@ -16,6 +16,7 @@ class AdresStore{
   this.nrCorrect= "";
   this.postalCorrect = "";
   this.countryCorrect = "";
+  this.enableButton = false;
   }
 
 
@@ -41,34 +42,49 @@ class AdresStore{
 
   checkfields(){
     if (this.streetnr !== ""){
-        if (this.age.length > 3 || isNaN(this.streetnr)){
+        if (this.streetnr.length > 3 || isNaN(this.streetnr)){
         console.log("error")
-        this.emailError = ` (☝◞‸◟)☞ this is not a street number`
+        this.nrError = ` (☝◞‸◟)☞ this is not a street number`
+        }
+        else{
+        this.nrCorrect = true;
+        console.log("correct");
         }
     }
     if (this.streetname !== ""){
-        if (this.name.length < 3){
+        if (this.streetname.length < 3){
         console.log("error")
-        this.emailError = ` (☝◞‸◟)☞ a little too short no?`
+        this.streetError = ` (☝◞‸◟)☞ a little too short no?`
         }
+        else{
+            this.streetCorrect = true;
+            console.log("correct");
+            }
     }
     if (this.postalcode!== ""){
         if (this.postalcode.length != 4 || isNaN(this.postalcode)){
         console.log("error")
-        this.emailError = `(☝◞‸◟)☞ this isn't a valid postalcode`
+        this.postalError = `(☝◞‸◟)☞ this isn't a valid postalcode`
         }
+        else{
+            this.postalCorrect = true;
+            console.log("correct");
+            }
     }
     if (this.country !== ""){
         if (this.country.length < 3){
         console.log("error")
-        this.emailError = `(☝◞‸◟)☞ a little too short no?`
+        this.countryError = `(☝◞‸◟)☞ a little too short no?`
         }
+        else{
+            this.countryCorrect = true;
+            console.log("correct");
+            }
     }
   }
   
 
   checkEnable(){
-      this.enableButton = true;
       if (this.streetname !== "" && this.streetnr !== ""  && this.postalcode !== "" && this.country!== "")
       if (this.streetError === "" && this.nrError === ""  && this.postalError === "" && this.countryError === ""){
           this.enableButton = true;
@@ -88,6 +104,7 @@ class AdresStore{
 decorate(AdresStore, {
   checkEnable: action,
   checkfields: action,
+  change: action,
   putonNull:action,
   enableButton: observable,
   streetError: observable,
