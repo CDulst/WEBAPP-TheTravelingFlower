@@ -45,8 +45,14 @@ function Challenge() {
   <Involvement/>
   </div>
   <div className={style.progress}>
-  <Progress title="Distance untill next challenge" start={rootStore.routeStore.findRouteById(rootStore.challengeStore.challenges[0].routeId).startName} end={rootStore.routeStore.findRouteById(rootStore.challengeStore.challenges[0].routeId).endName} percentage="80"/>
-  <Progress title="Challenge goal" start="$0" end={`€${challengeStore.currentChallenge.donationGoal}`} percentage={`${challengeStore.currentChallenge.currentSum/challengeStore.currentChallenge.donationGoal*100}`}/>
+  {rootStore.routeStore.findRouteById(rootStore.challengeStore.challenges[0].routeId) ? (
+      <>
+      <Progress title="Distance untill next challenge" start={rootStore.routeStore.findRouteById(rootStore.challengeStore.challenges[0].routeId).startName} end={rootStore.routeStore.findRouteById(rootStore.challengeStore.challenges[0].routeId).endName} percentage="80"/>
+      <Progress title="Challenge goal" start="$0" end={`€${challengeStore.currentChallenge.donationGoal}`} percentage={`${challengeStore.currentChallenge.currentSum/challengeStore.currentChallenge.donationGoal*100}`}/>
+      </>
+  ) : <p>Content not loaded because routes haven't been calculated...Go back to tracking page and wait for the checkpoints to load...</p>}
+
+
   </div>
   <SocialFeed/>
   </Route>

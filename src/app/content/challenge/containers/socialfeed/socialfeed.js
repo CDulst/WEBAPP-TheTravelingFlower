@@ -16,12 +16,15 @@ function SocialFeed() {
   const handleOnClick = (e) => {
     uiChallenge.UIIn();
   }
+
+
+  
   return useObserver(() => (
   <>
   <div className = {( uiChallenge.uiOut ? `${style.container} ${style.positionIn}` : `${style.container} ${style.positionOut}` ) }>
   <img onClick = {e => handleOnClick()} className = {style.close} src = {close} alt = "close"/>
   <FeedHeader hashtags = "#TravelingFlower #FlowerAmsterdamTF"/>
-  <div className = {style.postWrapper}>
+  <div className = {style.postWrapper2}>
   {
   rootStore.socialPostStore.posts.map(post => (
 <Post key={post.id} pic = {post.pic} user = {post.userName} social = {(post.type === "Twitter" ? Twitter : Instagram)} text = {`${post.title} #TheTravelingFlower ${post.hashTag}`} content = {post.content} /> 

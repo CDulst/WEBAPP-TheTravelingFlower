@@ -20,13 +20,14 @@ right:0rem;
 transition: all ease-in-out 0.3s;
 }
 
-.postWrapper{
+.postWrapper2{
 
         height: 65vh;
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-end;
-        overflow: scroll;
+  
+        overflow: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        
        
 }
 
@@ -48,10 +49,8 @@ cursor:pointer;
            
 
                 height: 80vh;
-                display:flex;
-                flex-direction:column;
-                justify-content:flex-end;
-                overflow: scroll;
+
+            
                }
            
  }
@@ -62,12 +61,10 @@ cursor:pointer;
        
         width:40vw;
         }
-        .postWrapper{
+        .postWrapper2{
             height: 78vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:flex-end;
-            overflow: scroll;
+
+        
            }
            
  }
