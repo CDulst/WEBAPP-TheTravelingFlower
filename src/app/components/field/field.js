@@ -18,9 +18,9 @@ function Field({value,icon,width,onValue,border,errorMessage,correctMessage,onCh
   ( onChange ?
     (
       onClick ?
-      <input value = {(onValue ? onValue : null)} onChange = {e =>onChange(e)} onClick = {e => onClick(e)}  className = {style.input} type = {(value === "Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
+      <input value = {(onValue ? onValue : null)} onChange = {e =>onChange(e)} onClick = {e => onClick(e)}  className = {style.input} type = {(value === "Password" ? "password" : value === "Repeat Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
       :
-      <input value = {(onValue ? onValue : null)} onChange = {e =>onChange(e)}  className = {style.input} type = {(value === "Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
+      <input value = {(onValue ? onValue : null)} onChange = {e =>onChange(e)}  className = {style.input} type = {(value === "Password" ? "password" : value === "Repeat Password" ? "password" : "text")} placeholder = {value} style = {(correct ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`green solid 2px`} : wrong ? {backgroundImage: `url(${icon})`, width: `${width}`, border:`red solid 2px`} : {backgroundImage: `url(${icon})`, width: `${width}`, border:`var(--colorSecondary) ${border} solid`})}/>
     )
   :
     onEnter ?
