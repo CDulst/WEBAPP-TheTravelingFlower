@@ -11,6 +11,10 @@ function Tracker() {
         uiStore.setPage("tracker")
       });
 
+      if(uiStore.activePage !== "tracker") {
+        dataStore.empty();
+      }
+
    
 
   return (
