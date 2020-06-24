@@ -36,7 +36,6 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
-    
 
     let place = undefined;
 
