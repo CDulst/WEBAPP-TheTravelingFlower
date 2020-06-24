@@ -27,7 +27,7 @@ function SocialFeed() {
   <div className = {style.postWrapper2}>
   {
   rootStore.socialPostStore.posts.map(post => (
-<Post key={post.id} pic = {post.pic} user = {post.userName} social = {(post.type === "Twitter" ? Twitter : Instagram)} text = {`${post.title} #TheTravelingFlower ${post.hashTag}`} content = {post.content} /> 
+<Post key={post.id} pic = {post.pic} user = {post.userName} social = {(post.type === "Twitter" ? Twitter : Instagram)} text = {`${post.title}`} content = {post.content} /> 
   ))
   }
   </div>
