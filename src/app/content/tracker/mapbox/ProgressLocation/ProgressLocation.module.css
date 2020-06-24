@@ -5,6 +5,10 @@
 .textballoon {
     color: white;
     font-weight: bold;
+    text-align: center;
+    background-color: #12662F;
+    border-radius: 1rem;
+    padding: .5rem;
 }
 
 .textballoon, .indicator {

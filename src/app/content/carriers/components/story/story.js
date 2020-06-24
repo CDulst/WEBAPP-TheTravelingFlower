@@ -6,7 +6,7 @@ import style from './story.module.css'
 function Story({title, date, location, content, image}) {
   return (
   <>
-    <div className={style.journey__container}>
+    <div  className={style.journey__container}>
       <div>
         <p>{`${location} ${date}`}</p>
         <h2 className={style.story__title}>{title}</h2>

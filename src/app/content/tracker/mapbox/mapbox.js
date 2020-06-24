@@ -37,6 +37,16 @@ const Map = ReactMapboxGl({
 
 const Mapbox = () => {
 
+    let place = undefined;
+
+    
+        if(dataStore.place[0]) {
+            place = dataStore.place[0].locality
+        }
+
+        console.log(place)
+ 
+
     
     const {routeStore, carrierStore, uiStore,serverValuesStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
@@ -51,11 +61,17 @@ const Mapbox = () => {
         Kmdone = resultKmDone.toFixed(2)
     }
 
+    
     if(routeStore.routes[routeStore.routes.length-1] && serverValuesStore.serverValues[0]) {
         const resultKmToGo = dataStore.calculatePoints(routeStore.routes[routeStore.routes.length-1], serverValuesStore.serverValues);
-        KmToGo = resultKmToGo.toFixed(2);
+        KmToGo = resultKmToGo.toFixed(2);   
+        dataStore.getLocation(serverValuesStore.serverValues[0])
         
     }
+
+       
+    
+  
 
     console.log('hey');
 
@@ -72,6 +88,8 @@ const Mapbox = () => {
             center:[6.0909, 52.52]
           
         })
+
+          
         
 
         if(checkpoints) {
@@ -115,7 +133,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage={percentage.toString()}  />
+                <ProgressbarLocation location={place} percentage={percentage.toString()}  />
             </div>
 
             <div className={style.iconMessage}>
@@ -211,7 +229,7 @@ const Mapbox = () => {
                    ) : null}
 
                     {checkpoints.status == "awaiting" ? (
-                     <Link><Button disable="treu" value="Awaiting flower arival"/></Link>
+                     <Link to={'/tracker'}><Button disable="treu" value="Awaiting flower arival"/></Link>
                    ) : null}
 
 

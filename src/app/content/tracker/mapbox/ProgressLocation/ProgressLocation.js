@@ -4,15 +4,16 @@ import Progress from '../../../../components/progressbar/progressbar'
 import indicator from '../../../../../assets/tracker/pink_flower.png'
 import start from '../../../../../assets/tracker/start.png'
 import finish from '../../../../../assets/tracker/finish.png'
+import { useObserver } from 'mobx-react-lite';
 
 
-const ProgressLocation = ({percentage}) => {
-    return (
+const ProgressLocation = ({percentage, location}) => {
+    return useObserver(() =>  (
         
         <div className={style.progress}>
            <div className={style.indicator} style={{left: `${percentage}%`}}>
                 <img src={indicator} alt="indicator"></img>
-                <div className={style.textballoon}>@Berlin</div>
+            <div className={style.textballoon}>{location}</div>
             </div>
             <div className={style.indicator} style={{left: "6%", bottom: "4rem"}}>
                 <img src={start} alt="indicator"></img>
@@ -24,7 +25,7 @@ const ProgressLocation = ({percentage}) => {
     </div>
             <Progress percentage={percentage} />
         </div>
-    );
+    ));
 };
 
 export default ProgressLocation;

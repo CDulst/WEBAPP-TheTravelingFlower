@@ -2,7 +2,6 @@ import React from 'react';
 import {useEffect} from 'react';
 import uiStore from '../../../UiStore'
 import Assignment from "./containers/assignment/assignment";
-import Explainer from "./containers/explainer/explainer";
 import Header from "./containers/header/header";
 import Involvement from "./containers/involvement/involvement";
 import Progress from "./containers/progress/progress";

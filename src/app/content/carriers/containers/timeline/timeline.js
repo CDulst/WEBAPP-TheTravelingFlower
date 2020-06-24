@@ -41,7 +41,7 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
 
         <VerticalTimeline key={selectedCarrier.id} layout={"1-column"}>
         {journeyArray.map(journey => (
-        <VerticalTimelineElement key={selectedCarrier.id}
+        <VerticalTimelineElement key={journey.id}
           contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
           contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
           date={date}
