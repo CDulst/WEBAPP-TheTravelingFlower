@@ -36,6 +36,17 @@ const Map = ReactMapboxGl({
 
 
 const Mapbox = () => {
+    
+
+    let place = undefined;
+
+    
+        if(dataStore.place[0]) {
+            place = dataStore.place[0].locality
+        }
+
+        console.log(place)
+ 
 
     
     const {routeStore, carrierStore, uiStore,serverValuesStore} = useStore();
@@ -59,17 +70,7 @@ const Mapbox = () => {
         
     }
 
-    let place = undefined;
-    if(dataStore.place[0]) {
-        place = dataStore.place[0].locality
-    }
-
-        
-   
-        
-    console.log(place)
        
-    
     
   
 

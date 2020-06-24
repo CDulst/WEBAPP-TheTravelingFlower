@@ -1,4 +1,4 @@
-import {rootStore} from '../../../../stores/index'
+
 import turf from 'turf'
 import { decorate, observable, action } from 'mobx';
 
@@ -9,7 +9,7 @@ class DataStore {
     }
 
 
-    getLocation = async(endRoute) => {
+    getLocation = async endRoute => {
         const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${endRoute.location.Ac}&longitude=${endRoute.location.Rc}&localityLanguage=nl`, {
             headers: new Headers({
               Accept: 'application/json'
@@ -37,9 +37,10 @@ class DataStore {
 
 decorate(DataStore, {
     trajectory:observable,
+    place: observable,
     calculatePoints: action,
     getLocation: action,
-    place: observable
+    
 })
 
 
