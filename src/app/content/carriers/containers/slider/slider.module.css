@@ -38,6 +38,7 @@
 
 .carriers {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     margin-left: 1rem;

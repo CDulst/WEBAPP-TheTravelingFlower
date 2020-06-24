@@ -17,6 +17,7 @@ import Button from '../../../components/button/button'
 import { uiStoreCarriers } from '../../carriers/stores/UiStore';
 import { Link } from 'react-router-dom';
 import {dataStore} from '../stores/DataStore'
+import 'mobx-react-lite/batchingForReactDom'
 
 
 
@@ -33,12 +34,9 @@ const Map = ReactMapboxGl({
 
 
 
-
 const Mapbox = () => {
 
     
-    
-
     const {routeStore, carrierStore, uiStore,serverValuesStore} = useStore();
     const [checkpoints, setCheckpoints] =useState(null);
     const [currentCarrier, setCurrentCarrier] = useState(null)
@@ -47,7 +45,6 @@ const Mapbox = () => {
     let Kmdone = undefined;
     let KmToGo = undefined;
 
-    console.log(routeStore.routes)
     if(routeStore.routes[3] && serverValuesStore.serverValues[0]) {
         const resultKmDone = dataStore.calculatePoints(routeStore.routes[3], serverValuesStore.serverValues);
         Kmdone = resultKmDone.toFixed(2)
@@ -58,6 +55,8 @@ const Mapbox = () => {
         KmToGo = resultKmToGo.toFixed(2);
         
     }
+
+    console.log('hey');
 
     let percentage = Kmdone/KmToGo*100;
     
@@ -98,10 +97,6 @@ const Mapbox = () => {
               uiTracker.popupOut();
               console.log(uiTracker.popup);
           }
-
-          if(checkpoints) {
-            console.log(carrierStore.findCarrierById(checkpoints.carrierId))
-          }
           
         
           return useObserver(() => (
@@ -134,13 +129,13 @@ const Mapbox = () => {
             <Livechat />
             </div>
             
-            <Map maxBounds={[-36.843834, 147.897897][64.12321, -21.2342324]} movingMethod="flyTo" {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb">
+            <Map {...viewport} style="mapbox://styles/yorbengoor/ckb6nfdnm3x4o1ip6nvt5psbb?optimize=true">
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
+                <Layer key="334"  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
                     <Feature coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}></Feature>
                 </Layer>
 
