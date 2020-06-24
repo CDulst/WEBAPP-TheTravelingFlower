@@ -17,7 +17,7 @@ class UserStore {
     removeUserByEmail (Email){
     const user = this.findUserByEmail(Email);
     if (user.phonenumber === undefined){
-        console.log("wtf");
+    
         const index = this.users.indexOf(user);
         this.users.splice(index,1);
     }

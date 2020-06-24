@@ -241,7 +241,10 @@ const Mapbox = () => {
                ) : null}
             {checkpoints && !uiTracker.selectedCarrier ? (
                     <Popup coordinates={[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac]}>
+                            <div className={style.nocarrierselectedTrackingPage}>
                             <h1>Carrier still needs to be decided</h1>
+                            <Link to={'/apply'}><Button value="Become a carrier"/></Link>
+                            </div>
                     </Popup>  
             ) : null
         }  

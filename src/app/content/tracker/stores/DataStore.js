@@ -29,7 +29,7 @@ class DataStore {
     }
 
     empty () {
-        this.trajectory = [];
+        this.place = []
     }
 
     
