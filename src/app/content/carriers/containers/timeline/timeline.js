@@ -8,6 +8,7 @@ import { uiStoreCarriers } from '../../stores/UiStore';
 import { useObserver } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
 import { useStore } from '../../../../../hooks';
+import { v4 } from 'uuid';
 
 
 
@@ -38,15 +39,15 @@ function TimeLine({backgroundColor, indicatorColor, carrierPhoto, date, borderTo
 
       {selectedCarrier && selectedCarrier.journeys ? (
 
-        <VerticalTimeline layout={"1-column"}>
+        <VerticalTimeline key={selectedCarrier.id} layout={"1-column"}>
         {journeyArray.map(journey => (
-        <VerticalTimelineElement
+        <VerticalTimelineElement key={selectedCarrier.id}
           contentStyle={{background: `${backgroundColor}`, color: '#fff', borderTop: `${borderTop}  var(--colorSecondary) solid`}}
           contentArrowStyle={{ borderRight: `6px solid  ${backgroundColor}`}}
           date={date}
           iconStyle={{ background: `${indicatorColor}`, color: '#fff' }}
           icon={<img className={style.icon} src={carrierPhoto} alt="carrierPhoto"></img>}>
-        <Story title= {journey.title} date={journey.date} location={journey.location} content={journey.text} image={journey.images} />
+        <Story key={selectedCarrier.id} title= {journey.title} date={journey.date} location={journey.location} content={journey.text} image={journey.images} />
   
       </VerticalTimelineElement>
         ))}

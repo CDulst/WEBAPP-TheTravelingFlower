@@ -18,6 +18,7 @@ import { uiStoreCarriers } from '../../carriers/stores/UiStore';
 import { Link } from 'react-router-dom';
 import {dataStore} from '../stores/DataStore'
 import 'mobx-react-lite/batchingForReactDom'
+import {v4} from "uuid"
 
 
 
@@ -135,12 +136,12 @@ const Mapbox = () => {
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
                 
 
-                <Layer key="334"  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
+                <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
                     <Feature coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}></Feature>
                 </Layer>
 
                 {currentCarrier ? (
-                    <Popup className={style.popupCurrent} coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}>
+                    <Popup key={currentCarrier.id} className={style.popupCurrent} coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}>
                         <div className={style.currentCarrier__container}>
                     
                         <img className={style.currentCarrierImage} src={currentCarrier.pic} alt="currentCarrier"></img>
@@ -161,7 +162,7 @@ const Mapbox = () => {
                 ): null}
 
                 {currentCarrier ? (
-                        <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
+                        <Layer key={v4} type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                                 <Feature coordinates={[[13.08434, 52.51435], [uiStore.currentRoute.endCoordinate.Rc, uiStore.currentRoute.endCoordinate.Ac]]} />
                         </Layer>
                 ): null}
@@ -179,7 +180,7 @@ const Mapbox = () => {
             {checkpoints ? (
              
 
-                    <Layer type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
+                    <Layer key={v4} type="line" paint={{"line-color":"#104ccf", "line-width": 4, "line-opacity": 0.5}}>
                             <Feature coordinates={[[checkpoints.startCoordinate.Rc, checkpoints.startCoordinate.Ac], [checkpoints.endCoordinate.Rc, checkpoints.endCoordinate.Ac]]} />
                     </Layer>
             ) : null}

@@ -79,7 +79,7 @@ function Carriers() {
         <Spinner size={120} spinnerColor={"#d54283"} spinnerWidth={2} visible={true} />
       </div>}
       
-      <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrierFromTracker.pic} date="Hello test" borderTop="3px" />
+      <TimeLine key={uiStoreCarriers.selectedCarrierFromTracker.id} backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrierFromTracker.pic} date="Hello test" borderTop="3px" />
       </div>
   ) : null}
 
@@ -105,7 +105,7 @@ function Carriers() {
         <p className={style.updatesJourneys}>Stay tuned for more updates!</p>
         <Spinner size={120} spinnerColor={"#d54283"} spinnerWidth={2} visible={true} />
       </div>}
-      <TimeLine backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrier.pic} date="Hello test" borderTop="3px" />
+      <TimeLine key={uiStoreCarriers.selectedCarrier.id} backgroundColor="white" indicatorColor="white" carrierPhoto={uiStoreCarriers.selectedCarrier.pic} date="Hello test" borderTop="3px" />
       </div>
   ) : null}
 
@@ -119,7 +119,7 @@ function Carriers() {
   <div className={style.carrier__container}>
     <Discover/>
     {uiStoreCarriers.selectedCarrier ? (
-      <Profile pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport={uiStoreCarriers.selectedCarrier.transport} bio={uiStoreCarriers.selectedCarrier.bio} />
+      <Profile key={uiStoreCarriers.selectedCarrier.id} pic={uiStoreCarriers.selectedCarrier.pic} name={uiStoreCarriers.selectedCarrier.name} flag={uiStoreCarriers.selectedCarrier.flag} age={uiStoreCarriers.selectedCarrier.age} transport={uiStoreCarriers.selectedCarrier.transport} bio={uiStoreCarriers.selectedCarrier.bio} />
     ): 
     <div className={style.noCarrierSelected}>
     
