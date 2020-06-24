@@ -8,6 +8,13 @@
     overflow:scroll;
 
 }
+.arrow{
+    position:absolute;
+    top:4rem;
+    left: 3rem;
+ }
+
+
 .wrapper{
     width:80vw;
     height:90vh;  
@@ -60,6 +67,7 @@
 
     .leftButton{
         margin-left:2rem;
+        width:20rem;
     }
     
     }

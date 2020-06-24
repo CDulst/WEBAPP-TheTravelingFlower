@@ -22,7 +22,7 @@ decorate(User, {
     id: observable,
     email: observable,
     name: observable,
-    phonenumber: observable,
+    number: observable,
     avatar: observable
     
 })

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import style from './progressBar.module.css';
 import lineInactive from '../../../../../assets/apply/lineInactive.png'
 import lineActive from '../../../../../assets/apply/lineActive.png'
@@ -19,7 +20,7 @@ function ProgressBar({type}) {
   <img  src = {doneStep} alt="inactive step" />
 
 }
-  <p className = {style.step} style = {(uiApply.currentStep != "personal" ? {color:"red"} : {fontWeight: "1000",color:"red"})}> Step 1 </p>
+  <p className = {style.step} style = {(uiApply.currentStep != "personal" ? {color:"red"} : {fontWeight: "800",color:"red"})}> Step 1 </p>
 
   </div>
   {
@@ -37,7 +38,7 @@ function ProgressBar({type}) {
   <img  src = {inactiveStep} alt="inactive step" />
   )
 }
-  <p className = {style.step}> Step 2 </p>
+  <p className = {style.step} style = {(uiApply.currentStep != "personal" && uiApply.currentStep != "adres" ? {color:"red"} : uiApply.currentStep === "adres" ? {fontWeight: "800",color:"red"} : {})}> Step 2 </p>
   </div>
   {
   (uiApply.currentStep != "personal" && uiApply.currentStep != "adres"  ?
@@ -54,7 +55,7 @@ function ProgressBar({type}) {
   <img  src = {inactiveStep} alt="inactive step" />
   )
 }
-  <p className = {style.step}> Step 3 </p>
+  <p className = {style.step} style = {(uiApply.currentStep != "personal" && uiApply.currentStep != "adres" && uiApply.currentStep != "route" ? {color:"red"} : uiApply.currentStep === "route" ? {fontWeight: "800",color:"red"} : {})}> Step 3 </p>
   </div>
   {
   (uiApply.currentStep != "personal" && uiApply.currentStep != "adres" && uiApply.currentStep != "route"   ?
@@ -71,7 +72,7 @@ function ProgressBar({type}) {
   <img  src = {inactiveStep} alt="inactive step" />
   )
 }
-  <p className = {style.step}> Step 4 </p>
+  <p className = {style.step} style = {(uiApply.currentStep != "motivation" ? {} : {fontWeight: "800",color:"red"})} > Step 4 </p>
   </div>
   </div>
   </>

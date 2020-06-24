@@ -9,24 +9,24 @@
 
 }
 .active{
-    width:2rem;
+    width:1.9rem;
     position:relative;
 }
 .activestep1{
-    left:4rem;
+    left:3.5rem;
     transition: ease-in-out all 0.5s; 
 }
 
 .activestep2{
-    left:14rem;
+    left:13.5rem;
     transition: ease-in-out all 0.5s; 
 }
 .activestep3{
-    left: 24rem;
+    left: 23.2rem;
     transition: ease-in-out all 0.5s; 
 }
 .activestep4{
-    left:34.5rem;
+    left:32.8rem;
     transition: ease-in-out all 0.5s; 
 }
 
@@ -60,8 +60,12 @@
         justify-content: centers;
         width: 5rem;
         height:5rem;
+        
     }
 
+    .step{
+
+    }
     .progressWrapper{
         flex-direction:column;  
         width: 1rem; 
@@ -74,7 +78,7 @@
         width:20%;
     }
     .active{
-        width:2rem;
+        width:1.9rem;
         position:relative;
     }
     .activestep1{

@@ -15,7 +15,10 @@ import Adres from './containers/adres/adres';
 import Rout from './containers/route/route';
 import Motivation from './containers/motivation/motivation';
 import uiApply from "./stores/uiStore";
+import arrow from '../../../assets/Arrow.svg'
+import personalStore from './stores/personal';
 import { useObserver } from 'mobx-react-lite';
+import adresStore from './stores/adres';
 
 
 
@@ -27,6 +30,7 @@ function Apply() {
       });
   return useObserver(() =>(
   <>
+
   <div className = {style.container}>
   <div className = {style.container__wrapper}>
   <div className = {style.wrapper}>
@@ -40,12 +44,15 @@ function Apply() {
   </>
   )
   }
+  <Link to="/tracker"><img className = {style.arrow} src = {arrow} alt="arrow"/></Link>
   <Switch>
   <Route path = {ROUTES.finished}>
   <div className = {style.specialWrapper}>
   <div className = {style.underground}>
   <Header title = "Congratulations" text = "Congratulations ! Your registration was succesfull. You’ll get an email when you’re selected. Stay tuned !" img = {Congrats}/>
   <Link className = {style.button} to = {"/tracker"}><Button className = {style.button} value = "Back to home" type= "secondary"/></Link>
+   <Button className = {style.button} value = "Back to home" type= "secondary" disabled = "true" />
+
   </div>
   </div>
   </Route>
@@ -75,7 +82,13 @@ function Apply() {
   <Adres/>
   <div className = {style.buttonsWrapper}>
   <Link to = {ROUTES.personal}><Button className = {style.button} value = "Previous Step" type= "primary"/></Link>
-  <Link className = {style.leftButton} to = {ROUTES.route}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  {
+  ( adresStore.enableButton ?
+  <Link className = {style.leftButton}  to = {ROUTES.route}> <Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  :
+  <p className = {style.leftButton} ><Button value = "Next Step" disable = "true" type= "secondary"/></p>
+  )
+  }
   </div>
   </div>
   </Route>
@@ -83,13 +96,20 @@ function Apply() {
   <div className = {style.underground}>
   <Header title = "Personal Information" text = "Once selected, we will need this to make a profile about you as a carrier."/>
   <Personal/>
+  {
+  ( personalStore.enableButton ?
   <Link to = {ROUTES.adres} className = {style.button}><Button className = {style.button} value = "Next Step" type= "secondary"/></Link>
+  :
+  <Button className = {style.button} value = "Next Step" disable = "true" type= "secondary"/>
+  )
+}
   </div>
   </Route>
   <Route path = {ROUTES.landing}>
   <div className = {style.specialWrapper}>
   <div className = {style.underground}>
   <Header title = "Become a carrier" img = {Bike} />
+
   <Link to = {ROUTES.personal}><Button className = {style.button} value = "Sign Up" type= "secondary"/></Link>
   </div>
   </div>
