@@ -8,7 +8,7 @@ import {uiStoreCarriers} from '../../stores/UiStore';
 import awaiting from '../../../../../assets/carrier/awaiting.svg'
 import { useStore } from '../../../../../hooks';
 import {uiStore} from '../../../../../UiStore'
-import UiStore from '../../../../../stores/UiStore';
+
 
 
 const Map = ReactMapboxGl({
@@ -22,7 +22,7 @@ const Map = ReactMapboxGl({
 
 const Discover = ({start, end, type}) => {
 
-    if(uiStore.activePage != "carriers") {
+    if(uiStore.activePage !== "carriers") {
         uiStoreCarriers.setSelectedRoute(undefined)
         uiStoreCarriers.setSelectedCarrier(undefined);
     }
