@@ -152,10 +152,15 @@ const Mapbox = () => {
 
                 <Image id={"marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/2/28/Marker76887687.png"}></Image>
                 <Image id={"current-marker-icon"} url={"https://upload.wikimedia.org/wikipedia/commons/f/f6/Logosfsdfsdf.png"}></Image>
+                <Image id={"end"} url={"https://upload.wikimedia.org/wikipedia/commons/4/49/EndDestinationsfsfs.png"}></Image>
                 
 
                 <Layer  onClick={e => {setCurrentCarrier(uiStore.currentCarrier)}} id="marker" layout={{"icon-image": "current-marker-icon", "icon-size": 0.5, "icon-ignore-placement": true, "icon-offset": [0,-70] }}  id="currentCarrier">
                     <Feature coordinates={serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1] ? [serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Rc, serverValuesStore.serverValues[serverValuesStore.serverValues.length - 1].location.Ac]: [13.08434, 52.51435]}></Feature>
+                </Layer>
+
+                <Layer  id="markerEnd" layout={{"icon-image": "end", "icon-size": 1, "icon-ignore-placement": true, "icon-offset": [0,-70] }}>
+                    <Feature coordinates={[84.0626 ,32.3027]}></Feature>
                 </Layer>
                 
 
