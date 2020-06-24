@@ -211,7 +211,7 @@ const Mapbox = () => {
                    ) : null}
 
                     {checkpoints.status == "awaiting" ? (
-                     <Link><Button disable="treu" value="Awaiting flower arival"/></Link>
+                     <Link to={'/tracker'}><Button disable="treu" value="Awaiting flower arival"/></Link>
                    ) : null}
 
 

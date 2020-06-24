@@ -1,35 +1,20 @@
 import "firebase/firestore";
-/*import {userConverter} from "../models/User";*/
+import {applicationConverter} from "../models/Application";
 
 class ApplicationService {
   constructor(firebase) {
     this.db = firebase.firestore();
-    this.realtimeUpdates()
-  }
-  /*
-  create = async group => {
-    const groupRef = await this.db.collection("groups").doc();
-    await groupRef.withConverter(groupConverter).set(group);
-    return groupRef;
+}
+  
+  create = async application => {
+    
+    const applicationRef = await this.db.collection("Application").doc(application.id)
+    .set(application);
+    return applicationRef;
   };
-*/
 
-  realtimeUpdates = async () =>{
-    await this.db.collection("Application")
-    .withConverter(applicationConverter)
-    .onSnapshot(this.getApplications);
+
  
-  }
-
-  getApplications = async () => {
-    const applications = await this.db
-    .collection("Application")
-    .withConverter(applicationConverter)
-    .get();
-
-    return applications.docs.map(doc => doc.data());
-
-  };
 
 
 }
