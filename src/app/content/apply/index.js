@@ -34,7 +34,7 @@ function Apply() {
     identification:personalStore.identification,
     name: personalStore.name,
     postalcode: adresStore.postalcode,
-    route: "*",
+    route: personalStore.route,
     streetname: adresStore.streetname,
     streetnr: adresStore.streetnr
     }

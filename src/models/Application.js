@@ -16,6 +16,8 @@ class Application {
     }
 }
 
+
+
 decorate(Application, {
     id: observable,
     name: observable,

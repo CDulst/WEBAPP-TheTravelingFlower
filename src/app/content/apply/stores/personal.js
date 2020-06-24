@@ -8,6 +8,7 @@ class PersonalStore{
   this.email = "";
   this.identification = "";
   this.age = "";
+  this.route = ""
   this.nameError = "";
   this.emailError= "";
   this.identificationError = "";
@@ -113,6 +114,7 @@ decorate(PersonalStore, {
     email: observable,
     change:action,
     age:observable,
+    route:observable,
     identification: observable,
     checkfields: action,
     putonNull:action,
