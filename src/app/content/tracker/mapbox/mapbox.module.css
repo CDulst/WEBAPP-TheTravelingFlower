@@ -7,6 +7,10 @@
     width: 0;
 }
 
+.livechat {
+    height: 100vh;
+}
+
 .personalInformation {
     display: flex;
     align-items: center;

@@ -6,10 +6,11 @@ class SocialPostStore {
         this.rootStore = rootStore;
         this.socialService = new SocialService (this.rootStore.firebase);
         this.posts = [];
+        
     }
 
     addPost(post) {
-        this.posts.push(post);
+        this.posts.unshift(post);
     }
 
         findPostById(id){
