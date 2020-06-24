@@ -51,11 +51,27 @@ const Mapbox = () => {
         Kmdone = resultKmDone.toFixed(2)
     }
 
+    
     if(routeStore.routes[routeStore.routes.length-1] && serverValuesStore.serverValues[0]) {
         const resultKmToGo = dataStore.calculatePoints(routeStore.routes[routeStore.routes.length-1], serverValuesStore.serverValues);
-        KmToGo = resultKmToGo.toFixed(2);
+        KmToGo = resultKmToGo.toFixed(2);   
+        dataStore.getLocation(serverValuesStore.serverValues[0])
         
     }
+
+    let place = undefined;
+    if(dataStore.place[0]) {
+        place = dataStore.place[0].locality
+    }
+
+        
+   
+        
+    console.log(place)
+       
+    
+    
+  
 
     console.log('hey');
 
@@ -72,6 +88,8 @@ const Mapbox = () => {
             center:[6.0909, 52.52]
           
         })
+
+          
         
 
         if(checkpoints) {
@@ -115,7 +133,7 @@ const Mapbox = () => {
             </div>
 
             <div className={style.progressbarLocation}>
-                <ProgressbarLocation percentage={percentage.toString()}  />
+                <ProgressbarLocation location={place} percentage={percentage.toString()}  />
             </div>
 
             <div className={style.iconMessage}>

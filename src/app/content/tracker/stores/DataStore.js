@@ -5,8 +5,20 @@ import { decorate, observable, action } from 'mobx';
 class DataStore {
     constructor() {
         this.trajectory = [];
+        this.place = [];
     }
 
+
+    getLocation = async(endRoute) => {
+        const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${endRoute.location.Ac}&longitude=${endRoute.location.Rc}&localityLanguage=nl`, {
+            headers: new Headers({
+              Accept: 'application/json'
+            })
+          });
+        
+          const result = await response.json();
+          this.place.push(result);
+    }
     
 
     calculatePoints (startRoute, endRoute) {
@@ -25,7 +37,9 @@ class DataStore {
 
 decorate(DataStore, {
     trajectory:observable,
-    calculatePoints: action
+    calculatePoints: action,
+    getLocation: action,
+    place: observable
 })
 
 
